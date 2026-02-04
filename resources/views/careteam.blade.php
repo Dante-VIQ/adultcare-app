@@ -154,7 +154,7 @@
                     <div class="rounded-2xl overflow-hidden shadow-2xl">
                         <img src="images/ednar.png" 
                              alt="Care team interacting with residents" 
-                             class="w-full object-cover">
+                             class="w-full h-96 object-cover">
                     </div>
                     <div class="absolute -bottom-6 -right-6 bg-gold text-navy p-6 rounded-2xl shadow-xl max-w-xs">
                         <h4 class="cormorant text-2xl font-bold mb-2">15+ Professionals</h4>
