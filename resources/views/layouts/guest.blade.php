@@ -2,208 +2,263 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+     {{-- Basic Meta Tags --}}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>{{ config('app.name', 'RIDE AIDE LLC | Non-Emergency Medical Transportation Services') }}</title>
-    <!-- Primary Meta Tags -->
-    <meta name="title" content="Ride_Aide LLC – Safe & Compassionate Non-Emergency Medical Transportation">
-    <meta name="description"
-        content="Ride_Aide LLC provides reliable, compassionate non-emergency medical transportation throughout Washington. Serving seniors, disabled individuals, and those with limited mobility.">
-    <meta name="keywords"
-        content="Non-Emergency Medical Transportation, NEMT Washington, wheelchair transport, senior transport, Ride_Aide LLC, medical appointments, dialysis transport, therapy ride, Seattle medical ride, Tacoma transport service">
-    <meta name="author" content="Daniel Mwangi, Web Designer - Kenya">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="en">
-    <meta name="revisit-after" content="7 days">
-    <meta name="distribution" content="global">
-    <meta name="coverage" content="Worldwide">
-    <meta name="copyright" content="Ride_Aide LLC">
-    <meta name="reply-to" content="damalide20@gmail.com">
+    {{-- Title --}}
+    <title>@yield('title', 'Amazing Palace Adult Family Home | Luxury Senior Care in Seattle, WA')</title>
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.rideaidellc.com">
-    <meta property="og:title" content="Ride_Aide LLC – Safe & Compassionate Medical Transportation">
-    <meta property="og:description"
-        content="Non-emergency medical transportation services across Washington. Reliable, accessible, and senior-friendly.">
-    <meta property="og:image" content="http://127.0.0.1:8000/images/ride-logo.png">
+    {{-- Primary Meta Tags --}}
+    <meta name="description" content="@yield('description', 'Amazing Palace Adult Family Home provides exceptional luxury senior care in Seattle, WA. Expert memory care, assisted living, and respite services in a premium residential setting.')">
+    <meta name="keywords" content="@yield('keywords', 'adult family home Seattle, senior care Seattle, memory care Washington, assisted living Seattle, luxury senior living, dementia care, respite care, geriatric care, Alzheimer\'s care, senior housing Seattle')">
+    <meta name="author" content="Amazing Palace Adult Family Home">
+    <meta name="robots" content="@yield('robots', 'index, follow')">
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ride_Aide LLC – Medical Transport You Can Trust">
-    <meta name="twitter:description"
-        content="Transportation services for medical appointments, dialysis, therapy, and more across Washington.">
-    <meta name="twitter:image" content="http://127.0.0.1:8000/images/ride-logo.png">
+    {{-- Open Graph / Facebook --}}
+    <meta property="og:type" content="@yield('og:type', 'website')">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="@yield('og:title', 'Amazing Palace Adult Family Home | Luxury Senior Care in Seattle')">
+    <meta property="og:description" content="@yield('og:description', 'Premium adult family home offering exceptional senior care services in Seattle, Washington. Specialized memory care, assisted living, and respite services.')">
+    <meta property="og:image" content="@yield('og:image', asset('images/og-image.jpg'))">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Amazing Palace Adult Family Home - Luxury Senior Living Facility in Seattle">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Amazing Palace Adult Family Home">
 
-    <!-- Additional SEO -->
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="en">
-<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/ride-logo.PNG') }}">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/ride-logo.PNG') }}">
-<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/ride-logo.PNG') }}">
+    {{-- Twitter --}}
+    <meta name="twitter:card" content="@yield('twitter:card', 'summary_large_image')">
+    <meta name="twitter:site" content="@yield('twitter:site', '@AmazingPalaceAFH')">
+    <meta name="twitter:creator" content="@AmazingPalaceAFH">
+    <meta name="twitter:title" content="@yield('twitter:title', 'Amazing Palace Adult Family Home | Seattle')">
+    <meta name="twitter:description" content="@yield('twitter:description', 'Luxury senior care with compassion and expertise in Seattle, WA. Specialized memory care and assisted living services.')">
+    <meta name="twitter:image" content="@yield('twitter:image', asset('images/twitter-card.jpg'))">
+    <meta name="twitter:image:alt" content="Amazing Palace facility exterior and caring staff">
 
+    {{-- Additional Meta Tags --}}
+    <meta name="theme-color" content="#0a2463">
+    <meta name="msapplication-TileColor" content="#0a2463">
+    <meta name="msapplication-config" content="{{ asset('browserconfig.xml') }}">
+    <link rel="canonical" href="{{ url()->current() }}">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    {{-- Icons & Favicons --}}
+   
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/logo0.png') }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/logo0.png') }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/logo0.png') }}">
+    <link rel="manifest" href="{{ asset('site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ asset('safari-pinned-tab.svg') }}" color="#0a2463">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'gold': '#d4af37',
+                        'royal-blue': '#00308F',
+                        'navy': '#0a2463',
+                        'cream': '#f5f2e9',
+                    },
+                    fontFamily: {
+                        'cormorant': ['Cormorant Garamond', 'serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-
-        /* Image Stack Section */
-.image-stack {
-    width: 100%;
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .image-stack {
-        min-height: 75vh;
-        background-position: center 25%;
-    
-    }
-}
-
-        /* Foreground image positioned at top 0 left 0 */
-        .foreground-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 50%;
-            max-width: 400px;
-            z-index: 50;
-            /* padding: 30px; */
-            /* transform: translateX(-10px) translateY(-10px);
-            animation: float 8s ease-in-out infinite; */
+        .care_one{
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .section-bg {
+            background-color: #f9f7f2;
+        }
+        .room-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1758&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .care-bg {
+            background-image: linear-gradient(rgba(94, 131, 219, 0.85), rgba(10, 36, 99, 0.85)), url('images/care_bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .logo-text {
+            font-family: 'Cormorant Garamond', serif;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
 
-        /* Text overlay at bottom center */
-        .text-overlay {
+        .hero-bg {
+            background-image: linear-gradient(rgba(90, 129, 221, 0.85), rgba(10, 36, 99, 0.8)), url('images/hero1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-opacity: 0.9;
+        }
+        .story-bg {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .values-bg {
+            background-color: #f9f7f2;
+        }
+        .btn-gold {
+            background: linear-gradient(to right, #d4af37, #f7ef8a);
+            color: #0a2463;
+            font-weight: 600;
+        }
+        .btn-gold:hover {
+            background: linear-gradient(to right, #b8941f, #e6d97a);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .timeline::before {
+            content: '';
             position: absolute;
-            bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
-            z-index: 20;
-            width: 90%;
-            max-width: 700px;
+            width: 2px;
+            height: 100%;
+            background-color: #d4af37;
+        }
+         .service-card {
+            transition: all 0.3s ease;
+            border-top: 4px solid #d4af37;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .memory-care-bg {
+            background-image: linear-gradient(rgba(10, 36, 99, 0.9), rgba(10, 36, 99, 0.9)), url('https://images.unsplash.com/photo-1581579431531-5c65f537180d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .assisted-living-bg {
+            background-color: #f9f7f2;
         }
 
-        .quote-box {
-            background-color: rgba(255, 255, 255, 0.92);
-            color: #1a365d;
-            padding: 10px 20px;
-            text-align: center;
-            font-size: 1.4rem;
-            font-weight: 700;
-            font-style: italic;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            border: 2px solid #ecc94b;
-            position: relative;
-            overflow: hidden;
+                .tab-active {
+            background-color: #0a2463;
+            color: white;
+            border-color: #0a2463;
         }
-
-        .quote-box::before, .quote-box::after {
-            content: '"';
-            position: absolute;
-            font-size: 5rem;
-            color: #ecc94b;
-            opacity: 0.2;
-            font-family: Georgia, serif;
-        }
-
-        .quote-box::before {
-            top: -20px;
-            left: 20px;
-        }
-
-        .quote-box::after {
-            bottom: -50px;
-            right: 20px;
-        }
-
-
-
-        /* Animation for foreground image */
-        @keyframes float {
-            0% {
-                transform: translateX(-10px) translateY(-10px);
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
             }
-            50% {
-                transform: translateX(10px) translateY(10px);
-            }
-            100% {
-                transform: translateX(-10px) translateY(-10px);
+            .hero-bg {
+                background-attachment: scroll;
             }
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 992px) {
-            .foreground-image {
-                width: 60%;
-            }
+               .team-hero-bg {
+            background-image: linear-gradient(rgba(10, 36, 99, 0.85), rgba(10, 36, 99, 0.8)), url('images/pave.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
 
-            .quote-box {
-                font-size: 1.2rem;
-                padding: 15px 20px;
-            }
+        .team-bg {
+            background-color: #f9f7f2;
+        }
+
+        .team-card {
+            transition: all 0.3s ease;
+            border-top: 4px solid transparent;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #d4af37;
+        }
+
+        .btn-gold {
+            background: linear-gradient(to right, #d4af37, #f7ef8a);
+            color: #0a2463;
+            font-weight: 600;
+        }
+
+        .btn-gold:hover {
+            background: linear-gradient(to right, #b8941f, #e6d97a);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .team-modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: 1rem;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .cert-badge {
+            display: inline-block;
+            background-color: #e8f0f7;
+            color: #0a2463;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px;
         }
 
         @media (max-width: 768px) {
-            .foreground-image {
-                width: 80%;
+            .team-hero-bg {
+                background-attachment: scroll;
             }
-
-            .quote-box {
-                font-size: 1.1rem;
-            }
-
         }
-
-        @media (max-width: 576px) {
-            .foreground-image {
-                width: 100%;
-            }
-
-            .quote-box {
-                font-size: 1rem;
-            }
-
-
-        }
-
-
     </style>
-
+    <!-- Scripts -->
     @livewireStyles
-
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="font-serif">
+    <livewire:layout.navigation />
     <div class="min-h-screen bg-gray-100">
 
-
-        <livewire:welcome.navigation />
-
+        <!-- Page Content -->
         <main>
             {{ $slot }}
         </main>
     </div>
+    @livewireScripts
+
     <!-- JavaScript Libraries -->
     <!-- jQuery FIRST (no defer) -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -212,9 +267,51 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
     <!-- Your Template Script (depends on jQuery) -->
-    <script src="js/main.js" defer></script>
+    {{-- <script src="js/main.js" defer></script> --}}
 
-    @livewireScripts
+<!-- Add this JavaScript for mobile menu toggle -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+        // Toggle between bars and X icon
+        const icon = mobileMenuButton.querySelector('i');
+        if (mobileMenu.classList.contains('hidden')) {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        } else {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        }
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!mobileMenu.classList.contains('hidden') &&
+            !mobileMenu.contains(event.target) &&
+            !mobileMenuButton.contains(event.target)) {
+            mobileMenu.classList.add('hidden');
+            const icon = mobileMenuButton.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+
+    // Close mobile menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            mobileMenu.classList.add('hidden');
+            const icon = mobileMenuButton.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        });
+    });
+});
+</script>
+
 
 </body>
 
