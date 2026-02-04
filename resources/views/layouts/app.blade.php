@@ -84,7 +84,7 @@
             background-position: center;
         }
         .care-bg {
-            background-image: linear-gradient(rgba(10, 36, 99, 0.85), rgba(10, 36, 99, 0.85)), url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1780&q=80');
+            background-image: linear-gradient(rgba(94, 131, 219, 0.85), rgba(10, 36, 99, 0.85)), url('images/care_bg.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -93,11 +93,12 @@
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
 
-                .hero-bg {
-            background-image: linear-gradient(rgba(10, 36, 99, 0.85), rgba(10, 36, 99, 0.8)), url('https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+        .hero-bg {
+            background-image: linear-gradient(rgba(90, 129, 221, 0.85), rgba(10, 36, 99, 0.8)), url('images/hero1.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            background-opacity: 0.9;
         }
         .story-bg {
             background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
@@ -171,6 +172,7 @@
             {{ $slot }}
         </main>
     </div>
+    @livewireScripts
 
     <!-- JavaScript Libraries -->
     <!-- jQuery FIRST (no defer) -->
@@ -180,85 +182,50 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
     <!-- Your Template Script (depends on jQuery) -->
-    <script src="js/main.js" defer></script>
+    {{-- <script src="js/main.js" defer></script> --}}
 
-    <script>
-        //  Simple animations
-        document.addEventListener('DOMContentLoaded', function() {
-                    const quoteBox = document.querySelector('.quote-box');
+<!-- Add this JavaScript for mobile menu toggle -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-                    // Pulsing animation for the quote box
-                    setInterval(() => {
-                        quoteBox.style.transform = 'scale(1.03)';
-                        setTimeout(() => {
-                            quoteBox.style.transform = 'scale(1)';
-                        }, 300);
-                    }, 5000);
-    </script>
-        <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+        // Toggle between bars and X icon
+        const icon = mobileMenuButton.querySelector('i');
+        if (mobileMenu.classList.contains('hidden')) {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        } else {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        }
+    });
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!mobileMenu.classList.contains('hidden') &&
+            !mobileMenu.contains(event.target) &&
+            !mobileMenuButton.contains(event.target)) {
+            mobileMenu.classList.add('hidden');
+            const icon = mobileMenuButton.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+
+    // Close mobile menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            mobileMenu.classList.add('hidden');
+            const icon = mobileMenuButton.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
         });
-
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Tab functionality
-        const tabs = document.querySelectorAll('button[id$="-tab"]');
-        const contents = document.querySelectorAll('.service-content');
-
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                // Remove active class from all tabs
-                tabs.forEach(t => {
-                    t.classList.remove('tab-active');
-                    t.classList.add('border-gray-300');
-                    t.classList.remove('border-navy', 'bg-navy', 'text-white');
-                });
-
-                // Add active class to clicked tab
-                tab.classList.add('tab-active');
-                tab.classList.remove('border-gray-300');
-                tab.classList.add('border-navy', 'bg-navy', 'text-white');
-
-                // Hide all content
-                contents.forEach(content => {
-                    content.classList.add('hidden');
-                });
-
-                // Show corresponding content
-                const contentId = tab.id.replace('-tab', '-content');
-                document.getElementById(contentId).classList.remove('hidden');
-            });
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if(href === '#' || href.includes('.html')) return;
-
-                e.preventDefault();
-
-                const targetElement = document.querySelector(href);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
-    @livewireScripts
+    });
+});
+</script>
 
 
 </body>

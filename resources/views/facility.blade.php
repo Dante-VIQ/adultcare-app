@@ -32,7 +32,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .facility-hero-bg {
-            background-image: linear-gradient(rgba(10, 36, 99, 0.85), rgba(10, 36, 99, 0.8)), url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-image: linear-gradient(rgba(10, 36, 99, 0.85), rgba(10, 36, 99, 0.8)), url('images/yard.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -153,7 +153,7 @@
                 </div>
                 <div class="relative">
                     <div class="rounded-2xl overflow-hidden shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" 
+                        <img src="images/facility.jpg" 
                              alt="Elegant living room at Amazing Palace" 
                              class="w-full h-96 object-cover">
                     </div>
@@ -239,7 +239,7 @@
                         </div>
                         <div class="order-1 lg:order-2">
                             <div class="rounded-2xl overflow-hidden shadow-2xl">
-                                <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                                <img src="images/private_suite.jpg" 
                                      alt="Private suite at Amazing Palace" 
                                      class="w-full h-96 object-cover">
                             </div>
@@ -292,7 +292,7 @@
                         </div>
                         <div>
                             <div class="rounded-2xl overflow-hidden shadow-2xl">
-                                <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                                <img src="images/facility.jpg" 
                                      alt="Deluxe suite at Amazing Palace" 
                                      class="w-full h-96 object-cover">
                             </div>
@@ -345,7 +345,7 @@
                         </div>
                         <div class="order-1 lg:order-2">
                             <div class="rounded-2xl overflow-hidden shadow-2xl">
-                                <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" 
+                                <img src="images/dining1.jpg" 
                                      alt="Companion suite at Amazing Palace" 
                                      class="w-full h-96 object-cover">
                             </div>
@@ -398,7 +398,7 @@
                         </div>
                         <div>
                             <div class="rounded-2xl overflow-hidden shadow-2xl">
-                                <img src="https://images.unsplash.com/photo-1581579431531-5c65f537180d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                                <img src="images/companion.jpg" 
                                      alt="Memory care suite at Amazing Palace" 
                                      class="w-full h-96 object-cover">
                             </div>
@@ -584,7 +584,7 @@
     </section>
 
     <!-- Photo Gallery -->
-    <section class="py-20" id="virtual-tour">
+    {{-- <section class="py-20" id="virtual-tour">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="cormorant text-4xl md:text-5xl font-bold text-navy mb-4">Photo Gallery</h2>
@@ -656,10 +656,10 @@
                 </a>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Image Modal -->
-    <div id="imageModal" class="image-modal">
+    {{-- <div id="imageModal" class="image-modal">
         <div class="relative">
             <button id="closeModal" class="absolute top-4 right-4 text-white text-3xl z-10">
                 <i class="fas fa-times"></i>
@@ -667,7 +667,7 @@
             <img id="modalImage" class="modal-image" src="" alt="">
             <div id="modalCaption" class="text-white text-center mt-4 text-lg"></div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- Virtual Tour Section -->
     <section class="py-20 bg-navy text-white">

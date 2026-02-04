@@ -30,7 +30,7 @@
                 </div>
                 <div class="relative">
                     <div class="rounded-2xl overflow-hidden shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" 
+                        <img src="images/care_bg.jpg" 
                              alt="Comfortable living room at Amazing Palace" 
                              class="w-full h-96 object-cover">
                     </div>

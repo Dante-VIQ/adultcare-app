@@ -25,8 +25,9 @@ class AppointmentController extends Controller
     {
         // ✅ 1. Validate form input
         $validated = $request->validate([
-            'first_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
+            'full_name' => 'required|string|max:255',
+            'phone_number' => 'required|string|max:20',
+            'date' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'message' => 'required|string|max:2000',
         ]);

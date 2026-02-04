@@ -152,7 +152,7 @@
                 </div>
                 <div class="relative">
                     <div class="rounded-2xl overflow-hidden shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" 
+                        <img src="images/ednar.png" 
                              alt="Care team interacting with residents" 
                              class="w-full h-96 object-cover">
                     </div>
@@ -176,7 +176,7 @@
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {{-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Team Member 1 -->
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden team-card">
                     <div class="h-64 bg-navy flex items-center justify-center relative">
@@ -242,11 +242,18 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
+                        @php
+                $teamMembers = App\Models\Team::orderBy('order')->get();
+            @endphp
+
+            @if ($teamMembers->count() > 0)
+                <x-team-section :teamMembers="$teamMembers" />
+            @endif
         </div>
     </section>
 
-    <!-- Clinical Care Team -->
+    {{-- <!-- Clinical Care Team -->
     <section class="py-20">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
@@ -433,7 +440,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Training & Certification -->
     <section class="py-20">
