@@ -38,7 +38,8 @@ new class extends Component {
                 <a href="/facility" class="font-semibold text-gray-700 hover:text-gold transition duration-200">Facility</a>
                 <a href="/careteam" class="font-semibold text-gray-700 hover:text-gold transition duration-200">Care Team</a>
                 <a href="/contact" class="font-semibold text-gray-700 hover:text-gold transition duration-200">Contact</a>
-
+            </nav>
+            <div class="hidden lg:flex items-center space-x-6">
                 <!-- Auth for Desktop -->
                 @auth
                     <div x-data="{ show: false }" @click.away="show = false" class="relative">
@@ -70,8 +71,7 @@ new class extends Component {
                         </a>
                     </div>
                 @endguest
-            </nav>
-
+                </div>
             <!-- Mobile menu button -->
             <div class="flex items-center lg:hidden space-x-4">
                 @auth

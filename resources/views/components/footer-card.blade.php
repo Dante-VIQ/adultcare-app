@@ -4,7 +4,7 @@
                 <div class="mb-8 md:mb-0">
                     <div class="flex items-center">
                         <div class="w-12 h-12 rounded-2xl flex items-center justify-center mr-3">
-                                                <img src="{{ asset('images/logo4.png') }}" alt="Logo"
+                        <img src="{{ asset('images/logo0.png') }}" alt="Logo"
                         class="object-cover w-auto h-16 rounded-2xl mr-3 ">
                         </div>
                         <div>

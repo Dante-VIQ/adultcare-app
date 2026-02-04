@@ -636,47 +636,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-navy py-12 border-t border-white/10">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-8 md:mb-0">
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-3">
-                            <i class="fas fa-crown text-navy text-xl"></i>
-                        </div>
-                        <div>
-                            <h2 class="cormorant text-2xl font-bold text-white">Amazing Palace</h2>
-                            <p class="text-xs font-semibold text-gold tracking-widest">ADULT FAMILY HOME</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 mt-4 max-w-md">
-                        Seattle's premier adult family home providing exceptional care with compassion, dignity, and expertise.
-                    </p>
-                </div>
-                
-                <div class="text-center md:text-right">
-                    <p class="text-gray-400 mb-4">&copy; 2023 Amazing Palace Adult Family Home. All rights reserved.</p>
-                    <div class="flex space-x-4 justify-center md:justify-end">
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition">
-                            <i class="fab fa-facebook-f text-white"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition">
-                            <i class="fab fa-instagram text-white"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition">
-                            <i class="fab fa-linkedin-in text-white"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-12 pt-8 border-t border-white/10 text-center text-gray-400 text-sm">
-                <p>123 Luxury Lane, Seattle, WA 98101 | Phone: (206) 555-1234 | Emergency: (206) 555-9999</p>
-                <p class="mt-2">Email: info@amazingpalaceseattle.com | WA State License #AFH-123456 | Medicaid Provider #WA98765</p>
-            </div>
-        </div>
-    </footer>
-
+ <x-footer-card />
     <!-- Form Submission Modal -->
     <div id="successModal" class="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center p-4">
         <div class="bg-white rounded-2xl max-w-md w-full p-10 text-center">
