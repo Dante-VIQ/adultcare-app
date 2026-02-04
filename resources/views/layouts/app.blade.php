@@ -44,7 +44,7 @@
     <link rel="canonical" href="{{ url()->current() }}">
 
     {{-- Icons & Favicons --}}
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
     <link rel="manifest" href="{{ asset('site.webmanifest') }}">
@@ -75,6 +75,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        .care_one{
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
         .section-bg {
             background-color: #f9f7f2;
         }
@@ -157,6 +162,85 @@
                 background-attachment: scroll;
             }
         }
+
+               .team-hero-bg {
+            background-image: linear-gradient(rgba(10, 36, 99, 0.85), rgba(10, 36, 99, 0.8)), url('images/pave.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .team-bg {
+            background-color: #f9f7f2;
+        }
+
+        .team-card {
+            transition: all 0.3s ease;
+            border-top: 4px solid transparent;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #d4af37;
+        }
+
+        .btn-gold {
+            background: linear-gradient(to right, #d4af37, #f7ef8a);
+            color: #0a2463;
+            font-weight: 600;
+        }
+
+        .btn-gold:hover {
+            background: linear-gradient(to right, #b8941f, #e6d97a);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .team-modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: 1rem;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .cert-badge {
+            display: inline-block;
+            background-color: #e8f0f7;
+            color: #0a2463;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .team-hero-bg {
+                background-attachment: scroll;
+            }
+        }
     </style>
     <!-- Scripts -->
     @livewireStyles
@@ -164,8 +248,8 @@
 </head>
 
 <body class="font-serif">
+    <livewire:layout.navigation />
     <div class="min-h-screen bg-gray-100">
-        <livewire:layout.navigation />
 
         <!-- Page Content -->
         <main>

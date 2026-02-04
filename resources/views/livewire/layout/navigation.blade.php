@@ -1,5 +1,4 @@
 <?php
-
 use App\Livewire\Actions\Logout;
 use Livewire\Volt\Component;
 
@@ -13,15 +12,16 @@ new class extends Component {
 
         $this->redirect('/', navigate: true);
     }
-}; ?>
+};
+?>
 
-<header class="sticky top-0 z-50 bg-white shadow-lg">
+<div class="sticky top-0 z-50 bg-white shadow-lg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-20">
+        <div class="flex flex-row justify-between h-20">
             <!-- Logo Section -->
             <div class="flex-shrink-0 flex items-center">
                 <div class="flex items-center">
-                    <img src="{{ asset('images/logo5.jpg') }}" alt="Amazing Palace Logo"
+                    <img src="{{ asset('images/logo0.png') }}" alt="Amazing Palace Logo"
                          class="h-12 w-auto sm:h-16 object-contain">
                     <div class="ml-3 hidden sm:block">
                         <h1 class="cormorant text-xl sm:text-2xl font-bold text-navy leading-tight">Amazing Palace</h1>
@@ -31,7 +31,7 @@ new class extends Component {
             </div>
 
             <!-- Desktop Navigation -->
-            <nav class="hidden lg:flex items-center space-x-6">
+            <nav class="hidden lg:flex items-center space-x-4">
                 <a href="/" class="font-semibold text-gray-700 hover:text-gold transition duration-200">Home</a>
                 <a href="/all-about" class="font-semibold text-gray-700 hover:text-gold transition duration-200">About</a>
                 <a href="/all-services" class="font-semibold text-gray-700 hover:text-gold transition duration-200">Services</a>
@@ -135,6 +135,6 @@ new class extends Component {
             @endguest
         </div>
     </div>
-</header>
+</div>
 
 

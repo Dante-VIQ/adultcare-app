@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,81 +30,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .team-hero-bg {
-            background-image: linear-gradient(rgba(10, 36, 99, 0.85), rgba(10, 36, 99, 0.8)), url('https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-        .team-bg {
-            background-color: #f9f7f2;
-        }
-        .team-card {
-            transition: all 0.3s ease;
-            border-top: 4px solid transparent;
-        }
-        .team-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border-top: 4px solid #d4af37;
-        }
-        .btn-gold {
-            background: linear-gradient(to right, #d4af37, #f7ef8a);
-            color: #0a2463;
-            font-weight: 600;
-        }
-        .btn-gold:hover {
-            background: linear-gradient(to right, #b8941f, #e6d97a);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        .team-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .team-modal.active {
-            display: flex;
-        }
-        .modal-content {
-            background-color: white;
-            border-radius: 1rem;
-            max-width: 800px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-        .cert-badge {
-            display: inline-block;
-            background-color: #e8f0f7;
-            color: #0a2463;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-right: 8px;
-            margin-bottom: 8px;
-        }
-        @media (max-width: 768px) {
-            .team-hero-bg {
-                background-attachment: scroll;
-            }
-        }
-    </style>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    @livewireStyles
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
+
 <body class="montserrat text-gray-800">
     <!-- Header/Navigation -->
-@include('livewire.layout.navigation')
+   <livewire:layout.navigation />
 
     <!-- Hero Section -->
     <section class="team-hero-bg text-white py-24">
@@ -124,10 +61,14 @@
                     <h2 class="cormorant text-4xl font-bold text-navy mb-6">Our Approach to Care</h2>
                     <div class="w-24 h-1 bg-gold mb-8"></div>
                     <p class="text-lg text-gray-700 mb-6">
-                        At Amazing Palace, we believe that exceptional care begins with exceptional people. Our team of dedicated professionals brings together expertise, compassion, and a genuine commitment to enhancing the lives of our residents.
+                        At Amazing Palace, we believe that exceptional care begins with exceptional people. Our team of
+                        dedicated professionals brings together expertise, compassion, and a genuine commitment to
+                        enhancing the lives of our residents.
                     </p>
                     <p class="text-lg text-gray-700 mb-8">
-                        Each member of our care team undergoes rigorous screening, comprehensive training, and continuous education to ensure they provide the highest standard of care. We maintain a low staff-to-resident ratio to ensure personalized attention and meaningful relationships.
+                        Each member of our care team undergoes rigorous screening, comprehensive training, and
+                        continuous education to ensure they provide the highest standard of care. We maintain a low
+                        staff-to-resident ratio to ensure personalized attention and meaningful relationships.
                     </p>
                     <div class="grid grid-cols-2 gap-6">
                         <div class="flex items-center">
@@ -152,9 +93,8 @@
                 </div>
                 <div class="relative">
                     <div class="rounded-2xl overflow-hidden shadow-2xl">
-                        <img src="images/ednar.png" 
-                             alt="Care team interacting with residents" 
-                             class="w-full h-96 object-cover">
+                        <img src="images/ednar.png" alt="Care team interacting with residents"
+                            class="care_one w-full h-auto">
                     </div>
                     <div class="absolute -bottom-6 -right-6 bg-gold text-navy p-6 rounded-2xl shadow-xl max-w-xs">
                         <h4 class="cormorant text-2xl font-bold mb-2">15+ Professionals</h4>
@@ -175,7 +115,7 @@
                     Our experienced leadership team sets the standard for excellence in senior care at Amazing Palace.
                 </p>
             </div>
-            
+
             {{-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Team Member 1 -->
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden team-card">
@@ -243,7 +183,7 @@
                     </div>
                 </div>
             </div> --}}
-                        @php
+            @php
                 $teamMembers = App\Models\Team::orderBy('order')->get();
             @endphp
 
@@ -452,43 +392,48 @@
                     Our commitment to excellence includes ongoing education and certification for every team member.
                 </p>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
                     <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-graduation-cap text-navy text-2xl"></i>
                     </div>
                     <h3 class="cormorant text-xl font-bold text-navy mb-4">Initial Training</h3>
-                    <p class="text-gray-700">40+ hours of comprehensive training covering senior care, safety protocols, dementia care, and emergency procedures.</p>
+                    <p class="text-gray-700">40+ hours of comprehensive training covering senior care, safety protocols,
+                        dementia care, and emergency procedures.</p>
                 </div>
-                
+
                 <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
                     <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-chalkboard-teacher text-navy text-2xl"></i>
                     </div>
                     <h3 class="cormorant text-xl font-bold text-navy mb-4">Ongoing Education</h3>
-                    <p class="text-gray-700">Monthly training sessions on topics like medication management, communication skills, and new care techniques.</p>
+                    <p class="text-gray-700">Monthly training sessions on topics like medication management,
+                        communication skills, and new care techniques.</p>
                 </div>
-                
+
                 <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
                     <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-award text-navy text-2xl"></i>
                     </div>
                     <h3 class="cormorant text-xl font-bold text-navy mb-4">Specialized Certifications</h3>
-                    <p class="text-gray-700">Team members pursue certifications in dementia care, CPR/First Aid, medication administration, and fall prevention.</p>
+                    <p class="text-gray-700">Team members pursue certifications in dementia care, CPR/First Aid,
+                        medication administration, and fall prevention.</p>
                 </div>
-                
+
                 <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
                     <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-heart text-navy text-2xl"></i>
                     </div>
                     <h3 class="cormorant text-xl font-bold text-navy mb-4">Compassion Training</h3>
-                    <p class="text-gray-700">Programs focused on empathy, communication, and building meaningful relationships with residents and families.</p>
+                    <p class="text-gray-700">Programs focused on empathy, communication, and building meaningful
+                        relationships with residents and families.</p>
                 </div>
             </div>
-            
+
             <div class="mt-12 text-center">
-                <a href="contact.html#training" class="inline-block bg-navy hover:bg-royal-blue text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-lg">
+                <a href="contact.html#training"
+                    class="inline-block bg-navy hover:bg-royal-blue text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-lg">
                     <i class="fas fa-file-certificate mr-2"></i> View Our Training Certifications
                 </a>
             </div>
@@ -503,43 +448,50 @@
                     <h2 class="cormorant text-4xl font-bold mb-6">Our Care Philosophy</h2>
                     <div class="w-24 h-1 bg-gold mb-8"></div>
                     <p class="text-xl mb-8">
-                        At Amazing Palace, we believe that exceptional care is built on three foundational principles that guide every interaction with our residents.
+                        At Amazing Palace, we believe that exceptional care is built on three foundational principles
+                        that guide every interaction with our residents.
                     </p>
-                    
+
                     <div class="space-y-8">
                         <div class="flex items-start">
-                            <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <div
+                                class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                                 <i class="fas fa-user-circle text-navy text-xl"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold text-2xl mb-2">Person-Centered Care</h4>
-                                <p>We see each resident as a unique individual with their own life story, preferences, and needs. Care plans are customized accordingly.</p>
+                                <p>We see each resident as a unique individual with their own life story, preferences,
+                                    and needs. Care plans are customized accordingly.</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <div
+                                class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                                 <i class="fas fa-hand-holding-heart text-navy text-xl"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold text-2xl mb-2">Dignity & Respect</h4>
-                                <p>We honor each resident's autonomy and life experience, providing care that preserves dignity and promotes self-worth.</p>
+                                <p>We honor each resident's autonomy and life experience, providing care that preserves
+                                    dignity and promotes self-worth.</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <div
+                                class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                                 <i class="fas fa-home text-navy text-xl"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold text-2xl mb-2">Family Partnership</h4>
-                                <p>We view families as essential partners in care, maintaining open communication and involving them in decision-making.</p>
+                                <p>We view families as essential partners in care, maintaining open communication and
+                                    involving them in decision-making.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-10 border border-white/20">
                     <h3 class="cormorant text-3xl font-bold mb-6 text-gold">What Families Say About Our Team</h3>
-                    
+
                     <div class="space-y-8">
                         <div>
                             <div class="flex items-center mb-4">
@@ -551,9 +503,11 @@
                                     <p class="text-gray-300 text-sm">Daughter of resident</p>
                                 </div>
                             </div>
-                            <p class="italic">"The care team at Amazing Palace treated my mother with such dignity and respect. They learned her life story, her preferences, and truly became like family. We couldn't have asked for better care."</p>
+                            <p class="italic">"The care team at Amazing Palace treated my mother with such dignity and
+                                respect. They learned her life story, her preferences, and truly became like family. We
+                                couldn't have asked for better care."</p>
                         </div>
-                        
+
                         <div>
                             <div class="flex items-center mb-4">
                                 <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-3">
@@ -564,12 +518,15 @@
                                     <p class="text-gray-300 text-sm">Family of memory care resident</p>
                                 </div>
                             </div>
-                            <p class="italic">"When our father needed memory care, we were nervous. But the specialized training of the Amazing Palace team gave us peace of mind. They understand dementia in a way that's both professional and compassionate."</p>
+                            <p class="italic">"When our father needed memory care, we were nervous. But the specialized
+                                training of the Amazing Palace team gave us peace of mind. They understand dementia in a
+                                way that's both professional and compassionate."</p>
                         </div>
                     </div>
-                    
+
                     <div class="mt-8 text-center">
-                        <a href="contact.html#testimonials" class="inline-block border-2 border-white text-white hover:bg-white hover:text-navy px-6 py-3 rounded-full font-bold transition-all duration-300">
+                        <a href="contact.html#testimonials"
+                            class="inline-block border-2 border-white text-white hover:bg-white hover:text-navy px-6 py-3 rounded-full font-bold transition-all duration-300">
                             <i class="fas fa-star mr-2"></i> Read More Testimonials
                         </a>
                     </div>
@@ -584,13 +541,16 @@
             <h2 class="cormorant text-4xl md:text-5xl font-bold text-navy mb-6">Meet Our Team in Person</h2>
             <div class="w-32 h-1 bg-gold mx-auto mb-8"></div>
             <p class="text-xl text-gray-700 max-w-3xl mx-auto mb-10">
-                Schedule a tour to meet our caring team, see our facility, and learn how we can provide exceptional care for your loved one.
+                Schedule a tour to meet our caring team, see our facility, and learn how we can provide exceptional care
+                for your loved one.
             </p>
             <div class="flex flex-col md:flex-row justify-center space-y-6 md:space-y-0 md:space-x-8">
-                <a href="contact.html#tour" class="btn-gold px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-xl">
+                <a href="contact.html#tour"
+                    class="btn-gold px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-xl">
                     <i class="fas fa-calendar-check mr-2"></i> Schedule a Tour
                 </a>
-                <a href="contact.html" class="bg-navy hover:bg-royal-blue text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-lg">
+                <a href="contact.html"
+                    class="bg-navy hover:bg-royal-blue text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-lg">
                     <i class="fas fa-phone-alt mr-2"></i> Call to Speak with Our Team
                 </a>
             </div>
@@ -619,26 +579,31 @@
                         </div>
                     </div>
                     <p class="text-gray-400 mt-4 max-w-md">
-                        Seattle's premier adult family home led by a team of compassionate, expert caregivers dedicated to exceptional senior care.
+                        Seattle's premier adult family home led by a team of compassionate, expert caregivers dedicated
+                        to exceptional senior care.
                     </p>
                 </div>
-                
+
                 <div class="text-center md:text-right">
-                    <p class="text-gray-400 mb-4">&copy; 2023 Amazing Palace Adult Family Home. All rights reserved.</p>
+                    <p class="text-gray-400 mb-4">&copy; 2023 Amazing Palace Adult Family Home. All rights reserved.
+                    </p>
                     <div class="flex space-x-4 justify-center md:justify-end">
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition">
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition">
                             <i class="fab fa-facebook-f text-white"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition">
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition">
                             <i class="fab fa-instagram text-white"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition">
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition">
                             <i class="fab fa-linkedin-in text-white"></i>
                         </a>
                     </div>
                 </div>
             </div>
-            
+
             <div class="mt-12 pt-8 border-t border-white/10 text-center text-gray-400 text-sm">
                 <p>123 Luxury Lane, Seattle, WA 98101 | (206) 555-1234 | info@amazingpalaceseattle.com</p>
                 <p class="mt-2">WA State License #AFH-123456 | Medicaid Provider #WA98765</p>
@@ -646,27 +611,28 @@
         </div>
     </footer>
 
+    @livewireScripts
     <script>
         // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-        
+        // const mobileMenuButton = document.getElementById('mobile-menu-button');
+        // const mobileMenu = document.getElementById('mobile-menu');
+
+        // mobileMenuButton.addEventListener('click', () => {
+        //     mobileMenu.classList.toggle('hidden');
+        // });
+
+        // // Close mobile menu when clicking a link
+        // document.querySelectorAll('#mobile-menu a').forEach(link => {
+        //     link.addEventListener('click', () => {
+        //         mobileMenu.classList.add('hidden');
+        //     });
+        // });
+
         // Team member modal functionality
         const teamModal = document.getElementById('teamModal');
         const modalContent = document.querySelector('.modal-content');
         const teamDetailButtons = document.querySelectorAll('.team-detail-btn');
-        
+
         // Team member data
         const teamMembers = {
             'dr-emily': {
@@ -674,8 +640,12 @@
                 title: 'Medical Director',
                 image: 'fas fa-user-md',
                 bio: 'Dr. Thompson is a board-certified geriatrician with over 20 years of experience in senior care. She completed her medical degree at the University of Washington and her geriatrics fellowship at Johns Hopkins University. Dr. Thompson oversees all medical care at Amazing Palace and works closely with residents\' personal physicians to coordinate comprehensive care plans.',
-                specialties: ['Geriatric Medicine', 'Dementia Management', 'Chronic Disease Management', 'Palliative Care'],
-                education: ['MD, University of Washington', 'Geriatrics Fellowship, Johns Hopkins University', 'Board Certified in Internal Medicine and Geriatrics'],
+                specialties: ['Geriatric Medicine', 'Dementia Management', 'Chronic Disease Management',
+                    'Palliative Care'
+                ],
+                education: ['MD, University of Washington', 'Geriatrics Fellowship, Johns Hopkins University',
+                    'Board Certified in Internal Medicine and Geriatrics'
+                ],
                 quote: '"My goal is to help residents maintain their highest possible quality of life while managing health challenges with dignity and respect."',
                 years: '20+ years'
             },
@@ -684,8 +654,12 @@
                 title: 'Director of Nursing',
                 image: 'fas fa-user-nurse',
                 bio: 'Maria brings 15 years of nursing experience with a specialization in memory care and geriatric nursing. She leads our nursing team with compassion and expertise, ensuring that all clinical care meets the highest standards. Maria is certified in dementia care and wound management.',
-                specialties: ['Memory Care', 'Wound Care Management', 'Medication Management', 'Staff Training & Development'],
-                education: ['BSN, Seattle University', 'Dementia Care Certification', 'Wound Care Specialist Certification'],
+                specialties: ['Memory Care', 'Wound Care Management', 'Medication Management',
+                    'Staff Training & Development'
+                ],
+                education: ['BSN, Seattle University', 'Dementia Care Certification',
+                    'Wound Care Specialist Certification'
+                ],
                 quote: '"I believe in treating each resident as I would my own family member - with patience, respect, and genuine care."',
                 years: '15 years'
             },
@@ -694,8 +668,12 @@
                 title: 'Executive Director',
                 image: 'fas fa-user-tie',
                 bio: 'Robert has over 12 years of experience in senior living administration. With an MBA in Healthcare Management, he ensures that Amazing Palace operates at the highest standards while maintaining a warm, family-like atmosphere. Robert is passionate about creating an environment where both residents and staff can thrive.',
-                specialties: ['Healthcare Administration', 'Operations Management', 'Family Communication', 'Regulatory Compliance'],
-                education: ['MBA, Healthcare Management, University of Washington', 'Licensed Adult Family Home Administrator', 'CPR & First Aid Instructor'],
+                specialties: ['Healthcare Administration', 'Operations Management', 'Family Communication',
+                    'Regulatory Compliance'
+                ],
+                education: ['MBA, Healthcare Management, University of Washington',
+                    'Licensed Adult Family Home Administrator', 'CPR & First Aid Instructor'
+                ],
                 quote: '"Great care begins with great people. I\'m proud to lead a team that\'s truly dedicated to making a difference in seniors\' lives."',
                 years: '12 years'
             },
@@ -704,8 +682,12 @@
                 title: 'Lead Licensed Nurse',
                 image: 'fas fa-stethoscope',
                 bio: 'James coordinates daily nursing care and medication management for all residents. With 8 years of experience in senior care, he is known for his meticulous attention to detail and compassionate approach. James ensures that medication regimens are followed precisely and health changes are monitored closely.',
-                specialties: ['Medication Management', 'Vital Signs Monitoring', 'Care Coordination', 'Health Assessment'],
-                education: ['LPN Certification, Seattle Central College', 'Medication Administration Certification', 'CPR & First Aid Certified'],
+                specialties: ['Medication Management', 'Vital Signs Monitoring', 'Care Coordination',
+                    'Health Assessment'
+                ],
+                education: ['LPN Certification, Seattle Central College', 'Medication Administration Certification',
+                    'CPR & First Aid Certified'
+                ],
                 quote: '"Accuracy in medication management is crucial, but so is taking the time to listen to residents\' concerns."',
                 years: '8 years'
             },
@@ -715,7 +697,9 @@
                 image: 'fas fa-heartbeat',
                 bio: 'Sarah specializes in geriatric rehabilitation, helping residents maintain and improve mobility, strength, and balance. She develops individualized exercise programs and works closely with the care team to implement fall prevention strategies.',
                 specialties: ['Geriatric Rehabilitation', 'Fall Prevention', 'Mobility Training', 'Balance Exercises'],
-                education: ['DPT, University of Washington', 'Geriatric Clinical Specialist', 'LSVT BIG Certified for Parkinson\'s'],
+                education: ['DPT, University of Washington', 'Geriatric Clinical Specialist',
+                    'LSVT BIG Certified for Parkinson\'s'
+                ],
                 quote: '"Movement is medicine. Helping residents stay active and independent is incredibly rewarding."',
                 years: '10 years'
             },
@@ -724,8 +708,12 @@
                 title: 'Consulting Pharmacist',
                 image: 'fas fa-notes-medical',
                 bio: 'David reviews all medication regimens for safety, efficacy, and potential interactions. With specialized training in geriatric pharmacology, he helps optimize medication plans to minimize side effects and maximize benefits for our residents.',
-                specialties: ['Geriatric Pharmacology', 'Medication Review', 'Drug Interaction Analysis', 'Medication Safety'],
-                education: ['PharmD, University of Washington', 'Board Certified Pharmacotherapy Specialist', 'Geriatric Pharmacy Certification'],
+                specialties: ['Geriatric Pharmacology', 'Medication Review', 'Drug Interaction Analysis',
+                    'Medication Safety'
+                ],
+                education: ['PharmD, University of Washington', 'Board Certified Pharmacotherapy Specialist',
+                    'Geriatric Pharmacy Certification'
+                ],
                 quote: '"The right medication at the right dose can significantly improve quality of life for seniors."',
                 years: '14 years'
             },
@@ -735,7 +723,9 @@
                 image: 'fas fa-comment-medical',
                 bio: 'Lisa provides emotional support, counseling, and care coordination for residents and their families. She helps families navigate the emotional aspects of senior care and connects residents with community resources as needed.',
                 specialties: ['Family Counseling', 'Care Coordination', 'Emotional Support', 'Resource Connection'],
-                education: ['MSW, University of Washington', 'Licensed Clinical Social Worker', 'Grief Counseling Certification'],
+                education: ['MSW, University of Washington', 'Licensed Clinical Social Worker',
+                    'Grief Counseling Certification'
+                ],
                 quote: '"Supporting families through the care journey is just as important as caring for residents."',
                 years: '9 years'
             },
@@ -745,7 +735,9 @@
                 image: 'fas fa-hands-helping',
                 bio: 'Michael specializes in mobility assistance and fall prevention. With 8 years of caregiving experience, he is known for his patience and creative approach to engaging residents in physical activity. Michael has a special talent for building trust with residents who are hesitant about mobility assistance.',
                 specialties: ['Mobility Assistance', 'Fall Prevention', 'Transfer Techniques', 'Physical Engagement'],
-                education: ['CNA Certification, Seattle Vocational Institute', 'Mobility & Transfer Specialist Training', 'CPR & First Aid Certified'],
+                education: ['CNA Certification, Seattle Vocational Institute',
+                    'Mobility & Transfer Specialist Training', 'CPR & First Aid Certified'
+                ],
                 quote: '"Helping someone maintain their independence, even in small ways, is what makes caregiving so meaningful."',
                 years: '8 years'
             },
@@ -754,8 +746,12 @@
                 title: 'Memory Care Specialist',
                 image: 'fas fa-brain',
                 bio: 'Jennifer is specially trained in validation therapy and cognitive stimulation techniques for residents with memory challenges. She creates engaging activities that tap into residents\' long-term memories and helps reduce anxiety associated with dementia.',
-                specialties: ['Validation Therapy', 'Cognitive Stimulation', 'Dementia Communication', 'Sensory Activities'],
-                education: ['Dementia Care Specialist Certification', 'Validation Therapy Training', 'Activities Director Certification'],
+                specialties: ['Validation Therapy', 'Cognitive Stimulation', 'Dementia Communication',
+                    'Sensory Activities'
+                ],
+                education: ['Dementia Care Specialist Certification', 'Validation Therapy Training',
+                    'Activities Director Certification'
+                ],
                 quote: '"Every person with dementia has a story to tell. My job is to listen and help them feel heard."',
                 years: '6 years'
             },
@@ -764,18 +760,21 @@
                 title: 'Activities Coordinator',
                 image: 'fas fa-smile',
                 bio: 'Carlos brings energy and creativity to his role as Activities Coordinator. He develops engaging social and recreational programs that cater to diverse interests and abilities, helping residents stay socially connected and mentally stimulated.',
-                specialties: ['Activity Planning', 'Social Engagement', 'Recreational Therapy', 'Intergenerational Programs'],
-                education: ['Recreational Therapy Certificate', 'Activity Director Certified', 'Music Therapy Training'],
+                specialties: ['Activity Planning', 'Social Engagement', 'Recreational Therapy',
+                    'Intergenerational Programs'
+                ],
+                education: ['Recreational Therapy Certificate', 'Activity Director Certified',
+                    'Music Therapy Training'],
                 quote: '"Joy is an essential part of wellness. I love creating moments of happiness for our residents."',
                 years: '5 years'
             }
         };
-        
+
         teamDetailButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const memberId = button.getAttribute('data-member');
                 const member = teamMembers[memberId];
-                
+
                 if (member) {
                     modalContent.innerHTML = `
                         <div class="p-8">
@@ -830,38 +829,38 @@
                             </div>
                         </div>
                     `;
-                    
+
                     teamModal.classList.add('active');
                     document.body.style.overflow = 'hidden';
-                    
+
                     // Add close event to the new close button
                     document.getElementById('closeTeamModal').addEventListener('click', closeTeamModal);
                 }
             });
         });
-        
+
         function closeTeamModal() {
             teamModal.classList.remove('active');
             document.body.style.overflow = 'auto';
         }
-        
+
         // Close modal when clicking outside
         teamModal.addEventListener('click', (e) => {
             if (e.target === teamModal) {
                 closeTeamModal();
             }
         });
-        
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
-                if(href === '#' || href.includes('.html')) return;
-                
+                if (href === '#' || href.includes('.html')) return;
+
                 e.preventDefault();
-                
+
                 const targetElement = document.querySelector(href);
-                if(targetElement) {
+                if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
@@ -871,4 +870,5 @@
         });
     </script>
 </body>
+
 </html>
