@@ -289,6 +289,56 @@
             }
         }
   
+        .contact-hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1581579431531-5c65f537180d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .contact-section-bg {
+            background-color: #f9f7f2;
+        }
+        .map-container {
+            height: 400px;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        .btn-gold {
+            background: linear-gradient(to right, #d4af37, #f7ef8a);
+            color: #0a2463;
+            font-weight: 600;
+        }
+        .btn-gold:hover {
+            background: linear-gradient(to right, #b8941f, #e6d97a);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .contact-card {
+            transition: all 0.3s ease;
+            border-top: 4px solid transparent;
+        }
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #d4af37;
+        }
+        .faq-item {
+            border-bottom: 1px solid #e5e7eb;
+            overflow: hidden;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-answer.open {
+            max-height: 500px;
+        }
+        @media (max-width: 768px) {
+            .contact-hero-bg {
+                background-attachment: scroll;
+            }
+        }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>

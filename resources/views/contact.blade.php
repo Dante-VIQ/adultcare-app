@@ -1,142 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Amazing Palace Adult Family Home - Seattle</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'gold': '#d4af37',
-                        'royal-blue': '#00308F',
-                        'navy': '#0a2463',
-                        'cream': '#f5f2e9',
-                        'light-blue': '#e8f0f7',
-                        'sage': '#87a96b',
-                    },
-                    fontFamily: {
-                        'cormorant': ['Cormorant Garamond', 'serif'],
-                        'montserrat': ['Montserrat', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .contact-hero-bg {
-            background-image: linear-gradient(rgba(10, 36, 99, 0.85), rgba(10, 36, 99, 0.8)), url('https://images.unsplash.com/photo-1581579431531-5c65f537180d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-        .contact-section-bg {
-            background-color: #f9f7f2;
-        }
-        .map-container {
-            height: 400px;
-            border-radius: 1rem;
-            overflow: hidden;
-        }
-        .btn-gold {
-            background: linear-gradient(to right, #d4af37, #f7ef8a);
-            color: #0a2463;
-            font-weight: 600;
-        }
-        .btn-gold:hover {
-            background: linear-gradient(to right, #b8941f, #e6d97a);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        .contact-card {
-            transition: all 0.3s ease;
-            border-top: 4px solid transparent;
-        }
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            border-top: 4px solid #d4af37;
-        }
-        .faq-item {
-            border-bottom: 1px solid #e5e7eb;
-            overflow: hidden;
-        }
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-        .faq-answer.open {
-            max-height: 500px;
-        }
-        @media (max-width: 768px) {
-            .contact-hero-bg {
-                background-attachment: scroll;
-            }
-        }
-    </style>
-</head>
-<body class="montserrat text-gray-800">
-    <!-- Header/Navigation -->
-    {{-- <header class="sticky top-0 z-50 bg-white shadow-lg">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center">
-                    <div class="w-12 h-12 bg-navy rounded-full flex items-center justify-center mr-3 border-2 border-gold">
-                        <i class="fas fa-crown text-gold text-xl"></i>
-                    </div>
-                    <div>
-                        <h1 class="cormorant text-2xl font-bold text-navy">Amazing Palace</h1>
-                        <p class="text-xs font-semibold text-navy tracking-widest">ADULT FAMILY HOME</p>
-                    </div>
-                </div>
-                
-                <nav class="hidden lg:flex space-x-8">
-                    <a href="index.html" class="font-semibold text-gray-700 hover:text-gold transition">Home</a>
-                    <a href="about.html" class="font-semibold text-gray-700 hover:text-gold transition">About</a>
-                    <a href="services.html" class="font-semibold text-gray-700 hover:text-gold transition">Services</a>
-                    <a href="service-area" class="font-semibold text-gray-700 hover:text-gold transition">Facility</a>
-                    <a href="/careteam" class="font-semibold text-gray-700 hover:text-gold transition">Care Team</a>
-                    <a href="/contact" class="font-semibold text-navy hover:text-gold transition border-b-2 border-gold">Contact</a>
-                </nav>
-                
-                <div class="hidden lg:block">
-                    <a href="#tour" class="btn-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg">
-                        <i class="fas fa-calendar-alt mr-2"></i> Schedule a Tour
-                    </a>
-                </div>
-                
-                <button id="mobile-menu-button" class="lg:hidden text-gray-700 text-2xl">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-            
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden lg:hidden mt-4 pb-4 border-t border-gray-100 pt-4">
-                <div class="flex flex-col space-y-4">
-                    <a href="index.html" class="font-semibold text-gray-700 hover:text-gold transition">Home</a>
-                    <a href="/all-about" class="font-semibold text-gray-700 hover:text-gold transition">About</a>
-                    <a href="/all-services" class="font-semibold text-gray-700 hover:text-gold transition">Services</a>
-                    <a href="/facility" class="font-semibold text-gray-700 hover:text-gold transition">Facility</a>
-                    <a href="/careteam" class="font-semibold text-gray-700 hover:text-gold transition">Care Team</a>
-                    <a href="/contact" class="font-semibold text-navy hover:text-gold transition">Contact</a>
-                    <a href="#tour" class="btn-gold px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg w-full text-center mt-2">
-                        <i class="fas fa-calendar-alt mr-2"></i> Schedule a Tour
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header> --}}
-@include('livewire.layout.navigation')
+<x-app-layout>
     <!-- Hero Section -->
-    <section class="contact-hero-bg text-white py-24">
-        <div class="container mx-auto px-4 text-center">
+    <section class="relative contact-hero-bg text-white py-24">
+        <div class="absolute inset-0 bg-gradient-to-r from-purpleDeep to-purpleLight"></div>
+        <div class="relative container mx-auto px-4 text-center">
             <h1 class="cormorant text-5xl md:text-6xl font-bold mb-6">Contact Us</h1>
             <div class="w-32 h-1 bg-gold mx-auto mb-8"></div>
             <p class="text-2xl max-w-3xl mx-auto font-light">
@@ -166,7 +32,7 @@
                         Speak directly with our care coordinator during business hours.
                     </p>
                     <div class="text-center">
-                        <a href="tel:2065551234" class="text-2xl font-bold text-navy hover:text-gold transition">(206) 555-1234</a>
+                        <a href="tel:2065551234" class="text-2xl font-bold text-navy hover:text-gold transition">(206) 488-9285</a>
                         <p class="text-gray-600 mt-2">Mon-Fri: 9am-5pm | Sat: 10am-2pm</p>
                         <p class="text-gray-600">24/7 Emergency Line Available</p>
                     </div>
@@ -181,8 +47,8 @@
                         Send us a message and we'll respond promptly.
                     </p>
                     <div class="text-center">
-                        <a href="mailto:info@amazingpalaceseattle.com" class="text-xl font-bold text-navy hover:text-gold transition block mb-2">info@amazingpalaceseattle.com</a>
-                        <a href="mailto:admissions@amazingpalaceseattle.com" class="text-xl font-bold text-navy hover:text-gold transition block">admissions@amazingpalaceseattle.com</a>
+                        <a href="mailto:amazingpalaceafh@gmail.com" class="text-lg font-bold text-navy hover:text-gold transition block mb-2 text-wrap">amazingpalaceafh@gmail.com</a>
+                        {{-- <a href="mailto:admissions@amazingpalaceseattle.com" class="text-xl font-bold text-navy hover:text-gold transition block">amazingpalaceafh@gmail.com</a> --}}
                         <p class="text-gray-600 mt-2">For admissions inquiries</p>
                     </div>
                 </div>
@@ -196,8 +62,8 @@
                         Schedule a tour to see our facility in person.
                     </p>
                     <div class="text-center">
-                        <p class="text-lg font-bold text-navy">123 Luxury Lane</p>
-                        <p class="text-lg text-gray-700">Seattle, WA 98101</p>
+                        <p class="text-lg font-bold text-navy">2638 26th PISE</p>
+                        <p class="text-lg text-gray-700">Auburn, WA 98002</p>
                         <p class="text-gray-600 mt-2">Tours by appointment only</p>
                         <a href="#tour" class="inline-block mt-4 bg-navy hover:bg-royal-blue text-white px-6 py-3 rounded-full font-semibold transition-all duration-300">
                             <i class="fas fa-directions mr-2"></i> Get Directions
@@ -214,7 +80,7 @@
                         <p class="text-lg">For urgent matters outside business hours</p>
                     </div>
                     <div class="text-center md:text-right">
-                        <a href="tel:2065559999" class="text-3xl font-bold block mb-2">(206) 555-9999</a>
+                        <a href="tel:2065559999" class="text-3xl font-bold block mb-2">(206) 488-9285</a>
                         <p class="text-sm">This line is monitored 24 hours a day, 7 days a week</p>
                     </div>
                 </div>
@@ -314,7 +180,7 @@
                                     <i class="fas fa-map-marker-alt text-gold text-xl mr-3 mt-1"></i>
                                     <div>
                                         <p class="font-semibold">Address</p>
-                                        <p class="text-gray-700">123 Luxury Lane, Seattle, WA 98101</p>
+                                        <p class="text-gray-700">2638 26th PISE, Auburn, WA 98002</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start">
@@ -341,11 +207,11 @@
                     <div class="bg-navy text-white rounded-xl p-8">
                         <h3 class="cormorant text-2xl font-bold mb-6 text-gold">Quick Links</h3>
                         <div class="space-y-4">
-                            <a href="services.html" class="flex items-center p-3 bg-white/10 rounded-lg hover:bg-white/20 transition">
+                            <a href="/all-services" class="flex items-center p-3 bg-white/10 rounded-lg hover:bg-white/20 transition">
                                 <i class="fas fa-list-alt text-gold mr-3"></i>
                                 <span>View Our Services</span>
                             </a>
-                            <a href="facility.html" class="flex items-center p-3 bg-white/10 rounded-lg hover:bg-white/20 transition">
+                            <a href="/facility" class="flex items-center p-3 bg-white/10 rounded-lg hover:bg-white/20 transition">
                                 <i class="fas fa-images text-gold mr-3"></i>
                                 <span>Virtual Facility Tour</span>
                             </a>
@@ -353,7 +219,7 @@
                                 <i class="fas fa-question-circle text-gold mr-3"></i>
                                 <span>Frequently Asked Questions</span>
                             </a>
-                            <a href="#tour" class="flex items-center p-3 bg-white/10 rounded-lg hover:bg-white/20 transition">
+                            <a href="/booking" class="flex items-center p-3 bg-white/10 rounded-lg hover:bg-white/20 transition">
                                 <i class="fas fa-calendar-check text-gold mr-3"></i>
                                 <span>Schedule an In-Person Tour</span>
                             </a>
@@ -494,7 +360,7 @@
                     <div class="faq-answer">
                         <div class="pb-6">
                             <p class="text-gray-700 mb-4">Amazing Palace combines luxury amenities with expert, personalized care in a true home-like environment. Our low resident-to-caregiver ratio ensures individual attention, and our facility features upscale finishes, gourmet dining, and a wide range of activities rarely found in traditional care settings.</p>
-                            <p class="text-gray-700">Additionally, our specialized memory care program, 24/7 licensed nursing oversight, and family-centered approach set us apart as Seattle's premier adult family home.</p>
+                            <p class="text-gray-700">Additionally, our specialized memory care program, 24/7 licensed nursing oversight, and family-centered approach set us apart as Auburn's premier adult family home.</p>
                         </div>
                     </div>
                 </div>
@@ -758,5 +624,4 @@
             tourDateInput.min = today;
         }
     </script>
-</body>
-</html>
+</x-app-layout>
