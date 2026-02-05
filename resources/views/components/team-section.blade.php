@@ -5,7 +5,7 @@
         <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
             <div class="h-64 bg-navy flex items-center justify-center">
                 @if($member->image)
-                    <img src="{{ $member->image_url }}"
+                    <img src="{{ asset($member->image) }}"
                          alt="{{ $member->name }}"
                          class="w-full h-full object-cover">
                 @else

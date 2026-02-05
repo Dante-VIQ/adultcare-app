@@ -84,17 +84,17 @@ Route::name('booking.')->prefix('booking')->group(function () {
     Route::post('/{booking}/cancel', [BookingController::class, 'cancelBooking'])->name('cancel');
     Route::post('/{booking}/reschedule', [BookingController::class, 'rescheduleBooking'])->name('reschedule');
 });
-Route::prefix('jobs')
-    ->name('jobs.')
-    ->group(function () {
-        Route::get('/', [JobApplicationController::class, 'index'])->name('index');
-        Route::get('/{career:slug}', [JobApplicationController::class, 'show'])->name('show');
-        Route::get('/{career:slug}/apply', [JobApplicationController::class, 'apply'])->name('apply');
-        Route::post('/{career:slug}/apply', [JobApplicationController::class, 'store'])->name('apply.store');
-        Route::get('/application/{application}/thankyou', [JobApplicationController::class, 'thankyou'])->name('application.thankyou');
-        Route::get('/application/{application}/resume', [JobApplicationController::class, 'downloadResume'])->name('application.download-resume');
-        Route::get('/application/{application}/document/{index}', [JobApplicationController::class, 'downloadDocument'])->name('application.download-document');
-    });
+// Route::prefix('jobs')
+//     ->name('jobs.')
+//     ->group(function () {
+//         Route::get('/', [JobApplicationController::class, 'index'])->name('index');
+//         Route::get('/{career:slug}', [JobApplicationController::class, 'show'])->name('show');
+//         Route::get('/{career:slug}/apply', [JobApplicationController::class, 'apply'])->name('apply');
+//         Route::post('/{career:slug}/apply', [JobApplicationController::class, 'store'])->name('apply.store');
+//         Route::get('/application/{application}/thankyou', [JobApplicationController::class, 'thankyou'])->name('application.thankyou');
+//         Route::get('/application/{application}/resume', [JobApplicationController::class, 'downloadResume'])->name('application.download-resume');
+//         Route::get('/application/{application}/document/{index}', [JobApplicationController::class, 'downloadDocument'])->name('application.download-document');
+//     });
 
 // Add to your web.php
 Route::get('/sitemap.xml', [App\Http\Controllers\SitemapController::class, 'index']);
@@ -125,9 +125,9 @@ Route::middleware(['auth', 'role:master|engineer'])->group(function () {
     // Employee Profile (view + edit inline)
     Route::get('admin/employees/{employee}', Profile::class)->name('admin.employees.profile');
 
-    Route::get('admin/employees', function () {
-        return view('admin.employees');
-    })->name('admin.employees');
+    // Route::get('admin/employees', function () {
+    //     return view('admin.employees');
+    // })->name('admin.employees');
 
     Route::get('admin/about', function () {
         return view('admin.about');
@@ -161,7 +161,7 @@ Route::middleware(['auth', 'role:master|engineer'])->group(function () {
     // routes/web.php (admin routes)
 
     // Dashboard
-    Route::get('/analysis', [AdminBookingController::class, 'dashboard'])->name('analysis');
+    // Route::get('/analysis', [AdminBookingController::class, 'dashboard'])->name('analysis');
 
     // Bookings management
     Route::get('admin/bookings', [AdminBookingController::class, 'index'])->name('admin.bookings.index');
@@ -171,19 +171,19 @@ Route::middleware(['auth', 'role:master|engineer'])->group(function () {
     Route::delete('admin/bookings/{booking}', [AdminBookingController::class, 'destroy'])->name('admin.bookings.destroy');
     Route::get('admin/bookings/export', [AdminBookingController::class, 'export'])->name('admin.bookings.export');
 
-    Route::prefix('admin')
-        ->name('admin.')
-        ->group(function () {
-            Route::resource('jobs', AdminJobController::class);
+    // Route::prefix('admin')
+    //     ->name('admin.')
+    //     ->group(function () {
+    //         Route::resource('jobs', AdminJobController::class);
 
-            // Job applications
-            Route::get('/job-applications', [AdminJobController::class, 'applications'])->name('jobs.applications');
-            Route::get('/job-applications/{application}', [AdminJobController::class, 'showApplication'])->name('jobs.applications.show');
-            Route::put('/job-applications/{application}', [AdminJobController::class, 'updateApplication'])->name('jobs.applications.update');
-            Route::delete('/job-applications/{application}', [AdminJobController::class, 'destroy'])->name('jobs.applications.destroy');
-            Route::get('/job-applications/{application}/resume', [AdminJobController::class, 'downloadApplicationResume'])->name('jobs.applications.download-resume');
-            Route::get('/job-applications/export', [AdminJobController::class, 'exportApplications'])->name('jobs.applications.export');
-        });
+    //         // Job applications
+    //         Route::get('/job-applications', [AdminJobController::class, 'applications'])->name('jobs.applications');
+    //         Route::get('/job-applications/{application}', [AdminJobController::class, 'showApplication'])->name('jobs.applications.show');
+    //         Route::put('/job-applications/{application}', [AdminJobController::class, 'updateApplication'])->name('jobs.applications.update');
+    //         Route::delete('/job-applications/{application}', [AdminJobController::class, 'destroy'])->name('jobs.applications.destroy');
+    //         Route::get('/job-applications/{application}/resume', [AdminJobController::class, 'downloadApplicationResume'])->name('jobs.applications.download-resume');
+    //         Route::get('/job-applications/export', [AdminJobController::class, 'exportApplications'])->name('jobs.applications.export');
+    //     });
 });
 
 // routes/web.php

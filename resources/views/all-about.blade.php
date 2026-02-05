@@ -1,8 +1,9 @@
 <x-app-layout>
 
     <!-- Hero Section -->
-    <section class="hero-bg text-white py-24">
-        <div class="container mx-auto px-4 text-center">
+    <section class="relative hero-bg text-white py-24">
+        <div class="absolute inset-0 bg-gradient-to-r from-purpleDeep to-purpleLight"></div>
+        <div class="relative container mx-auto px-4 text-center">
             <h1 class="cormorant text-5xl md:text-6xl font-bold mb-6">Our Story & Mission</h1>
             <div class="w-32 h-1 bg-gold mx-auto mb-8"></div>
             <p class="text-2xl max-w-3xl mx-auto font-light">
@@ -19,13 +20,13 @@
                     <h2 class="cormorant text-4xl font-bold text-navy mb-6">Welcome to Amazing Palace</h2>
                     <div class="w-24 h-1 bg-gold mb-8"></div>
                     <p class="text-lg text-gray-700 mb-6">
-                        At Amazing Palace Adult Family Home, we believe that aging should be a journey marked by dignity, comfort, and joy. Founded with a vision to transform senior care in Seattle, we've created a sanctuary where expert medical support meets the warmth of a loving home.
+                        At Amazing Palace Adult Family Home, we believe that aging should be a journey marked by dignity, comfort, and joy. Founded with a vision to transform senior care in Auburn, we've created a sanctuary where expert medical support meets the warmth of a loving home.
                     </p>
                     <p class="text-lg text-gray-700 mb-6">
                         Our name reflects our commitment to providing not just care, but an amazing living experience for every resident. We understand that choosing a care facility is one of the most important decisions a family can make, and we strive to exceed expectations at every turn.
                     </p>
                     <p class="text-lg text-gray-700">
-                        Located in the heart of Seattle, our facility combines the convenience of city living with the tranquility of a private residence, creating the perfect environment for seniors to thrive.
+                        Located in the heart of Auburn, our facility combines the convenience of city living with the tranquility of a private residence, creating the perfect environment for seniors to thrive.
                     </p>
                 </div>
                 <div class="relative">
@@ -85,7 +86,7 @@
                     </div>
                     <h3 class="cormorant text-3xl font-bold text-navy text-center mb-6">Our Vision</h3>
                     <p class="text-gray-700 text-lg mb-6 text-center">
-                        To be recognized as Seattle's premier adult family home, setting the standard for luxury senior care through innovation, compassion, and unwavering commitment to excellence.
+                        To be recognized as Auburn's premier adult family home, setting the standard for luxury senior care through innovation, compassion, and unwavering commitment to excellence.
                     </p>
                     <ul class="space-y-4">
                         <li class="flex items-start">
@@ -189,7 +190,7 @@
                     <div class="md:w-1/2 md:pl-12 mt-6 md:mt-0">
                         <div class="bg-white rounded-2xl shadow-lg p-8 max-w-md">
                             <h3 class="cormorant text-2xl font-bold text-navy mb-3">Today: The Amazing Palace Standard</h3>
-                            <p class="text-gray-700 mb-4">Now recognized as Seattle's premier adult family home, we continue to innovate while staying true to our founding principles of compassion, dignity, and excellence.</p>
+                            <p class="text-gray-700 mb-4">Now recognized as Auburn's premier adult family home, we continue to innovate while staying true to our founding principles of compassion, dignity, and excellence.</p>
                             <div class="flex items-center text-gold font-semibold">
                                 <i class="fas fa-calendar-alt mr-2"></i>
                                 <span>Present</span>
@@ -326,7 +327,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-navy">Family Choice Award</h4>
-                                <p class="text-gray-600">Seattle Families Magazine, 2020</p>
+                                <p class="text-gray-600">Auburn Families Magazine, 2020</p>
                             </div>
                         </div>
                     </div>
@@ -341,13 +342,13 @@
             <h2 class="cormorant text-4xl md:text-5xl font-bold mb-6">Experience the Amazing Palace Difference</h2>
             <div class="w-32 h-1 bg-gold mx-auto mb-8"></div>
             <p class="text-xl max-w-3xl mx-auto mb-10">
-                Discover why families throughout Seattle trust us with their loved ones' care. Schedule a personal tour to see our facility and meet our team.
+                Discover why families throughout Auburn trust us with their loved ones' care. Schedule a personal tour to see our facility and meet our team.
             </p>
             <div class="flex flex-col md:flex-row justify-center space-y-6 md:space-y-0 md:space-x-8">
-                <a href="contact.html#tour" class="btn-gold px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-xl">
+                <a href="/booking" class="btn-gold px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-xl">
                     <i class="fas fa-calendar-check mr-2"></i> Schedule a Tour
                 </a>
-                <a href="contact.html" class="bg-transparent border-2 border-white hover:bg-white hover:text-navy text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300">
+                <a href="/contact" class="bg-transparent border-2 border-white hover:bg-white hover:text-navy text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300">
                     <i class="fas fa-phone-alt mr-2"></i> Contact Us Today
                 </a>
             </div>

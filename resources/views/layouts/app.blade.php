@@ -8,23 +8,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     {{-- Title --}}
-    <title>@yield('title', 'Amazing Palace Adult Family Home | Luxury Senior Care in Seattle, WA')</title>
+    <title>@yield('title', 'Amazing Palace Adult Family Home | Luxury Senior Care in Auburn, WA')</title>
 
     {{-- Primary Meta Tags --}}
-    <meta name="description" content="@yield('description', 'Amazing Palace Adult Family Home provides exceptional luxury senior care in Seattle, WA. Expert memory care, assisted living, and respite services in a premium residential setting.')">
-    <meta name="keywords" content="@yield('keywords', 'adult family home Seattle, senior care Seattle, memory care Washington, assisted living Seattle, luxury senior living, dementia care, respite care, geriatric care, Alzheimer\'s care, senior housing Seattle')">
+    <meta name="description" content="@yield('description', 'Amazing Palace Adult Family Home provides exceptional luxury senior care in Auburn, WA. Expert memory care, assisted living, and respite services in a premium residential setting.')">
+    <meta name="keywords" content="@yield('keywords', 'adult family home Auburn, senior care Auburn, memory care Washington, assisted living Auburn, luxury senior living, dementia care, respite care, geriatric care, Alzheimer\'s care, senior housing Auburn')">
     <meta name="author" content="Amazing Palace Adult Family Home">
     <meta name="robots" content="@yield('robots', 'index, follow')">
 
     {{-- Open Graph / Facebook --}}
     <meta property="og:type" content="@yield('og:type', 'website')">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:title" content="@yield('og:title', 'Amazing Palace Adult Family Home | Luxury Senior Care in Seattle')">
-    <meta property="og:description" content="@yield('og:description', 'Premium adult family home offering exceptional senior care services in Seattle, Washington. Specialized memory care, assisted living, and respite services.')">
+    <meta property="og:title" content="@yield('og:title', 'Amazing Palace Adult Family Home | Luxury Senior Care in Auburn, WA')">
+    <meta property="og:description" content="@yield('og:description', 'Premium adult family home offering exceptional senior care services in Auburn, Washington. Specialized memory care, assisted living, and respite services.')">
     <meta property="og:image" content="@yield('og:image', asset('images/og-image.jpg'))">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Amazing Palace Adult Family Home - Luxury Senior Living Facility in Seattle">
+    <meta property="og:image:alt" content="Amazing Palace Adult Family Home - Luxury Senior Living Facility in Auburn">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Amazing Palace Adult Family Home">
 
@@ -32,8 +32,8 @@
     <meta name="twitter:card" content="@yield('twitter:card', 'summary_large_image')">
     <meta name="twitter:site" content="@yield('twitter:site', '@AmazingPalaceAFH')">
     <meta name="twitter:creator" content="@AmazingPalaceAFH">
-    <meta name="twitter:title" content="@yield('twitter:title', 'Amazing Palace Adult Family Home | Seattle')">
-    <meta name="twitter:description" content="@yield('twitter:description', 'Luxury senior care with compassion and expertise in Seattle, WA. Specialized memory care and assisted living services.')">
+    <meta name="twitter:title" content="@yield('twitter:title', 'Amazing Palace Adult Family Home | Auburn, WA')">
+    <meta name="twitter:description" content="@yield('twitter:description', 'Luxury senior care with compassion and expertise in Auburn, WA. Specialized memory care and assisted living services.')">
     <meta name="twitter:image" content="@yield('twitter:image', asset('images/twitter-card.jpg'))">
     <meta name="twitter:image:alt" content="Amazing Palace facility exterior and caring staff">
 
@@ -51,29 +51,6 @@
     <link rel="mask-icon" href="{{ asset('safari-pinned-tab.svg') }}" color="#0a2463">
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'gold': '#d4af37',
-                        'royal-blue': '#00308F',
-                        'navy': '#0a2463',
-                        'cream': '#f5f2e9',
-                    },
-                    fontFamily: {
-                        'cormorant': ['Cormorant Garamond', 'serif'],
-                        'montserrat': ['Montserrat', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .care_one{
             background-size: cover;
@@ -89,7 +66,7 @@
             background-position: center;
         }
         .care-bg {
-            background-image: linear-gradient(rgba(94, 131, 219, 0.85), rgba(10, 36, 99, 0.85)), url('images/care_bg.jpg');
+            background-image: url('images/care_bg.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -99,7 +76,7 @@
         }
 
         .hero-bg {
-            background-image: linear-gradient(rgba(90, 129, 221, 0.85), rgba(10, 36, 99, 0.8)), url('images/hero1.jpg');
+            background-image: url('images/hero1.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -141,7 +118,7 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
         .memory-care-bg {
-            background-image: linear-gradient(rgba(10, 36, 99, 0.9), rgba(10, 36, 99, 0.9)), url('https://images.unsplash.com/photo-1581579431531-5c65f537180d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-image: url('https://images.unsplash.com/photo-1581579431531-5c65f537180d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
         }
@@ -164,7 +141,7 @@
         }
 
                .team-hero-bg {
-            background-image: linear-gradient(rgba(10, 36, 99, 0.85), rgba(10, 36, 99, 0.8)), url('images/pave.jpg');
+            background-image: url('images/pave.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -241,7 +218,109 @@
                 background-attachment: scroll;
             }
         }
+
+         .facility-hero-bg {
+            background-image: url('images/yard.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .amenities-bg {
+            background-color: #f9f7f2;
+        }
+        .room-card {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        .room-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: #d4af37;
+        }
+        .btn-gold {
+            background: linear-gradient(to right, #d4af37, #f7ef8a);
+            color: #0a2463;
+            font-weight: 600;
+        }
+        .btn-gold:hover {
+            background: linear-gradient(to right, #b8941f, #e6d97a);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .gallery-image {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .gallery-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .image-modal.active {
+            display: flex;
+        }
+        .modal-image {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        .tab-button {
+            transition: all 0.3s ease;
+        }
+        .tab-button.active {
+            background-color: #0a2463;
+            color: white;
+            border-color: #0a2463;
+        }
+        @media (max-width: 768px) {
+            .facility-hero-bg {
+                background-attachment: scroll;
+            }
+        }
+  
     </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'gold': '#E6D7FF',              // Soft Amethyst
+                        'royal-blue': '#5B2D8B',     // 'royal-purple': '#5E83DB',
+                        'navy': '#2A123F', //deep purple
+                        'cream': '#f5f2e9',
+                        'purpleDeep': 'rgba(91, 45, 139, 0.75)',
+                        'purpleLight': 'rgba(155, 109, 255, 0.55)',
+                        'light-blue': '#e8f0f7',
+                        'sage': '#87a96b',
+                        'taupe': '#b8a99a',
+                    },
+                    fontFamily: {
+                        'cormorant': ['Cormorant Garamond', 'serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    {{-- <link rel="stylesheet" href="{{ asset('css/style.css') }}" > --}}
+
+    {{-- @include('style.css') --}}
     <!-- Scripts -->
     @livewireStyles
     @vite(['resources/css/app.css', 'resources/js/app.js'])

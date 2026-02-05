@@ -1,7 +1,8 @@
 <x-app-layout>
     <!-- Hero Section -->
-    <section class="hero-bg text-white py-24">
-        <div class="container mx-auto px-4 text-center">
+    <section class="relative hero-bg text-white py-24">
+        <div class="absolute inset-0 bg-gradient-to-r from-purpleDeep to-purpleLight"></div>
+        <div class="relative container mx-auto px-4 text-center">
             <h1 class="cormorant text-5xl md:text-6xl font-bold mb-6">Our Care Services</h1>
             <div class="w-32 h-1 bg-gold mx-auto mb-8"></div>
             <p class="text-2xl max-w-3xl mx-auto font-light">
@@ -385,8 +386,9 @@
     </section>
 
     <!-- Care Coordination Section -->
-    <section class="py-20 memory-care-bg text-white">
-        <div class="container mx-auto px-4">
+    <section class="relative py-20 memory-care-bg text-white">
+        <div class="absolute inset-0 bg-gradient-to-r from-purpleDeep to-purpleLight"></div>
+        <div class="relative container mx-auto px-4">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                     <h2 class="cormorant text-4xl font-bold mb-6">Personalized Care Coordination</h2>

@@ -1,50 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Care Team | Amazing Palace Adult Family Home - Expert Caregivers in Seattle</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'gold': '#d4af37',
-                        'royal-blue': '#00308F',
-                        'navy': '#0a2463',
-                        'cream': '#f5f2e9',
-                        'light-blue': '#e8f0f7',
-                        'sage': '#87a96b',
-                        'taupe': '#b8a99a',
-                    },
-                    fontFamily: {
-                        'cormorant': ['Cormorant Garamond', 'serif'],
-                        'montserrat': ['Montserrat', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
-    @livewireStyles
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-
-<body class="montserrat text-gray-800">
-    <!-- Header/Navigation -->
-   <livewire:layout.navigation />
-
+<x-app-layout>
     <!-- Hero Section -->
-    <section class="team-hero-bg text-white py-24">
-        <div class="container mx-auto px-4 text-center">
+    <section class="relative team-hero-bg text-white py-24">
+        <div class="absolute inset-0 bg-gradient-to-r from-purpleDeep to-purpleLight"></div>
+        <div class="relative container mx-auto px-4 text-center">
             <h1 class="cormorant text-5xl md:text-6xl font-bold mb-6">Meet Our Care Team</h1>
             <div class="w-32 h-1 bg-gold mx-auto mb-8"></div>
             <p class="text-2xl max-w-3xl mx-auto font-light">
@@ -825,6 +783,4 @@
             });
         });
     </script>
-</body>
-
-</html>
+</x-app-layout>

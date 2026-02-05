@@ -22,8 +22,8 @@ new class extends Component {
             <div class="flex-shrink-0 flex items-center">
                 <div class="flex items-center">
                     <img src="{{ asset('images/logo0.png') }}" alt="Amazing Palace Logo"
-                         class="h-12 w-auto sm:h-16 object-contain">
-                    <div class="ml-3 hidden sm:block">
+                         class="w-36 sm:h-16 object-contain">
+                    <div class="ml-3 block">
                         <h1 class="cormorant text-xl sm:text-2xl font-bold text-navy leading-tight">Amazing Palace</h1>
                         <p class="text-xs font-semibold text-navy tracking-wider">ADULT FAMILY HOME</p>
                     </div>

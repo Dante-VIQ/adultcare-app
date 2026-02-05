@@ -1,118 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facility | Amazing Palace Adult Family Home - Luxury Senior Living in Seattle</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'gold': '#d4af37',
-                        'royal-blue': '#00308F',
-                        'navy': '#0a2463',
-                        'cream': '#f5f2e9',
-                        'light-blue': '#e8f0f7',
-                        'sage': '#87a96b',
-                        'taupe': '#b8a99a',
-                    },
-                    fontFamily: {
-                        'cormorant': ['Cormorant Garamond', 'serif'],
-                        'montserrat': ['Montserrat', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .facility-hero-bg {
-            background-image: linear-gradient(rgba(10, 36, 99, 0.85), rgba(10, 36, 99, 0.8)), url('images/yard.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-        .amenities-bg {
-            background-color: #f9f7f2;
-        }
-        .room-card {
-            transition: all 0.3s ease;
-            border: 1px solid #e5e7eb;
-        }
-        .room-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border-color: #d4af37;
-        }
-        .btn-gold {
-            background: linear-gradient(to right, #d4af37, #f7ef8a);
-            color: #0a2463;
-            font-weight: 600;
-        }
-        .btn-gold:hover {
-            background: linear-gradient(to right, #b8941f, #e6d97a);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        .gallery-image {
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        .gallery-image:hover {
-            transform: scale(1.02);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-        .image-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        .image-modal.active {
-            display: flex;
-        }
-        .modal-image {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-        }
-        .tab-button {
-            transition: all 0.3s ease;
-        }
-        .tab-button.active {
-            background-color: #0a2463;
-            color: white;
-            border-color: #0a2463;
-        }
-        @media (max-width: 768px) {
-            .facility-hero-bg {
-                background-attachment: scroll;
-            }
-        }
-    </style>
-</head>
-<body class="montserrat text-gray-800">
-    <!-- Header/Navigation -->
-@include('livewire.layout.navigation')
-
+<x-app-layout>
     <!-- Hero Section -->
-    <section class="facility-hero-bg text-white py-24">
-        <div class="container mx-auto px-4 text-center">
+    <section class="relative facility-hero-bg text-white py-24">
+        <div class="absolute inset-0 bg-gradient-to-r from-purpleDeep to-purpleLight"></div>
+        <div class="relative container mx-auto px-4 text-center">
             <h1 class="cormorant text-5xl md:text-6xl font-bold mb-6">Our Luxurious Facility</h1>
             <div class="w-32 h-1 bg-gold mx-auto mb-8"></div>
             <p class="text-2xl max-w-3xl mx-auto font-light">
-                Experience the perfect blend of comfort, safety, and elegance in Seattle's premier adult family home.
+                Experience the perfect blend of comfort, safety, and elegance in Auburn's premier adult family home.
             </p>
         </div>
     </section>
@@ -125,7 +19,7 @@
                     <h2 class="cormorant text-4xl font-bold text-navy mb-6">A Home Designed for Comfort & Care</h2>
                     <div class="w-24 h-1 bg-gold mb-8"></div>
                     <p class="text-lg text-gray-700 mb-6">
-                        Amazing Palace isn't just a care facility—it's a luxurious residential home designed specifically for senior living. Our Seattle property combines the warmth of a family home with the amenities and safety features of a premium care facility.
+                        Amazing Palace isn't just a care facility—it's a luxurious residential home designed specifically for senior living. Our Auburn property combines the warmth of a family home with the amenities and safety features of a premium care facility.
                     </p>
                     <p class="text-lg text-gray-700 mb-8">
                         Every detail, from the elegant decor to the thoughtfully designed common areas, has been carefully considered to create an environment where residents can thrive, socialize, and enjoy their golden years with dignity and comfort.
@@ -181,7 +75,7 @@
             <div class="mb-12">
                 <div class="flex flex-wrap justify-center gap-4 mb-12">
                     <button id="private-suite-tab" class="tab-button active px-6 py-3 rounded-full font-semibold border-2 border-navy bg-navy text-white transition-all duration-300">
-                        <i class="fas fa-door-closed mr-2"></i> Private Suite
+                        <i class="fas fa-door-closed mr-2"></i> Private Rooms
                     </button>
                     <button id="deluxe-suite-tab" class="tab-button px-6 py-3 rounded-full font-semibold border-2 border-gray-300 hover:border-navy transition-all duration-300">
                         <i class="fas fa-crown mr-2"></i> Deluxe Suite
@@ -198,7 +92,7 @@
                 <div id="private-suite-content" class="room-content">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div class="order-2 lg:order-1">
-                            <h3 class="cormorant text-4xl font-bold text-navy mb-6">Private Suite</h3>
+                            <h3 class="cormorant text-4xl font-bold text-navy mb-6">Private Rooms</h3>
                             <p class="text-lg text-gray-700 mb-6">
                                 Our standard private suites offer a comfortable, spacious living area with ensuite bathroom, large windows with garden views, and elegant finishes. Perfect for residents who value privacy and independence.
                             </p>
@@ -251,7 +145,7 @@
                 <div id="deluxe-suite-content" class="room-content hidden">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div>
-                            <h3 class="cormorant text-4xl font-bold text-navy mb-6">Deluxe Suite</h3>
+                            <h3 class="cormorant text-4xl font-bold text-navy mb-6">Deluxe Rooms</h3>
                             <p class="text-lg text-gray-700 mb-6">
                                 Our premium deluxe suites offer expanded living space with separate sitting areas, upgraded finishes, and enhanced amenities. These suites feature private balconies or patios with beautiful views of our gardens.
                             </p>
@@ -304,7 +198,7 @@
                 <div id="companion-suite-content" class="room-content hidden">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div class="order-2 lg:order-1">
-                            <h3 class="cormorant text-4xl font-bold text-navy mb-6">Companion Suite</h3>
+                            <h3 class="cormorant text-4xl font-bold text-navy mb-6">Companion Rooms</h3>
                             <p class="text-lg text-gray-700 mb-6">
                                 Designed for couples or friends who wish to live together, our companion suites offer separate sleeping areas with a shared living space. These suites provide the perfect balance of companionship and privacy.
                             </p>
@@ -357,7 +251,7 @@
                 <div id="memory-care-suite-content" class="room-content hidden">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div>
-                            <h3 class="cormorant text-4xl font-bold text-navy mb-6">Memory Care Suite</h3>
+                            <h3 class="cormorant text-4xl font-bold text-navy mb-6">Memory Care Rooms</h3>
                             <p class="text-lg text-gray-700 mb-6">
                                 Specially designed for residents with dementia or Alzheimer's, these suites feature enhanced safety features, soothing colors, and wayfinding cues to reduce confusion and anxiety while maximizing independence.
                             </p>
@@ -388,11 +282,11 @@
                                 </li>
                             </ul>
                             <div class="flex items-center space-x-4">
-                                <a href="contact.html#pricing" class="inline-block bg-navy hover:bg-royal-blue text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-lg">
-                                    <i class="fas fa-tag mr-2"></i> View Pricing
+                                <a href="https://wa.me/2064889285" class="inline-block bg-navy hover:bg-royal-blue text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-lg">
+                                    <i class="fas fa-tag mr-2"></i> Request Pricing
                                 </a>
-                                <a href="#virtual-tour" class="inline-block border-2 border-navy text-navy hover:bg-navy hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300">
-                                    <i class="fas fa-video mr-2"></i> Virtual Tour
+                                <a href="https://wa.me/2064889285" class="inline-block border-2 border-navy text-navy hover:bg-navy hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300">
+                                    <i class="fas fa-video mr-2"></i> Request Tour
                                 </a>
                             </div>
                         </div>
@@ -590,7 +484,7 @@
                 <h2 class="cormorant text-4xl md:text-5xl font-bold text-navy mb-4">Photo Gallery</h2>
                 <div class="w-24 h-1 bg-gold mx-auto mb-6"></div>
                 <p class="text-xl text-gray-700 max-w-3xl mx-auto">
-                    Take a visual tour of our beautiful facility and see why Amazing Palace is Seattle's premier adult family home.
+                    Take a visual tour of our beautiful facility and see why Amazing Palace is Auburn's premier adult family home.
                 </p>
             </div>
             
@@ -684,9 +578,9 @@
                     </p>
                     <div class="flex flex-col sm:flex-row gap-6">
                         <a href="#virtual-tour" class="btn-gold px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-xl text-center">
-                            <i class="fas fa-play-circle mr-2"></i> Start Virtual Tour
+                            <i class="fas fa-play-circle mr-2"></i> Book Now
                         </a>
-                        <a href="contact.html#tour" class="bg-transparent border-2 border-white hover:bg-white hover:text-navy text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 text-center">
+                        <a href="https://wa.me/2064889285" class="bg-transparent border-2 border-white hover:bg-white hover:text-navy text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 text-center">
                             <i class="fas fa-calendar-alt mr-2"></i> Schedule Live Tour
                         </a>
                     </div>
@@ -745,11 +639,11 @@
                 Schedule a personal tour to experience our facility firsthand, meet our team, and see why families choose Amazing Palace for their loved ones.
             </p>
             <div class="flex flex-col md:flex-row justify-center space-y-6 md:space-y-0 md:space-x-8">
-                <a href="contact.html#tour" class="btn-gold px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-xl">
+                <a href="/booking" class="btn-gold px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-xl">
                     <i class="fas fa-calendar-check mr-2"></i> Schedule a Tour
                 </a>
-                <a href="contact.html" class="bg-navy hover:bg-royal-blue text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-lg">
-                    <i class="fas fa-phone-alt mr-2"></i> Call Now: (206) 555-1234
+                <a href="tel:+12064889285" class="bg-navy hover:bg-royal-blue text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-lg">
+                    <i class="fas fa-phone-alt mr-2"></i> Call Now: (206) 4889285
                 </a>
             </div>
         </div>
@@ -854,5 +748,4 @@
             });
         });
     </script>
-</body>
-</html>
+</x-app-layout>

@@ -4,36 +4,25 @@
 
 
 #img {
-  background-image: url('/images/RIDE TOP.png'); /* Adjust the path as necessary */
-  background-size: cover; /* or 'contain' depending on your preference */
-  background-repeat: no-repeat;
-  background-position: top left; /* Adjust position as needed */
+background-image: url('/images/RIDE TOP.png'); /* Adjust the path as necessary */
+background-size: cover; /* or 'contain' depending on your preference */
+background-repeat: no-repeat;
+background-position: top left; /* Adjust position as needed */
 }
 
 [x-cloak] { display: none !important; }
 
 /* Smooth transitions for Alpine.js */
 .transition {
-    transition-property: opacity, transform;
-    transition-duration: 150ms;
-    transition-timing-function: ease-in-out;
+transition-property: opacity, transform;
+transition-duration: 150ms;
+transition-timing-function: ease-in-out;
 }
 
 .transition-opacity {
-    transition-property: opacity;
+transition-property: opacity;
 }
 
 .duration-150 {
-    transition-duration: 150ms;
+transition-duration: 150ms;
 }
-
- .star {
-        transition: color 0.2s;
-    }
-    .rating-input .star:hover {
-        color: #4ade80; /* Light green on hover */
-    }
-
-    #{
-        color: #10b981; /* Tailwind's green-500 */
-    }

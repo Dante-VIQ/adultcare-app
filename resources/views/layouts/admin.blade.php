@@ -88,14 +88,14 @@
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-dark bg-navy fixed-top">
         <div class="container-fluid">
             <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse"
                 data-bs-target="#sidebarMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand" href="{{ route('analysis') }}">
-                <i class="fas fa-car me-2"></i> RideAide Admin
+                <i class="fas fa-car me-2"></i> Amazing Palace
             </a>
             <div class="dropdown">
                 <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown">
@@ -132,7 +132,7 @@
                                 Dashboard
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link {{ request()->routeIs('admin.bookings.*') ? 'active' : '' }}"
                                 href="{{ route('admin.bookings.index') }}">
                                 <i class="fas fa-calendar-alt me-2"></i>
@@ -140,7 +140,7 @@
                                 <span
                                     class="badge bg-primary float-end">{{ App\Models\Booking::where('status', 'pending')->count() }}</span>
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <a class="nav-link" href="/admin/service">
                                 <i class="fas fa-users me-2"></i>
@@ -153,12 +153,12 @@
                                 Images
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin.view') }}">
                                 <i class="fas fa-chart-line me-2"></i>
                                 Employees
                             </a>
-                        </li>
+                        </li> --}}
 
                         <li class="nav-item">
                             <a class="nav-link {{ request()->routeIs('admin.jobs.*') ? 'active' : '' }}"
@@ -167,7 +167,7 @@
                                 Care Team
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link {{ request()->routeIs('admin.jobs.applications.*') ? 'active' : '' }}"
                                 href="{{ route('admin.jobs.applications') }}">
                                 <i class="fas fa-file-alt me-2"></i>
@@ -175,7 +175,7 @@
                                 <span
                                     class="badge bg-primary float-end">{{ App\Models\CareerApplication::where('status', 'pending')->count() }}</span>
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
 
                     {{-- <h6 class="sidebar-heading mt-4">Settings</h6>

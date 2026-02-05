@@ -37,15 +37,18 @@ class TeamController extends Controller
             'title' => 'required|string|max:255',
             'specialty' => 'required|string|max:255',
             'details' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:20480',
             'icon_class' => 'nullable|string|max:255',
             'order' => 'nullable|integer',
         ]);
 
-        // Handle image upload
-        if ($request->hasFile('image')) {
-            $validated['image'] = $request->file('image')->store('team', 'public');
-        }
+        // // Handle image upload
+        // if ($request->hasFile('image')) {
+        //     $validated['image'] = $request->file('image')->store('team', 'public');
+        // }
+        $path = $request->file('image')->store('teams', 'public_direct');
+        $imagePath = 'uploads/' . $path;
+        $validated['image'] = $imagePath;
 
         Team::create($validated);
 
@@ -91,9 +94,11 @@ class TeamController extends Controller
         if ($request->hasFile('image')) {
             // Delete old image if exists
             if ($team->image) {
-                Storage::disk('public')->delete($team->image);
+                
             }
-            $validated['image'] = $request->file('image')->store('team', 'public');
+        $path = $request->file('image')->store('teams', 'public_direct');
+        $imagePath = 'uploads/' . $path;
+        $validated['image'] = $imagePath;
         }
 
         $team->update($validated);

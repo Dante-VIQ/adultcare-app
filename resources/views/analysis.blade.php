@@ -8,7 +8,7 @@
 
     <!-- Statistics Cards -->
     <div class="row">
-        <div class="col-xl-3 col-md-6">
+        {{-- <div class="col-xl-3 col-md-6">
             <div class="card bg-primary text-white mb-4">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
@@ -24,8 +24,8 @@
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
-        </div>
-        <div class="col-xl-3 col-md-6">
+        </div> --}}
+        {{-- <div class="col-xl-3 col-md-6">
             <div class="card bg-warning text-white mb-4">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
@@ -41,8 +41,8 @@
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
-        </div>
-        <div class="col-xl-3 col-md-6">
+        </div> --}}
+        {{-- <div class="col-xl-3 col-md-6">
             <div class="card bg-success text-white mb-4">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
@@ -58,8 +58,8 @@
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
-        </div>
-        <div class="col-xl-3 col-md-6">
+        </div> --}}
+        {{-- <div class="col-xl-3 col-md-6">
             <div class="card bg-info text-white mb-4">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
@@ -75,12 +75,12 @@
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 
     <!-- Charts and Recent Bookings -->
     <div class="row">
-        <div class="col-xl-8">
+        {{-- <div class="col-xl-8">
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-chart-bar me-1"></i>
@@ -134,7 +134,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="col-xl-4">
             <div class="card mb-4">
                 <div class="card-header">
@@ -143,17 +143,17 @@
                 </div>
                 <div class="card-body">
                     <div class="list-group">
-                        @foreach($serviceTypeStats as $stat)
+                        {{-- @foreach($serviceTypeStats as $stat)
                         <div class="list-group-item d-flex justify-content-between align-items-center">
                             {{ ucfirst($stat->service_type) }}
                             <span class="badge bg-primary rounded-pill">{{ $stat->count }}</span>
                         </div>
-                        @endforeach
+                        @endforeach --}}
                     </div>
                 </div>
             </div>
 
-            <div class="card mb-4">
+            {{-- <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-chart-pie me-1"></i>
                     Bookings by Status
@@ -172,7 +172,7 @@
                     </div>
                     @endforeach
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>
