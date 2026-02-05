@@ -320,7 +320,7 @@ Welcome to Amazing Palace, where the comfort of a private residence meets the ex
     </section>
 
     <!-- Footer -->
-
+    <x-footer-card />
 
     <!-- Contact Modal -->
     <div id="contactModal" class="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center p-4">
