@@ -67,7 +67,7 @@ Welcome to Amazing Palace, where the comfort of a private residence meets the ex
                     <livewire:header-image />
                     <div class="absolute -bottom-6 -left-6 bg-gold text-navy p-6 rounded-2xl shadow-xl max-w-xs">
                         <h4 class="cormorant text-2xl font-bold mb-2">7+ Years</h4>
-                        <p class="font-semibold">Of Excellence in Senior Care</p>
+                        <p class="font-semibold">Of Excellence in Service</p>
                     </div>
                 </div>
             </div>
@@ -75,7 +75,7 @@ Welcome to Amazing Palace, where the comfort of a private residence meets the ex
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20">
+    {{-- <section id="services" class="py-20">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="cormorant text-4xl md:text-5xl font-bold text-navy mb-4">Our Premium Services</h2>
@@ -94,7 +94,7 @@ Welcome to Amazing Palace, where the comfort of a private residence meets the ex
                 </button>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Facility Tour -->
     <section id="facility" class="relative py-20 care-bg text-white">
@@ -145,7 +145,7 @@ Welcome to Amazing Palace, where the comfort of a private residence meets the ex
 
             <div class="mt-16 text-center">
                 <a href="/booking"
-                    class="btn-gold px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-xl">
+                    class="btn-gold px-8 py-4 rounded-full font-bold text-lg sm:text-sm transition-all duration-300 shadow-xl">
                     <i class="fas fa-video mr-2"></i> Schedule a Virtual Tour
                 </a>
             </div>
@@ -230,7 +230,7 @@ Welcome to Amazing Palace, where the comfort of a private residence meets the ex
                             </div>
                             <div>
                                 <h4 class="cormorant text-xl font-bold mb-1">Our Location</h4>
-                                <p class="text-gray-300">2638 26th PISE, Auburn, WA 98002</p>
+                                <p class="text-gray-300">2638 26th pl SE, Auburn, WA 98002</p>
                             </div>
                         </div>
 
@@ -277,43 +277,7 @@ Welcome to Amazing Palace, where the comfort of a private residence meets the ex
                     <p class="mb-8">Contact us to schedule a personal tour of our facility or a virtual consultation.
                     </p>
 
-                    <form id="contact-form" class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block mb-2 font-semibold">First Name</label>
-                                <input type="text"
-                                    class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-gold">
-                            </div>
-                            <div>
-                                <label class="block mb-2 font-semibold">Last Name</label>
-                                <input type="text"
-                                    class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-gold">
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block mb-2 font-semibold">Email Address</label>
-                            <input type="email"
-                                class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-gold">
-                        </div>
-
-                        <div>
-                            <label class="block mb-2 font-semibold">Phone Number</label>
-                            <input type="tel"
-                                class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-gold">
-                        </div>
-
-                        <div>
-                            <label class="block mb-2 font-semibold">Message</label>
-                            <textarea rows="4"
-                                class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-gold"></textarea>
-                        </div>
-
-                        <button type="submit"
-                            class="btn-gold w-full py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg">
-                            <i class="fas fa-paper-plane mr-2"></i> Send Message
-                        </button>
-                    </form>
+               @include('components.partials.appointment')
                 </div>
             </div>
         </div>

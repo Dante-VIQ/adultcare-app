@@ -8,23 +8,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     {{-- Title --}}
-    <title>@yield('title', 'Amazing Palace Adult Family Home | Luxury Senior Care in Auburn, WA')</title>
+    <title>@yield('title', 'Amazing Palace Adult Family Home | Home-Styled Care in Auburn, WA')</title>
 
     {{-- Primary Meta Tags --}}
-    <meta name="description" content="@yield('description', 'Amazing Palace Adult Family Home provides exceptional luxury senior care in Auburn, WA. Expert memory care, assisted living, and respite services in a premium residential setting.')">
-    <meta name="keywords" content="@yield('keywords', 'adult family home Auburn, senior care Auburn, memory care Washington, assisted living Auburn, luxury senior living, dementia care, respite care, geriatric care, Alzheimer\'s care, senior housing Auburn')">
+    <meta name="description" content="@yield('description', 'Amazing Palace Adult Family Home provides exceptional Home-Styled care in Auburn, WA.')">
+    <meta name="keywords" content="@yield('keywords', 'adult family home Auburn,  assisted living Auburn, Home-Styled living, dementia care, respite care, geriatric care, Alzheimer\'s care, senior housing Auburn')">
     <meta name="author" content="Amazing Palace Adult Family Home">
     <meta name="robots" content="@yield('robots', 'index, follow')">
 
     {{-- Open Graph / Facebook --}}
     <meta property="og:type" content="@yield('og:type', 'website')">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:title" content="@yield('og:title', 'Amazing Palace Adult Family Home | Luxury Senior Care in Auburn, WA')">
+    <meta property="og:title" content="@yield('og:title', 'Amazing Palace Adult Family Home | Home-Styled Care in Auburn, WA')">
     <meta property="og:description" content="@yield('og:description', 'Premium adult family home offering exceptional senior care services in Auburn, Washington. Specialized memory care, assisted living, and respite services.')">
     <meta property="og:image" content="@yield('og:image', asset('images/og-image.jpg'))">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Amazing Palace Adult Family Home - Luxury Senior Living Facility in Auburn">
+    <meta property="og:image:alt" content="Amazing Palace Adult Family Home - Home-Styled Living Facility in Auburn">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Amazing Palace Adult Family Home">
 
@@ -288,7 +288,7 @@
                 background-attachment: scroll;
             }
         }
-  
+
         .contact-hero-bg {
             background-image: url('https://images.unsplash.com/photo-1581579431531-5c65f537180d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
@@ -350,8 +350,8 @@
                         'royal-blue': '#5B2D8B',     // 'royal-purple': '#5E83DB',
                         'navy': '#2A123F', //deep purple
                         'cream': '#f5f2e9',
-                        'purpleDeep': 'rgba(91, 45, 139, 0.75)',
-                        'purpleLight': 'rgba(155, 109, 255, 0.55)',
+                        'purpleDeep': 'rgba(91, 45, 139, 0.55)',
+                        'purpleLight': 'rgba(155, 109, 255, 0.35)',
                         'light-blue': '#e8f0f7',
                         'sage': '#87a96b',
                         'taupe': '#b8a99a',

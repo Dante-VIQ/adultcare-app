@@ -47,7 +47,7 @@
                         Send us a message and we'll respond promptly.
                     </p>
                     <div class="text-center">
-                        <a href="mailto:amazingpalaceafh@gmail.com" class="text-lg font-bold text-navy hover:text-gold transition block mb-2 text-wrap">amazingpalaceafh@gmail.com</a>
+                        <a href="mailto:amazingpalaceafh@gmail.com" class="text-sm font-bold text-navy hover:text-gold transition block mb-2 text-wrap">amazingpalaceafh@gmail.com</a>
                         {{-- <a href="mailto:admissions@amazingpalaceseattle.com" class="text-xl font-bold text-navy hover:text-gold transition block">amazingpalaceafh@gmail.com</a> --}}
                         <p class="text-gray-600 mt-2">For admissions inquiries</p>
                     </div>
@@ -62,7 +62,7 @@
                         Schedule a tour to see our facility in person.
                     </p>
                     <div class="text-center">
-                        <p class="text-lg font-bold text-navy">2638 26th PISE</p>
+                        <p class="text-lg font-bold text-navy">2638 26th pl SE</p>
                         <p class="text-lg text-gray-700">Auburn, WA 98002</p>
                         <p class="text-gray-600 mt-2">Tours by appointment only</p>
                         <a href="#tour" class="inline-block mt-4 bg-navy hover:bg-royal-blue text-white px-6 py-3 rounded-full font-semibold transition-all duration-300">
@@ -100,62 +100,7 @@
                         Fill out the form below and our team will contact you within 24 hours. For immediate assistance, please call us directly.
                     </p>
                     
-                    <form id="contactForm" class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block mb-2 font-semibold text-gray-800">First Name *</label>
-                                <input type="text" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent">
-                            </div>
-                            <div>
-                                <label class="block mb-2 font-semibold text-gray-800">Last Name *</label>
-                                <input type="text" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent">
-                            </div>
-                        </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block mb-2 font-semibold text-gray-800">Email Address *</label>
-                                <input type="email" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent">
-                            </div>
-                            <div>
-                                <label class="block mb-2 font-semibold text-gray-800">Phone Number *</label>
-                                <input type="tel" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent">
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label class="block mb-2 font-semibold text-gray-800">Subject *</label>
-                            <select class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent">
-                                <option value="">Select a subject</option>
-                                <option value="tour">Schedule a Tour</option>
-                                <option value="admissions">Admissions Information</option>
-                                <option value="pricing">Pricing & Financial Options</option>
-                                <option value="care-assessment">Care Needs Assessment</option>
-                                <option value="employment">Employment Opportunities</option>
-                                <option value="general">General Inquiry</option>
-                            </select>
-                        </div>
-                        
-                        <div>
-                            <label class="block mb-2 font-semibold text-gray-800">Message *</label>
-                            <textarea rows="5" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent" placeholder="Tell us about your specific needs or questions..."></textarea>
-                        </div>
-                        
-                        <div class="flex items-center">
-                            <input type="checkbox" id="consent" required class="w-5 h-5 mr-3">
-                            <label for="consent" class="text-gray-700">
-                                I consent to Amazing Palace contacting me via phone or email regarding my inquiry. *
-                            </label>
-                        </div>
-                        
-                        <button type="submit" class="btn-gold w-full py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg">
-                            <i class="fas fa-paper-plane mr-2"></i> Send Message
-                        </button>
-                        
-                        <p class="text-gray-600 text-sm text-center">
-                            * Required fields. We respect your privacy and will not share your information with third parties.
-                        </p>
-                    </form>
+                    @include('components.partials.form')
                 </div>
                 
                 <!-- Map & Location Information -->
@@ -180,7 +125,7 @@
                                     <i class="fas fa-map-marker-alt text-gold text-xl mr-3 mt-1"></i>
                                     <div>
                                         <p class="font-semibold">Address</p>
-                                        <p class="text-gray-700">2638 26th PISE, Auburn, WA 98002</p>
+                                        <p class="text-gray-700">2638 26th pl SE, Auburn, WA 98002</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start">
@@ -204,7 +149,7 @@
                     </div>
                     
                     <!-- Quick Links -->
-                    <div class="bg-navy text-white rounded-xl p-8">
+                    {{-- <div class="bg-navy text-white rounded-xl p-8">
                         <h3 class="cormorant text-2xl font-bold mb-6 text-gold">Quick Links</h3>
                         <div class="space-y-4">
                             <a href="/all-services" class="flex items-center p-3 bg-white/10 rounded-lg hover:bg-white/20 transition">
@@ -224,14 +169,14 @@
                                 <span>Schedule an In-Person Tour</span>
                             </a>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Schedule a Tour Section -->
-    <section class="py-20" id="tour">
+    {{-- <section class="py-20" id="tour">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="cormorant text-4xl md:text-5xl font-bold text-navy mb-4">Schedule a Tour</h2>
@@ -338,10 +283,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- FAQ Section -->
-    <section class="py-20 contact-section-bg" id="faq">
+    {{-- <section class="py-20 contact-section-bg" id="faq">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="cormorant text-4xl md:text-5xl font-bold text-navy mb-4">Frequently Asked Questions</h2>
@@ -480,7 +425,7 @@
                 </a>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- CTA Section -->
     <section class="py-20 bg-navy text-white">
@@ -494,9 +439,9 @@
                 <a href="tel:2064889285" class="btn-gold px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-xl">
                     <i class="fas fa-phone-alt mr-2"></i> Call Now: (206) 4889285
                 </a>
-                <a href="/booking" class="bg-transparent border-2 border-white hover:bg-white hover:text-navy text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300">
+                {{-- <a href="/booking" class="bg-transparent border-2 border-white hover:bg-white hover:text-navy text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300">
                     <i class="fas fa-calendar-alt mr-2"></i> Schedule a Tour
-                </a>
+                </a> --}}
             </div>
         </div>
     </section>

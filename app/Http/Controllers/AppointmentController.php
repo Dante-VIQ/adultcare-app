@@ -53,4 +53,7 @@ class AppointmentController extends Controller
             return back()->with('error', 'Something went wrong. Please try again later.');
         }
     }
+    public function show(){
+        return view('components.partials.form');
+    }
 }

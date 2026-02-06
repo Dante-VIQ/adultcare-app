@@ -69,7 +69,9 @@ Route::view('profile', 'profile')
     ->name('profile');
 // Route::get('/all-services', ServiceCard::class);
 // Route::get('/all-about', AboutCard::class);
+Route::view('/qr', 'qr.simple')->name('qr');
 Route::post('/appointments', [AppointmentController::class, 'store'])->name('appointments.store');
+// Route::post('/appointments/show', [AppointmentController::class, 'show'])->name('appointments.store');
 // });
 
 // Route::get('/booking', [BookingController::class, 'showForm'])->name('booking.form');
@@ -125,9 +127,9 @@ Route::middleware(['auth', 'role:master|engineer'])->group(function () {
     // Employee Profile (view + edit inline)
     Route::get('admin/employees/{employee}', Profile::class)->name('admin.employees.profile');
 
-    // Route::get('admin/employees', function () {
-    //     return view('admin.employees');
-    // })->name('admin.employees');
+    Route::get('admin/employees', function () {
+        return view('admin.employees');
+    })->name('admin.employees');
 
     Route::get('admin/about', function () {
         return view('admin.about');

@@ -5,9 +5,9 @@
         <div class="relative container mx-auto px-4 text-center">
             <h1 class="cormorant text-5xl md:text-6xl font-bold mb-6">Meet Our Care Team</h1>
             <div class="w-32 h-1 bg-gold mx-auto mb-8"></div>
-            <p class="text-2xl max-w-3xl mx-auto font-light">
+            {{-- <p class="text-2xl max-w-3xl mx-auto font-light">
                 Compassionate experts dedicated to providing exceptional care with dignity and respect.
-            </p>
+            </p> --}}
         </div>
     </section>
 

@@ -3,10 +3,10 @@
     <section class="relative facility-hero-bg text-white py-24">
         <div class="absolute inset-0 bg-gradient-to-r from-purpleDeep to-purpleLight"></div>
         <div class="relative container mx-auto px-4 text-center">
-            <h1 class="cormorant text-5xl md:text-6xl font-bold mb-6">Our Luxurious Facility</h1>
+            <h1 class="cormorant text-5xl md:text-6xl font-bold mb-6">Our Home-Styled Facility</h1>
             <div class="w-32 h-1 bg-gold mx-auto mb-8"></div>
             <p class="text-2xl max-w-3xl mx-auto font-light">
-                Experience the perfect blend of comfort, safety, and elegance in Auburn's premier adult family home.
+                Experience the perfect blend of comfort, safety, and elegance in Auburn's adult family home.
             </p>
         </div>
     </section>
@@ -19,12 +19,12 @@
                     <h2 class="cormorant text-4xl font-bold text-navy mb-6">A Home Designed for Comfort & Care</h2>
                     <div class="w-24 h-1 bg-gold mb-8"></div>
                     <p class="text-lg text-gray-700 mb-6">
-                        Amazing Palace isn't just a care facility—it's a luxurious residential home designed specifically for senior living. Our Auburn property combines the warmth of a family home with the amenities and safety features of a premium care facility.
+                     Amazing Palace is more than a care facility- it's a thoughtfully designed adult residential home. Located in Auburn, our property blends the comfort and familiarity of a private home with the professional support, safety features, and amenities of a dedicated care setting. From well-appointed bedrooms and bathrooms to intentionally designed shared spaces, every aspect of our home is carefully planned to promote comfort, connection, and well-being.
                     </p>
                     <p class="text-lg text-gray-700 mb-8">
-                        Every detail, from the elegant decor to the thoughtfully designed common areas, has been carefully considered to create an environment where residents can thrive, socialize, and enjoy their golden years with dignity and comfort.
+                    We've created a welcoming environment where residents can flourish, engage with others, and enjoy daily life with dignity and peace of mind.
                     </p>
-                    <div class="grid grid-cols-2 gap-6">
+                    {{-- <div class="grid grid-cols-2 gap-6">
                         <div class="flex items-center">
                             <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-4">
                                 <i class="fas fa-ruler-combined text-white text-xl"></i>
@@ -43,7 +43,7 @@
                                 <p class="text-gray-600 text-sm">With ensuite bathrooms</p>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="relative">
                     <div class="rounded-2xl overflow-hidden shadow-2xl">
@@ -51,17 +51,17 @@
                              alt="Elegant living room at Amazing Palace" 
                              class="w-full h-96 object-cover">
                     </div>
-                    <div class="absolute -bottom-6 -right-6 bg-gold text-navy p-6 rounded-2xl shadow-xl max-w-xs">
+                    {{-- <div class="absolute -bottom-6 -right-6 bg-gold text-navy p-6 rounded-2xl shadow-xl max-w-xs">
                         <h4 class="cormorant text-2xl font-bold mb-2">Secure & Serene</h4>
                         <p class="font-semibold">Gated property in prestigious neighborhood</p>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Room Types Section -->
-    <section class="py-20 amenities-bg">
+    {{-- <section class="py-20 amenities-bg">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="cormorant text-4xl md:text-5xl font-bold text-navy mb-4">Accommodations & Suites</h2>
@@ -307,7 +307,7 @@
                 </p>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Amenities Section -->
     <section class="py-20">
@@ -327,7 +327,7 @@
                     </div>
                     <h3 class="cormorant text-2xl font-bold text-navy mb-4">Dining Room</h3>
                     <p class="text-gray-700 mb-6">
-                        Elegant restaurant-style dining room where residents enjoy chef-prepared meals together. Features linen tablecloths, ambient lighting, and garden views.
+                      
                     </p>
                     <div class="text-gold font-semibold">
                         <i class="fas fa-clock mr-2"></i> 3 meals daily + snacks
@@ -338,7 +338,7 @@
                     <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center mb-6">
                         <i class="fas fa-couch text-white text-2xl"></i>
                     </div>
-                    <h3 class="cormorant text-2xl font-bold text-navy mb-4">Great Room</h3>
+                    <h3 class="cormorant text-2xl font-bold text-navy mb-4">Living Area</h3>
                     <p class="text-gray-700 mb-6">
                         Spacious living area with comfortable seating, fireplace, large-screen TV, and library nook. The heart of our home for socializing and activities.
                     </p>
@@ -351,53 +351,16 @@
                     <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center mb-6">
                         <i class="fas fa-spa text-white text-2xl"></i>
                     </div>
-                    <h3 class="cormorant text-2xl font-bold text-navy mb-4">Sunroom & Salon</h3>
+                    <h3 class="cormorant text-2xl font-bold text-navy mb-4">Friendly Environment</h3>
                     <p class="text-gray-700 mb-6">
-                        Bright sunroom with comfortable seating and on-site salon services including hair styling, manicures, and therapeutic massage.
+                     Welcoming service with a touch of home.
                     </p>
                     <div class="text-gold font-semibold">
-                        <i class="fas fa-sun mr-2"></i> Natural light & garden views
+                        <i class="fas fa-sun mr-2"></i> Home-Styled
                     </div>
                 </div>
                 
-                <div class="bg-white rounded-2xl shadow-lg p-8 room-card">
-                    <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-seedling text-white text-2xl"></i>
-                    </div>
-                    <h3 class="cormorant text-2xl font-bold text-navy mb-4">Secure Gardens</h3>
-                    <p class="text-gray-700 mb-6">
-                        Beautifully landscaped gardens with walking paths, raised flower beds, seating areas, and secure fencing. Perfect for outdoor relaxation and activities.
-                    </p>
-                    <div class="text-gold font-semibold">
-                        <i class="fas fa-tree mr-2"></i> Therapeutic gardening area
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-2xl shadow-lg p-8 room-card">
-                    <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-dumbbell text-white text-2xl"></i>
-                    </div>
-                    <h3 class="cormorant text-2xl font-bold text-navy mb-4">Wellness Center</h3>
-                    <p class="text-gray-700 mb-6">
-                        Dedicated space for exercise classes, physical therapy, and wellness activities. Features specialized equipment for senior fitness and rehabilitation.
-                    </p>
-                    <div class="text-gold font-semibold">
-                        <i class="fas fa-heartbeat mr-2"></i> Daily fitness classes
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-2xl shadow-lg p-8 room-card">
-                    <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-prayer-rug text-white text-2xl"></i>
-                    </div>
-                    <h3 class="cormorant text-2xl font-bold text-navy mb-4">Meditation Chapel</h3>
-                    <p class="text-gray-700 mb-6">
-                        Peaceful interfaith chapel for prayer, meditation, and spiritual reflection. Open to all faiths and beliefs for quiet contemplation.
-                    </p>
-                    <div class="text-gold font-semibold">
-                        <i class="fas fa-peace mr-2"></i> Multi-faith space
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
@@ -478,7 +441,7 @@
     </section>
 
     <!-- Photo Gallery -->
-    {{-- <section class="py-20" id="virtual-tour">
+    <section class="py-20" id="virtual-tour">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="cormorant text-4xl md:text-5xl font-bold text-navy mb-4">Photo Gallery</h2>
@@ -544,13 +507,8 @@
                 </div>
             </div>
             
-            <div class="text-center">
-                <a href="contact.html#virtual-tour" class="inline-block bg-navy hover:bg-royal-blue text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-lg">
-                    <i class="fas fa-video mr-2"></i> Schedule a Virtual Tour
-                </a>
-            </div>
         </div>
-    </section> --}}
+    </section>
 
     <!-- Image Modal -->
     {{-- <div id="imageModal" class="image-modal">
@@ -564,7 +522,7 @@
     </div> --}}
 
     <!-- Virtual Tour Section -->
-    <section class="py-20 bg-navy text-white">
+    {{-- <section class="py-20 bg-navy text-white">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
@@ -628,7 +586,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- CTA Section -->
     <section class="py-20">

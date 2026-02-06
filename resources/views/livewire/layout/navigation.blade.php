@@ -22,7 +22,7 @@ new class extends Component {
             <div class="flex-shrink-0 flex items-center">
                 <div class="flex items-center">
                     <img src="{{ asset('images/logo0.png') }}" alt="Amazing Palace Logo"
-                         class="h-20 w-auto sm:h-24 object-contain">
+                         class="h-24 w-auto sm:h-24 object-cover">
                     <div class="ml-3 block">
                         <h1 class="cormorant text-xl sm:text-2xl font-bold text-navy leading-tight">Amazing Palace</h1>
                         <p class="text-xs font-semibold text-navy tracking-wider">ADULT FAMILY HOME</p>
@@ -34,10 +34,13 @@ new class extends Component {
             <nav class="hidden lg:flex items-center space-x-4">
                 <a href="/" class="font-semibold text-gray-700 hover:text-gold transition duration-200">Home</a>
                 <a href="/all-about" class="font-semibold text-gray-700 hover:text-gold transition duration-200">About</a>
-                <a href="/all-services" class="font-semibold text-gray-700 hover:text-gold transition duration-200">Services</a>
+                {{-- <a href="/all-services" class="font-semibold text-gray-700 hover:text-gold transition duration-200">Services</a> --}}
                 <a href="/facility" class="font-semibold text-gray-700 hover:text-gold transition duration-200">Facility</a>
                 <a href="/careteam" class="font-semibold text-gray-700 hover:text-gold transition duration-200">Care Team</a>
                 <a href="/contact" class="font-semibold text-gray-700 hover:text-gold transition duration-200">Contact</a>
+                            @role('master|engineer')
+            <a href="/analysis" class="font-semibold text-gray-700 hover:text-gold transition duration-200">Admin</a>
+            @endrole
             </nav>
             <div class="hidden lg:flex items-center space-x-6">
                 <!-- Auth for Desktop -->
@@ -100,14 +103,15 @@ new class extends Component {
             <!-- Navigation Links -->
             <a href="/" class="block py-3 px-4 text-base font-semibold text-gray-700 hover:text-gold hover:bg-gray-50 rounded-lg transition">Home</a>
             <a href="/all-about" class="block py-3 px-4 text-base font-semibold text-gray-700 hover:text-gold hover:bg-gray-50 rounded-lg transition">About</a>
-            <a href="/all-services" class="block py-3 px-4 text-base font-semibold text-gray-700 hover:text-gold hover:bg-gray-50 rounded-lg transition">Services</a>
+            {{-- <a href="/all-services" class="block py-3 px-4 text-base font-semibold text-gray-700 hover:text-gold hover:bg-gray-50 rounded-lg transition">Services</a> --}}
             <a href="/facility" class="block py-3 px-4 text-base font-semibold text-gray-700 hover:text-gold hover:bg-gray-50 rounded-lg transition">Facility</a>
             <a href="/careteam" class="block py-3 px-4 text-base font-semibold text-gray-700 hover:text-gold hover:bg-gray-50 rounded-lg transition">Care Team</a>
             <a href="/contact" class="block py-3 px-4 text-base font-semibold text-gray-700 hover:text-gold hover:bg-gray-50 rounded-lg transition">Contact</a>
 
-            <a href="#tour" class="block mt-4 bg-gradient-to-r from-gold to-yellow-500 text-white px-5 py-3 rounded-full font-semibold text-center shadow-lg hover:shadow-xl transition">
-                <i class="fas fa-calendar-alt mr-2"></i> Schedule a Tour
-            </a>
+            @role('master|engineer')
+            <a href="/analysis" class="block py-3 px-4 text-base font-semibold text-gray-700 hover:text-gold hover:bg-gray-50 rounded-lg transition">Admin</a>
+            @endrole
+
 
             <!-- Auth for Mobile -->
             @auth

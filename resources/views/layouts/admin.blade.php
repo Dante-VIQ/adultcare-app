@@ -2,229 +2,116 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-<meta name="robots" content="noindex, nofollow">
     <title>Admin - @yield('title', 'Dashboard')</title>
-
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Custom Admin CSS -->
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
-
-        .sidebar {
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            z-index: 100;
-            padding: 48px 0 0;
-            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-            background-color: #343a40;
-            color: white;
-        }
-
-        .sidebar-sticky {
-            position: relative;
-            top: 0;
-            height: calc(100vh - 48px);
-            padding-top: .5rem;
-            overflow-x: hidden;
-            overflow-y: auto;
-        }
-
-        .sidebar .nav-link {
-            color: rgba(255, 255, 255, .75);
-            padding: 0.75rem 1rem;
-        }
-
-        .sidebar .nav-link:hover {
-            color: white;
-            background-color: rgba(255, 255, 255, .1);
-        }
-
-        .sidebar .nav-link.active {
-            color: white;
-            background-color: #007bff;
-        }
-
-        .sidebar-heading {
-            font-size: .75rem;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, .5);
-            padding: 0.5rem 1rem;
-        }
-
-        .main-content {
-            padding-left: 240px;
-            padding-top: 60px;
-        }
-
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-            }
-
-            .main-content {
-                padding-left: 0;
+    <meta name="robots" content="noindex, nofollow">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3a0ca3',
+                        secondary: '#7209b7',
+                        soft: '#f4f2ff',
+                    }
+                }
             }
         }
-
-        .navbar-brand {
-            padding: 0.5rem 1rem;
-        }
-    </style>
+    </script>
+    @livewireStyles
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-dark bg-navy fixed-top">
-        <div class="container-fluid">
-            <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse"
-                data-bs-target="#sidebarMenu">
-                <span class="navbar-toggler-icon"></span>
+<body class="bg-gray-100 font-sans antialiased">
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 right-0 h-16 bg-gradient-to-r from-[#0b1c2d] to-[#6f42c1] flex items-center px-4 z-20 shadow-md">
+        <!-- Mobile Hamburger -->
+        <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                 viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+        <!-- Brand -->
+        <a href="{{ route('analysis') }}" class="text-white font-bold text-lg ml-4 md:ml-0 flex items-center">
+            <i class="fas fa-car mr-2"></i> Amazing Palace
+        </a>
+        <!-- Spacer -->
+        <div class="flex-1"></div>
+        <!-- User Dropdown -->
+        <div class="relative">
+            <button id="user-menu-button" class="text-white flex items-center space-x-1 focus:outline-none">
+                <i class="fas fa-user-circle"></i> <span>Admin</span>
             </button>
-            <a class="navbar-brand" href="{{ route('analysis') }}">
-                <i class="fas fa-car me-2"></i> Amazing Palace
-            </a>
-            <div class="dropdown">
-                <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                    <i class="fas fa-user-circle me-1"></i> Admin
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i> Profile</a></li>
-                    <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i> Settings</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="/"><i class="fas fa-home me-2"></i> Back to Site</a></li>
-                    {{-- <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        <i class="fas fa-sign-out-alt me-2"></i> Logout
-                    </a></li> --}}
-                    {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form> --}}
-                </ul>
+            <div id="user-menu" class="hidden absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg overflow-hidden z-30">
+                <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Profile</a>
+                <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Settings</a>
+                <hr>
+                <a href="/" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Back to Site</a>
             </div>
         </div>
     </nav>
 
-    <!-- Sidebar -->
-    <div class="container-fluid">
-        <div class="row">
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
-                <div class="sidebar-sticky pt-3">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link {{ request()->routeIs('analysis') ? 'active' : '' }}"
-                                href="{{ route('analysis') }}">
-                                <i class="fas fa-tachometer-alt me-2"></i>
-                                Dashboard
-                            </a>
-                        </li>
-                        {{-- <li class="nav-item">
-                            <a class="nav-link {{ request()->routeIs('admin.bookings.*') ? 'active' : '' }}"
-                                href="{{ route('admin.bookings.index') }}">
-                                <i class="fas fa-calendar-alt me-2"></i>
-                                Bookings
-                                <span
-                                    class="badge bg-primary float-end">{{ App\Models\Booking::where('status', 'pending')->count() }}</span>
-                            </a>
-                        </li> --}}
-                        <li class="nav-item">
-                            <a class="nav-link" href="/admin/service">
-                                <i class="fas fa-users me-2"></i>
-                                Services
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/admin/head">
-                                <i class="fas fa-car me-2"></i>
-                                Images
-                            </a>
-                        </li>
-                        {{-- <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.view') }}">
-                                <i class="fas fa-chart-line me-2"></i>
-                                Employees
-                            </a>
-                        </li> --}}
+    <!-- SIDEBAR (Desktop & Mobile) -->
+    <div class="flex pt-16">
 
-                        <li class="nav-item">
-                            <a class="nav-link {{ request()->routeIs('admin.jobs.*') ? 'active' : '' }}"
-                                href="/team">
-                                <i class="fas fa-briefcase me-2"></i>
-                                Care Team
-                            </a>
-                        </li>
-                        {{-- <li class="nav-item">
-                            <a class="nav-link {{ request()->routeIs('admin.jobs.applications.*') ? 'active' : '' }}"
-                                href="{{ route('admin.jobs.applications') }}">
-                                <i class="fas fa-file-alt me-2"></i>
-                                Job Applications
-                                <span
-                                    class="badge bg-primary float-end">{{ App\Models\CareerApplication::where('status', 'pending')->count() }}</span>
-                            </a>
-                        </li> --}}
-                    </ul>
+        <!-- Desktop Sidebar -->
+        <aside class="hidden md:flex flex-col w-64 bg-gradient-to-b from-[#0b1c2d] to-[#111827] text-white fixed h-screen overflow-y-auto">
+            <div class="px-4 py-6">
+                @include('admin.partials.sidebar')
+            </div>
+        </aside>
 
-                    {{-- <h6 class="sidebar-heading mt-4">Settings</h6>
-                    <ul class="nav flex-column mb-2">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fas fa-cog me-2"></i>
-                                General Settings
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fas fa-envelope me-2"></i>
-                                Email Templates
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fas fa-user-shield me-2"></i>
-                                Admin Users
-                            </a>
-                        </li>
-                    </ul> --}}
-                </div>
-            </nav>
+        <!-- Mobile Sidebar (off-canvas) -->
+        <aside id="mobile-sidebar" class="fixed inset-y-0 left-0 w-64 bg-gradient-to-b from-[#0b1c2d] to-[#111827] text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-40 md:hidden">
+            <div class="px-4 py-6">
+                <button id="mobile-menu-close" class="mb-4 text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                         viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                @include('admin.partials.sidebar')
+            </div>
+        </aside>
 
-            <!-- Main Content -->
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
-                {{ $slot }}
-            </main>
-        </div>
+        <!-- MAIN CONTENT -->
+        <main class=" ml-0 md:ml-64 p-6">
+            {{ $slot }}
+        </main>
     </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Custom Scripts -->
+    @livewireScripts
     <script>
-        // Auto-hide alerts after 5 seconds
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(function() {
-                var alerts = document.querySelectorAll('.alert');
-                alerts.forEach(function(alert) {
-                    var bsAlert = new bootstrap.Alert(alert);
-                    bsAlert.close();
-                });
-            }, 5000);
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileSidebar = document.getElementById('mobile-sidebar');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileSidebar.classList.remove('-translate-x-full');
+        });
+
+        mobileMenuClose.addEventListener('click', () => {
+            mobileSidebar.classList.add('-translate-x-full');
+        });
+
+        // User dropdown toggle
+        const userMenuButton = document.getElementById('user-menu-button');
+        const userMenu = document.getElementById('user-menu');
+
+        userMenuButton.addEventListener('click', () => {
+            userMenu.classList.toggle('hidden');
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!userMenuButton.contains(event.target) && !userMenu.contains(event.target)) {
+                userMenu.classList.add('hidden');
+            }
         });
     </script>
 </body>
-
 </html>

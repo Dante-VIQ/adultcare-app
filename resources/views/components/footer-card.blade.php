@@ -3,7 +3,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-8 md:mb-0">
                     <div class="flex items-center">
-                        <div class="w-12 h-12 rounded-2xl flex items-center justify-center mr-3">
+                        <div class="bg-white w-14 h-14 p-2 rounded-full flex items-center justify-center mr-3">
                         <img src="{{ asset('images/logo0.png') }}" alt="Logo"
                         class="object-cover w-auto h-16 rounded-2xl mr-3 ">
                         </div>
@@ -19,7 +19,7 @@
                 
                 <div class="text-center md:text-right">
                     <p class="text-gray-400 mb-4">&copy; 2019 Amazing Palace Adult Family Home. All rights reserved.</p>
-                    <div class="flex space-x-4 justify-center md:justify-end">
+                    {{-- <div class="flex space-x-4 justify-center md:justify-end">
                         <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition">
                             <i class="fab fa-facebook-f text-white"></i>
                         </a>
@@ -29,13 +29,13 @@
                         <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition">
                             <i class="fab fa-linkedin-in text-white"></i>
                         </a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             
             <div class="mt-12 pt-8 border-t border-white/10 text-center text-gray-400 text-sm">
                 <p>2638 26th PISE, Auburn, WA 98002 | (206) 4889285 | amazingpalaceafh@gmail.com</p>
-                <p class="mt-2">WA State License #AFH-123456 | Medicaid Provider #WA98765</p>
+                <p class="mt-2">WA State License  | Medicaid Provider</p>
             </div>
         </div>
     </footer>
