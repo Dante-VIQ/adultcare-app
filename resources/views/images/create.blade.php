@@ -24,25 +24,7 @@
                         <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                     @enderror
                 </div>
-
-                <div class="mb-6 text-black font-semibold">
-                    <label for="photo" class="inline-block text-lg mb-2">Service Photo</label>
-                    <input accept="image/png, image/jpeg, image/jfif, image/jpg" type="file" name="photo"
-                        class="border border-gray-200 rounded p-2 w-full" />
-                    @error('photo')
-                        <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                    @enderror
-                </div>
-
-                <div class="mb-6 text-black font-semibold">
-                    <label for="picture" class="inline-block text-lg mb-2">About Image</label>
-                    <input accept="image/png, image/jpeg, image/jfif, image/jpg" type="file" name="picture"
-                        class="border border-gray-200 rounded p-2 w-full" />
-                    @error('picture')
-                        <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                    @enderror
-                </div>
-
+                
                 <div class="mb-6 text-black font-semibold">
                     <button type="submit" class="bg-laravel rounded py-2 px-4 text-black font-semibold">Create</button>
                 </div>

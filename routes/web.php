@@ -59,6 +59,10 @@ Route::get('careteam', function () {
     return view('careteam');
 })->name('careteam');
 
+Route::get('gallery', function () {
+    return view('gallery');
+})->name('gallery');
+
 // routes/web.php
 Route::get('/booking', function () {
     return view('booking');

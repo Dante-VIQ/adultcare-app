@@ -18,7 +18,7 @@
                 </div>
                 
                 <div class="text-center md:text-right">
-                    <p class="text-gray-400 mb-4">&copy; 2019 Amazing Palace Adult Family Home. All rights reserved.</p>
+                    <p class="text-gray-400 mb-4">&copy; 2026 Amazing Palace Adult Family Home. All rights reserved.</p>
                     {{-- <div class="flex space-x-4 justify-center md:justify-end">
                         <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition">
                             <i class="fab fa-facebook-f text-white"></i>

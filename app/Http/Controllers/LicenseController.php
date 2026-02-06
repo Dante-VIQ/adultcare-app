@@ -76,7 +76,7 @@ class LicenseController extends Controller
 
         License::create($validated);
 
-        return redirect()->route('license.index')
+        return redirect()->route('licenses.index')
             ->with('success', 'License/Accreditation added successfully.');
     }
 
@@ -142,7 +142,7 @@ class LicenseController extends Controller
 
         $license->update($validated);
 
-        return redirect()->route('license.index')
+        return redirect()->route('licenses.index')
             ->with('success', 'License/Accreditation updated successfully.');
     }
 
@@ -155,7 +155,7 @@ class LicenseController extends Controller
 
         $license->delete();
 
-        return redirect()->route('admin.license.index')
+        return redirect()->route('licenses.index')
             ->with('success', 'License/Accreditation deleted successfully.');
     }
 

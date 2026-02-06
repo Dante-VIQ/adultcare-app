@@ -110,11 +110,11 @@
                         <div class="w-24 h-1 bg-gold mb-8"></div>
                         
                         <!-- Map Placeholder (In a real implementation, you would embed Google Maps or similar) -->
-                        <div class="map-container bg-gray-200 mb-8 flex items-center justify-center">
+                        <div id="hotel-map" class="map-container bg-gray-200 mb-8 flex items-center justify-center">
                             <div class="text-center">
-                                <i class="fas fa-map-marked-alt text-gray-400 text-6xl mb-4"></i>
-                                <p class="text-gray-600 font-semibold">Interactive Map Would Appear Here</p>
-                                <p class="text-gray-500 text-sm">(Google Maps integration)</p>
+                                {{-- <i class="fas fa-map-marked-alt text-gray-400 text-6xl mb-4"></i> --}}
+                                {{-- <p class="text-gray-600 font-semibold">Interactive Map Would Appear Here</p> --}}
+                                {{-- <p class="text-gray-500 text-sm">(Google Maps integration)</p> --}}
                             </div>
                         </div>
                         

@@ -1,9 +1,9 @@
     <section id="home" class="hero-bg relative text-white py-20 md:py-32">
-        <div class="absolute inset-0 bg-gradient-to-r from-purpleDeep to-purpleLight"></div>
-        <div class="relative container mx-auto px-4 text-center">
-            <div class="max-w-4xl mx-auto">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-purpleLight"></div>
+        <div class="relative container mx-auto px-4 text-center bottom-0">
+            <div class="max-w-3xl mx-auto py-4">
                 <h1 class="cormorant text-3xl md:text-5xl font-bold mb-6">
-                    AFH in serene environment in <span class="text-gold">Auburn</span>
+                    AFH in a serene environment in <span class="text-gold">Auburn Washington</span>
                 </h1>
                 <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto font-light">
                     Experience compassionate care in a safe and peaceful environment at Amazing Palace  Adult Family Home
@@ -13,7 +13,7 @@
                         class="btn-gold px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-xl">
                         <i class="fas fa-phone-alt mr-2"></i> Contact Us Today
                     </a>
-                    <a href="/booking"
+                    <a href="/gallery"
                         class="bg-transparent border-2 border-white hover:bg-white hover:text-navy text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300">
                         <i class="fas fa-images mr-2"></i> View Our Facility
                     </a>
@@ -26,7 +26,7 @@
     <section id="about" class="py-20 section-bg">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="cormorant text-4xl md:text-5xl font-bold text-navy mb-4">Welcome to Amazing Palace</h2>
+                <h2 class="cormorant text-3xl md:text-5xl font-bold text-purple-950 mb-4">Welcome to Amazing Palace</h2>
                 <div class="w-24 h-1 bg-gold mx-auto mb-6"></div>
                 <p class="text-xl text-gray-700 max-w-3xl mx-auto">
                   Loving, attentive support and a personalized care in a home-style environment
@@ -35,7 +35,7 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h3 class="cormorant text-3xl font-bold text-navy mb-6">A Home That Feels Like Home</h3>
+                    <h3 class="cormorant text-2xl font-bold text-purple-950 mb-6">A Home That Feels Like Home</h3>
                     <p class="text-lg text-gray-700 mb-6">
 Welcome to Amazing Palace, where the comfort of a private residence meets the excellence of professional care. Located in beautiful Auburn, our home is more than just a facility - it's a sanctuary built on warmth, safety, and connection.
                     </p>
@@ -114,9 +114,8 @@ Welcome to Amazing Palace, where the comfort of a private residence meets the ex
                         <i class="fas fa-bed"></i>
                     </div>
                     <h3 class="cormorant text-2xl font-bold mb-4">Private Rooms</h3>
-                    <p class="mb-6">Spacious, elegantly furnished private rooms with ensuite bathrooms and emergency
-                        call systems.</p>
-                    <a href="#" class="text-gold font-semibold hover:text-yellow-300 transition">View Gallery <i
+                    <p class="mb-6">Spacious private rooms with emergncy call systems. 24hr monitoring available</p>
+                    <a href="/gallery" class="text-gold font-semibold hover:text-yellow-300 transition">View Gallery <i
                             class="fas fa-arrow-right ml-1"></i></a>
                 </div>
 
@@ -142,13 +141,6 @@ Welcome to Amazing Palace, where the comfort of a private residence meets the ex
                             class="fas fa-arrow-right ml-1"></i></a>
                 </div>
             </div>
-
-            <div class="mt-16 text-center">
-                <a href="/booking"
-                    class="btn-gold px-8 py-4 rounded-full font-bold text-lg sm:text-sm transition-all duration-300 shadow-xl">
-                    <i class="fas fa-video mr-2"></i> Schedule a Virtual Tour
-                </a>
-            </div>
         </div>
     </section>
 
@@ -156,7 +148,7 @@ Welcome to Amazing Palace, where the comfort of a private residence meets the ex
     <section id="team" class="py-20 section-bg">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="cormorant text-4xl md:text-5xl font-bold text-navy mb-4">Meet Our Expert Care Team</h2>
+                <h2 class="cormorant text-4xl md:text-5xl font-bold text-navy mb-4">Meet Our Staff</h2>
                 <div class="w-24 h-1 bg-gold mx-auto mb-6"></div>
                 <p class="text-xl text-gray-700 max-w-3xl mx-auto">
                     Our compassionate, highly trained professionals are dedicated to providing exceptional care.
