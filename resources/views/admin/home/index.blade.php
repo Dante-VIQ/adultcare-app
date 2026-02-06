@@ -144,10 +144,7 @@ Welcome to Amazing Palace, where the comfort of a private residence meets the ex
             </div>
 
             <div class="mt-16 text-center">
-                <a href="/booking"
-                    class="btn-gold px-8 py-4 rounded-full font-bold text-lg sm:text-sm transition-all duration-300 shadow-xl">
-                    <i class="fas fa-video mr-2"></i> Schedule a Virtual Tour
-                </a>
+                
             </div>
         </div>
     </section>
