@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Admin\Employees\Index;
 use App\Http\Controllers\ShowController;
+use App\Http\Controllers\TeamController;
 use App\Livewire\Admin\Employees\Create;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
@@ -24,9 +25,9 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\AdminJobController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\AdminBookingController;
+use App\Http\Controllers\LicenseController;
 use App\Http\Controllers\Admin\UserRoleController;
 use App\Http\Controllers\JobApplicationController;
-use App\Http\Controllers\TeamController;
 
 Route::view('/', 'welcome');
 // Route::middleware(['role:user'])->group(function () {
@@ -98,13 +99,22 @@ Route::name('booking.')->prefix('booking')->group(function () {
 //         Route::get('/application/{application}/document/{index}', [JobApplicationController::class, 'downloadDocument'])->name('application.download-document');
 //     });
 
-// Add to your web.php
+// Public routes
+Route::get('licenses', function () {
+    return view('licenses');
+})->name('licenses');
 Route::get('/sitemap.xml', [App\Http\Controllers\SitemapController::class, 'index']);
 
 Route::middleware(['auth', 'role:master|engineer'])->group(function () {
     Route::get('/analysis', [AdminController::class, 'index'])->name('analysis');
     Route::get('/Admin/user/roles/index', [UserRoleController::class, 'index'])->name('admin.user.roles.index');
     Route::post('/Admin/roles/{user}', [UserRoleController::class, 'update'])->name('admin.roles.update');
+
+        Route::resource('licenses', LicenseController::class);
+    Route::post('licenses/update-order', [LicenseController::class, 'updateOrder'])
+        ->name('licenses.update-order');
+    Route::get('licenses/{license}/download', [LicenseController::class, 'download'])
+        ->name('licenses.download');
     // Admin routes
     // Route::prefix('admin')->middleware(['role:admin'])->group(function () {
     Route::resource('admin/abouts', AboutController::class);
@@ -134,9 +144,9 @@ Route::middleware(['auth', 'role:master|engineer'])->group(function () {
     Route::get('admin/about', function () {
         return view('admin.about');
     })->name('admin.about');
-    Route::get('admin/service', function () {
-        return view('admin.service');
-    })->name('admin.service');
+    // Route::get('admin/service', function () {
+    //     return view('admin.service');
+    // })->name('admin.service');
 
     Route::get('admin/view', function () {
         return view('admin.view');

@@ -1,3 +1,6 @@
 <x-admin-layout>
-    <livewire:admin.employees.index />
+    <div>
+
+        <livewire:admin.employees.index />
+    </div>
 </x-admin-layout>

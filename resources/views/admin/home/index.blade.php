@@ -262,11 +262,11 @@ Welcome to Amazing Palace, where the comfort of a private residence meets the ex
                         <div class="flex flex-wrap gap-4">
                             <div class="bg-white/10 px-4 py-2 rounded-lg">
                                 <p class="font-semibold">WA State License</p>
-                                <p class="text-sm text-gray-300">#AFH-123456</p>
+                                {{-- <p class="text-sm text-gray-300">#AFH-123456</p> --}}
                             </div>
                             <div class="bg-white/10 px-4 py-2 rounded-lg">
                                 <p class="font-semibold">Medicaid Approved</p>
-                                <p class="text-sm text-gray-300">Provider #WA98765</p>
+                                {{-- <p class="text-sm text-gray-300">Provider #WA98765</p> --}}
                             </div>
                         </div>
                     </div>

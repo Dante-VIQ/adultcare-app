@@ -339,6 +339,35 @@
                 background-attachment: scroll;
             }
         }
+        .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.hover-scale {
+    transition: transform 0.2s ease;
+}
+
+.hover-scale:hover {
+    transform: translateY(-2px);
+}
+
+.bg-light-blue {
+    background-color: #f0f8ff;
+}
+
+.text-navy {
+    color: #001f3f;
+}
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>

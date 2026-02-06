@@ -7,19 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Admin - @yield('title', 'Dashboard')</title>
     <meta name="robots" content="noindex, nofollow">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#3a0ca3',
-                        secondary: '#7209b7',
-                        soft: '#f4f2ff',
-                    }
-                }
-            }
-        }
-    </script>
+
     @livewireStyles
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -47,8 +35,8 @@
                 <i class="fas fa-user-circle"></i> <span>Admin</span>
             </button>
             <div id="user-menu" class="hidden absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg overflow-hidden z-30">
-                <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Profile</a>
-                <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Settings</a>
+                {{-- <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Profile</a>
+                <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Settings</a> --}}
                 <hr>
                 <a href="/" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Back to Site</a>
             </div>
@@ -79,7 +67,7 @@
         </aside>
 
         <!-- MAIN CONTENT -->
-        <main class=" ml-0 md:ml-64 p-6">
+        <main class="flex-1 ml-0 md:ml-64 p-6">
             {{ $slot }}
         </main>
     </div>

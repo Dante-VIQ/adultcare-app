@@ -328,42 +328,11 @@
                     </a>
                 </div>
                 <div class="bg-white rounded-2xl shadow-xl p-10">
-                    <div class="text-center mb-8">
+                    <div class="text-center mb-3">
                         <i class="fas fa-award text-gold text-6xl mb-6"></i>
                         <h3 class="cormorant text-3xl font-bold text-navy mb-4">Our Accolades</h3>
                     </div>
-                    <div class="space-y-6">
-                        <div class="flex items-center p-4 bg-light-blue rounded-xl">
-                            <div
-                                class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-medal text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-navy">Excellence in Senior Care Award</h4>
-                                <p class="text-gray-600">Washington State Senior Care Association, 2022</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center p-4 bg-light-blue rounded-xl">
-                            <div
-                                class="w-12 h-12 bg-navy rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-star text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-navy">Top Rated Facility</h4>
-                                <p class="text-gray-600">SeniorAdvisor.com, 2021-2023</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center p-4 bg-light-blue rounded-xl">
-                            <div
-                                class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-heart text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-navy">Family Choice Award</h4>
-                                <p class="text-gray-600">Auburn Families Magazine, 2020</p>
-                            </div>
-                        </div>
-                    </div>
+<livewire:licenses-display />
                 </div>
             </div>
         </div>
@@ -379,10 +348,10 @@
                 to see our facility and meet our team.
             </p>
             <div class="flex flex-col md:flex-row justify-center space-y-6 md:space-y-0 md:space-x-8">
-                <a href="/booking"
+                {{-- <a href="/booking"
                     class="btn-gold px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-xl">
                     <i class="fas fa-calendar-check mr-2"></i> Schedule a Tour
-                </a>
+                </a> --}}
                 <a href="/contact"
                     class="bg-transparent border-2 border-white hover:bg-white hover:text-navy text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300">
                     <i class="fas fa-phone-alt mr-2"></i> Contact Us Today
