@@ -410,7 +410,7 @@
     <div class="min-h-screen bg-gray-100">
 
         <!-- Page Content -->
-        <main>
+        <main class="p-5">
             {{ $slot }}
         </main>
     </div>
