@@ -640,7 +640,7 @@
         name: "Amazing Palace",
         // Optional: Convert Plus Code to coordinates for maps that need lat/lng
         // You can get these from https://plus.codes/ or Google Maps
-        lat: -47.3069, // Approximate coordinates for M4PJ+XRG Nakuru
+        lat: 47.3069, // Approximate coordinates for M4PJ+XRG Nakuru
         lng: -122.2285   // Approximate coordinates for M4PJ+XRG Nakuru
     };
 
