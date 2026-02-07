@@ -14,7 +14,7 @@
             </div>
             <div class="p-4">
                 <h3 class="cormorant text-sm lg:text-lg font-bold text-navy mb-2">{{ $member->name }}</h3>
-                <p class="text-gold font-semibold mb-4">{{ $member->specialty }}</p>
+                <p class="text-gray-500 font-semibold mb-4">{{ $member->specialty }}</p>
                 {{-- <p class="text-gray-700">{{ $member->details }}</p> --}}
             </div>
         </div>
