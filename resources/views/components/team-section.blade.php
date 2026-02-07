@@ -12,9 +12,9 @@
                     <i class="{{ $member->icon_class }} text-white text-8xl"></i>
                 @endif
             </div>
-            <div class="p-8">
-                <h3 class="cormorant text-xl font-bold text-navy mb-2">{{ $member->name }}</h3>
+            <div class="p-4 flex flex-col items-center text-center">
                 <p class="text-gold font-semibold mb-4">{{ $member->title }}</p>
+                <h3 class="cormorant text-sm lg:text-lg font-bold text-navy mb-2">{{ $member->name }}</h3>
                 {{-- <p class="text-gray-700">{{ $member->details }}</p> --}}
             </div>
         </div>
