@@ -3,7 +3,7 @@
     <section class="relative team-hero-bg text-white py-24">
         <div class="absolute inset-0 bg-gradient-to-r from-purpleDeep to-purpleLight"></div>
         <div class="relative container mx-auto px-4 text-center">
-            <h1 class="cormorant text-5xl md:text-6xl font-bold mb-6">Meet Our Care Team</h1>
+            <h1 class="cormorant text-5xl md:text-6xl font-bold mb-6">Meet Our Staff</h1>
             <div class="w-32 h-1 bg-gold mx-auto mb-8"></div>
             {{-- <p class="text-2xl max-w-3xl mx-auto font-light">
                 Compassionate experts dedicated to providing exceptional care with dignity and respect.
