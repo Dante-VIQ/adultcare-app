@@ -8,11 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Appointment extends Model
 {
     use HasFactory;
-
     protected $fillable = [
+        'full_name',
         'first_name',
         'last_name',
         'email',
+        'phone_number',
+        'date',
+        'subject',
         'message',
+        'consent',
+    ];
+
+    protected $casts = [
+        'consent' => 'boolean',
     ];
 }

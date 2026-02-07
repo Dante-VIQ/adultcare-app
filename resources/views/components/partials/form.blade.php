@@ -1,4 +1,5 @@
-                    <form class="space-y-6">
+                    <form action="{{ route('appointments.store') }}" method="POST" class="space-y-6">
+                        @csrf
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block mb-2 font-semibold text-gray-800">First Name *</label>
@@ -22,15 +23,15 @@
                         </div>
                         
                         <div>
-                            <label class="block mb-2 font-semibold text-gray-800">Subject *</label>
-                            <select class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent">
+                            <label class="block mb-2 font-semibold text-gray-800">Subject</label>
+                            <select name="subject" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent">
                                 <option value="">Select a subject</option>
-                                <option value="tour">Schedule a Tour</option>
-                                <option value="admissions">Admissions Information</option>
-                                <option value="pricing">Pricing & Financial Options</option>
-                                <option value="care-assessment">Care Needs Assessment</option>
-                                <option value="employment">Employment Opportunities</option>
-                                <option value="general">General Inquiry</option>
+                                <option value="Schedule a Tour">Schedule a Tour</option>
+                                <option value="Admissions Information">Admissions Information</option>
+                                <option value="Pricing & Financial Options">Pricing & Financial Options</option>
+                                <option value="Care Needs Assessment">Care Needs Assessment</option>
+                                <option value="Employment Opportunities">Employment Opportunities</option>
+                                <option value="General Inquiry">General Inquiry</option>
                             </select>
                         </div>
                         
@@ -40,7 +41,7 @@
                         </div>
                         
                         <div class="flex items-center">
-                            <input type="checkbox" id="consent" required class="w-5 h-5 mr-3">
+                            <input type="checkbox" id="consent" name="consent" required class="w-5 h-5 mr-3">
                             <label for="consent" class="text-gray-700">
                                 I consent to Amazing Palace contacting me via phone or email regarding my inquiry. *
                             </label>
