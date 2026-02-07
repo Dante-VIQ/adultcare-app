@@ -34,7 +34,7 @@
             </div>
             
             <div class="mt-12 pt-8 border-t border-white/10 text-center text-gray-400 text-sm">
-                <p>2638 26th PISE, Auburn, WA 98002 | (206) 4889285 | amazingpalaceafh@gmail.com</p>
+                <p>2638 26th pl SE, Auburn, WA 98002 | (206) 4889285 | amazingpalaceafh@gmail.com</p>
                 <p class="mt-2">WA State License  | Medicaid Provider</p>
             </div>
         </div>
