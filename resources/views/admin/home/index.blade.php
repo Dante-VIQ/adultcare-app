@@ -1,4 +1,4 @@
-  <x-hero-card />
+<x-hero-card />
 {{--  <section id="home" class="hero-bg relative text-white py-20 md:py-32">
          <div class="absolute inset-0 bg-gradient-to-b from-transparent to-purpleLight"></div>
         <div class="relative container mx-auto px-4 text-center bottom-0">
