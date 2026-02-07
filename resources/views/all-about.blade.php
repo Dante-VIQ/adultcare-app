@@ -289,7 +289,7 @@
     </section>
 
     <!-- Accreditation & Licensing -->
-    <section class="py-20 values-bg">
+    {{-- <section class="py-20 values-bg">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
@@ -336,7 +336,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- CTA Section -->
     <section class="py-20 bg-navy text-white">

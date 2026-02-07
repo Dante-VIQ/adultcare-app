@@ -13,10 +13,10 @@
                         </div>
                     </div>
                     <p class="text-gray-400 mt-4 max-w-md">
-                        Providing exceptional senior care services in Auburn with compassion, expertise, and dignity.
+                        Providing exceptional adult care services in Auburn with compassion, expertise, and dignity.
                     </p>
                 </div>
-                
+
                 <div class="text-center md:text-right">
                     <p class="text-gray-400 mb-4">&copy; 2026 Amazing Palace Adult Family Home. All rights reserved.</p>
                     {{-- <div class="flex space-x-4 justify-center md:justify-end">
@@ -32,7 +32,7 @@
                     </div> --}}
                 </div>
             </div>
-            
+
             <div class="mt-12 pt-8 border-t border-white/10 text-center text-gray-400 text-sm">
                 <p>2638 26th pl SE, Auburn, WA 98002 | (206) 4889285 | amazingpalaceafh@gmail.com</p>
                 <p class="mt-2">WA State License  | Medicaid Provider</p>

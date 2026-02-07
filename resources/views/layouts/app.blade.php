@@ -439,6 +439,8 @@
             box-shadow: 0 4px 12px rgba(107, 33, 168, 0.3);
         }
     </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -497,14 +499,13 @@
     <!-- JavaScript Libraries -->
     <!-- jQuery FIRST (no defer) -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Bootstrap Bundle (with Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
     <!-- Your Template Script (depends on jQuery) -->
     {{-- <script src="js/main.js" defer></script> --}}
-
-    <!-- Add this JavaScript for mobile menu toggle -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -544,6 +545,54 @@
                     icon.classList.add('fa-bars');
                 });
             });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroSwiper = new Swiper('.hero-slider', {
+                // Optional parameters
+                direction: 'horizontal',
+                loop: {{ !empty($heroImages) && count($heroImages) > 1 ? 'true' : 'false' }},
+                speed: 1000,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+
+                // Navigation arrows
+                navigation: {{ !empty($heroImages) && count($heroImages) > 1
+                    ? `{
+                                                                nextEl: '.swiper-button-next',
+                                                                prevEl: '.swiper-button-prev',
+                                                            }`
+                    : 'false' }},
+
+                // Pagination
+                pagination: {{ !empty($heroImages) && count($heroImages) > 1
+                    ? `{
+                                                                el: '.swiper-pagination',
+                                                                clickable: true,
+                                                                dynamicBullets: true,
+                                                            }`
+                    : 'false' }},
+
+                // Only enable autoplay if we have multiple images
+                {{ empty($heroImages) || count($heroImages) <= 1 ? 'autoplay: true,' : '' }}
+            });
+
+            // Pause autoplay on hover (only if we have autoplay)
+            @if (!empty($heroImages) && count($heroImages) > 1)
+                heroSwiper.el.addEventListener('mouseenter', function() {
+                    heroSwiper.autoplay.stop();
+                });
+
+                heroSwiper.el.addEventListener('mouseleave', function() {
+                    heroSwiper.autoplay.start();
+                });
+            @endif
         });
 
         // Filter functionality
@@ -627,44 +676,45 @@
             const mobileMenuBtn = document.querySelector('button.md\\:hidden');
             mobileMenuBtn.addEventListener('click', function() {
                 alert(
-                    'Mobile menu would open here. In a full implementation, this would toggle a mobile navigation menu.');
+                    'Mobile menu would open here. In a full implementation, this would toggle a mobile navigation menu.'
+                    );
             });
         });
-    </script>
-<script>
-    // Hotel location using Plus Code
-    const hotelLocation = {
-        plusCode: "V+4W, Auburn", // Your Plus Code
-        displayPlusCode: "V+4W, Auburn, WA",
-        address: "2638 26th pl SE, Auburn, WA USA",
-        name: "Amazing Palace",
-        // Optional: Convert Plus Code to coordinates for maps that need lat/lng
-        // You can get these from https://plus.codes/ or Google Maps
-        lat: 47.3069, // Approximate coordinates for M4PJ+XRG Nakuru
-        lng: -122.2285   // Approximate coordinates for M4PJ+XRG Nakuru
-    };
 
-    // Convert Plus Code to coordinates for mapping
-    function convertPlusCodeToCoordinates(plusCode) {
-        // For M4PJ+XRG format, we can use the Open Location Code library
-        // Or use a simple conversion if you know the approximate coordinates
-        return {
-            lat: hotelLocation.lat,
-            lng: hotelLocation.lng
+        // Hotel location using Plus Code
+        const hotelLocation = {
+            plusCode: "V+4W, Auburn", // Your Plus Code
+            displayPlusCode: "V+4W, Auburn, WA",
+            address: "2638 26th pl SE, Auburn, WA USA",
+            name: "Amazing Palace",
+            // Optional: Convert Plus Code to coordinates for maps that need lat/lng
+            // You can get these from https://plus.codes/ or Google Maps
+            lat: 47.3069, // Approximate coordinates for M4PJ+XRG Nakuru
+            lng: -122.2285 // Approximate coordinates for M4PJ+XRG Nakuru
         };
-    }
 
-    // Initialize OpenStreetMap using Plus Code
-    function initOpenStreetMapWithPlusCode() {
-        const mapElement = document.getElementById('hotel-map');
-        if (!mapElement) return;
+        // Convert Plus Code to coordinates for mapping
+        function convertPlusCodeToCoordinates(plusCode) {
+            // For M4PJ+XRG format, we can use the Open Location Code library
+            // Or use a simple conversion if you know the approximate coordinates
+            return {
+                lat: hotelLocation.lat,
+                lng: hotelLocation.lng
+            };
+        }
 
-        const coords = convertPlusCodeToCoordinates(hotelLocation.plusCode);
+        // Initialize OpenStreetMap using Plus Code
+        function initOpenStreetMapWithPlusCode() {
+            const mapElement = document.getElementById('hotel-map');
+            if (!mapElement) return;
 
-        // OpenStreetMap iframe centered on coordinates
-        const mapUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${coords.lng - 0.01}%2C${coords.lat - 0.01}%2C${coords.lng + 0.01}%2C${coords.lat + 0.01}&layer=mapnik&marker=${coords.lat}%2C${coords.lng}`;
+            const coords = convertPlusCodeToCoordinates(hotelLocation.plusCode);
 
-        mapElement.innerHTML = `
+            // OpenStreetMap iframe centered on coordinates
+            const mapUrl =
+                `https://www.openstreetmap.org/export/embed.html?bbox=${coords.lng - 0.01}%2C${coords.lat - 0.01}%2C${coords.lng + 0.01}%2C${coords.lat + 0.01}&layer=mapnik&marker=${coords.lat}%2C${coords.lng}`;
+
+            mapElement.innerHTML = `
             <iframe
                 class="w-full h-full border-0"
                 src="${mapUrl}"
@@ -694,81 +744,84 @@
                 </a>
             </div>
         `;
-    }
-
-    // Open directions in Google Maps using Plus Code
-    function openDirections() {
-        const startAddress = document.getElementById('start-address').value;
-
-        if (startAddress) {
-            // With starting address and Plus Code destination
-            const encodedStart = encodeURIComponent(startAddress);
-            const encodedPlusCode = encodeURIComponent(hotelLocation.plusCode);
-            window.open(`https://www.google.com/maps/dir/${encodedStart}/${encodedPlusCode}`, '_blank');
-        } else {
-            // Just Plus Code destination
-            openGoogleMapsWithPlusCode();
         }
-    }
 
-    // Open Google Maps with Plus Code
-    function openGoogleMapsWithPlusCode() {
-        // Google Maps directly supports Plus Codes!
-        const encodedPlusCode = encodeURIComponent(hotelLocation.plusCode);
-        window.open(`https://www.google.com/maps/search/?api=1&query=${encodedPlusCode}`, '_blank');
-    }
+        // Open directions in Google Maps using Plus Code
+        function openDirections() {
+            const startAddress = document.getElementById('start-address').value;
 
-    // Open Apple Maps (may need coordinates, so we convert Plus Code)
-    function openAppleMapsWithPlusCode() {
-        const coords = convertPlusCodeToCoordinates(hotelLocation.plusCode);
-        const encodedName = encodeURIComponent(hotelLocation.name);
-        window.open(`http://maps.apple.com/?ll=${coords.lat},${coords.lng}&q=${encodedName}`, '_blank');
-    }
+            if (startAddress) {
+                // With starting address and Plus Code destination
+                const encodedStart = encodeURIComponent(startAddress);
+                const encodedPlusCode = encodeURIComponent(hotelLocation.plusCode);
+                window.open(`https://www.google.com/maps/dir/${encodedStart}/${encodedPlusCode}`, '_blank');
+            } else {
+                // Just Plus Code destination
+                openGoogleMapsWithPlusCode();
+            }
+        }
 
-    // Open Waze with coordinates (converted from Plus Code)
-    function openWazeWithPlusCode() {
-        const coords = convertPlusCodeToCoordinates(hotelLocation.plusCode);
-        window.open(`https://www.waze.com/ul?ll=${coords.lat},${coords.lng}&navigate=yes`, '_blank');
-    }
+        // Open Google Maps with Plus Code
+        function openGoogleMapsWithPlusCode() {
+            // Google Maps directly supports Plus Codes!
+            const encodedPlusCode = encodeURIComponent(hotelLocation.plusCode);
+            window.open(`https://www.google.com/maps/search/?api=1&query=${encodedPlusCode}`, '_blank');
+        }
 
-    // Open OpenStreetMap with coordinates
-    function openOpenStreetMapWithPlusCode() {
-        const coords = convertPlusCodeToCoordinates(hotelLocation.plusCode);
-        window.open(`https://www.openstreetmap.org/?mlat=${coords.lat}&mlon=${coords.lng}#map=17/${coords.lat}/${coords.lng}`, '_blank');
-    }
+        // Open Apple Maps (may need coordinates, so we convert Plus Code)
+        function openAppleMapsWithPlusCode() {
+            const coords = convertPlusCodeToCoordinates(hotelLocation.plusCode);
+            const encodedName = encodeURIComponent(hotelLocation.name);
+            window.open(`http://maps.apple.com/?ll=${coords.lat},${coords.lng}&q=${encodedName}`, '_blank');
+        }
 
-    // Copy Plus Code to clipboard
-    function copyPlusCode() {
-        navigator.clipboard.writeText(hotelLocation.plusCode).then(() => {
-            // Show success feedback
-            const button = event.target.closest('button');
-            const originalHTML = button.innerHTML;
-            button.innerHTML = `
+        // Open Waze with coordinates (converted from Plus Code)
+        function openWazeWithPlusCode() {
+            const coords = convertPlusCodeToCoordinates(hotelLocation.plusCode);
+            window.open(`https://www.waze.com/ul?ll=${coords.lat},${coords.lng}&navigate=yes`, '_blank');
+        }
+
+        // Open OpenStreetMap with coordinates
+        function openOpenStreetMapWithPlusCode() {
+            const coords = convertPlusCodeToCoordinates(hotelLocation.plusCode);
+            window.open(
+                `https://www.openstreetmap.org/?mlat=${coords.lat}&mlon=${coords.lng}#map=17/${coords.lat}/${coords.lng}`,
+                '_blank');
+        }
+
+        // Copy Plus Code to clipboard
+        function copyPlusCode() {
+            navigator.clipboard.writeText(hotelLocation.plusCode).then(() => {
+                // Show success feedback
+                const button = event.target.closest('button');
+                const originalHTML = button.innerHTML;
+                button.innerHTML = `
                 <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
                 Copied!
             `;
-            button.classList.remove('text-hotel-gold');
-            button.classList.add('text-green-600');
+                button.classList.remove('text-hotel-gold');
+                button.classList.add('text-green-600');
 
-            setTimeout(() => {
-                button.innerHTML = originalHTML;
-                button.classList.remove('text-green-600');
-                button.classList.add('text-hotel-gold');
-            }, 2000);
-        });
-    }
+                setTimeout(() => {
+                    button.innerHTML = originalHTML;
+                    button.classList.remove('text-green-600');
+                    button.classList.add('text-hotel-gold');
+                }, 2000);
+            });
+        }
 
-    // Show Plus Code in a QR code for easy mobile sharing
-    function showPlusCodeQR() {
-        // Optional: Generate QR code for the Plus Code
-        const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(`https://plus.codes/${hotelLocation.plusCode.replace('+', '').replace(' ', '')}`)}`;
+        // Show Plus Code in a QR code for easy mobile sharing
+        function showPlusCodeQR() {
+            // Optional: Generate QR code for the Plus Code
+            const qrCodeUrl =
+                `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(`https://plus.codes/${hotelLocation.plusCode.replace('+', '').replace(' ', '')}`)}`;
 
-        // Create modal or show QR code
-        const qrModal = document.createElement('div');
-        qrModal.className = 'fixed inset-0 bg-black/50 flex items-center justify-center z-50';
-        qrModal.innerHTML = `
+            // Create modal or show QR code
+            const qrModal = document.createElement('div');
+            qrModal.className = 'fixed inset-0 bg-black/50 flex items-center justify-center z-50';
+            qrModal.innerHTML = `
             <div class="bg-white rounded-2xl p-6 max-w-sm mx-4">
                 <div class="text-center">
                     <h3 class="text-lg font-medium text-hotel-navy mb-4">Scan to Navigate</h3>
@@ -782,75 +835,79 @@
                 </div>
             </div>
         `;
-        document.body.appendChild(qrModal);
-    }
+            document.body.appendChild(qrModal);
+        }
 
-    // Initialize on page load
-    document.addEventListener('DOMContentLoaded', function() {
-        // Initialize map using Plus Code
-        initOpenStreetMapWithPlusCode();
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize map using Plus Code
+            initOpenStreetMapWithPlusCode();
 
-        // Add QR code button if desired
-        const plusCodeSection = document.querySelector('.mt-6.pt-6.border-t');
-        if (plusCodeSection) {
-            const qrButton = document.createElement('button');
-            qrButton.innerHTML = `
+            // Add QR code button if desired
+            const plusCodeSection = document.querySelector('.mt-6.pt-6.border-t');
+            if (plusCodeSection) {
+                const qrButton = document.createElement('button');
+                qrButton.innerHTML = `
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/>
                 </svg>
                 QR Code
             `;
-            qrButton.className = 'text-hotel-gold hover:text-yellow-600 transition flex items-center gap-2 ml-4';
-            qrButton.onclick = showPlusCodeQR;
-            plusCodeSection.querySelector('.flex').appendChild(qrButton);
-        }
+                qrButton.className =
+                'text-hotel-gold hover:text-yellow-600 transition flex items-center gap-2 ml-4';
+                qrButton.onclick = showPlusCodeQR;
+                plusCodeSection.querySelector('.flex').appendChild(qrButton);
+            }
 
-        // Auto-fill current location in directions field
-        if (navigator.geolocation) {
-            const locationInput = document.getElementById('start-address');
-            locationInput.addEventListener('click', function() {
-                if (!this.dataset.autoFilled) {
-                    this.placeholder = 'Detecting your location...';
-                    navigator.geolocation.getCurrentPosition(
-                        (position) => {
-                            const { latitude, longitude } = position.coords;
-                            // Use Plus Code API to get address from coordinates
-                            fetch(`https://plus.codes/api?address=${latitude},${longitude}`)
-                                .then(response => response.json())
-                                .then(data => {
-                                    if (data.plus_code && data.plus_code.global_code) {
-                                        this.value = data.plus_code.global_code;
-                                        this.dataset.autoFilled = 'true';
-                                    }
-                                    this.placeholder = 'Enter your starting address';
-                                })
-                                .catch(() => {
-                                    this.placeholder = 'Enter your starting address';
-                                });
-                        },
-                        () => {
-                            this.placeholder = 'Enter your starting address';
-                        }
-                    );
-                }
-            });
-        }
-    });
+            // Auto-fill current location in directions field
+            if (navigator.geolocation) {
+                const locationInput = document.getElementById('start-address');
+                locationInput.addEventListener('click', function() {
+                    if (!this.dataset.autoFilled) {
+                        this.placeholder = 'Detecting your location...';
+                        navigator.geolocation.getCurrentPosition(
+                            (position) => {
+                                const {
+                                    latitude,
+                                    longitude
+                                } = position.coords;
+                                // Use Plus Code API to get address from coordinates
+                                fetch(`https://plus.codes/api?address=${latitude},${longitude}`)
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        if (data.plus_code && data.plus_code.global_code) {
+                                            this.value = data.plus_code.global_code;
+                                            this.dataset.autoFilled = 'true';
+                                        }
+                                        this.placeholder = 'Enter your starting address';
+                                    })
+                                    .catch(() => {
+                                        this.placeholder = 'Enter your starting address';
+                                    });
+                            },
+                            () => {
+                                this.placeholder = 'Enter your starting address';
+                            }
+                        );
+                    }
+                });
+            }
+        });
 
-    // Plus Code validation and formatting
-    function formatPlusCode(plusCode) {
-        // Format Plus Code for display: M4PJ+XRG Nakuru
-        const parts = plusCode.split(' ');
-        const code = parts[0];
-        const location = parts.slice(1).join(' ');
+        // Plus Code validation and formatting
+        function formatPlusCode(plusCode) {
+            // Format Plus Code for display: M4PJ+XRG Nakuru
+            const parts = plusCode.split(' ');
+            const code = parts[0];
+            const location = parts.slice(1).join(' ');
 
-        if (code.includes('+')) {
-            return `<span class="font-mono">${code}</span> ${location ? `<span class="text-gray-600">${location}</span>` : ''}`;
+            if (code.includes('+')) {
+                return `<span class="font-mono">${code}</span> ${location ? `<span class="text-gray-600">${location}</span>` : ''}`;
+            }
+            return plusCode;
         }
-        return plusCode;
-    }
-</script>
+    </script>
 </body>
 
 </html>

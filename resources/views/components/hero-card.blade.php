@@ -4,7 +4,7 @@
             <!-- Left Content -->
             <div class="animate-fade-in-up justify-center items-center">
                 <h1 class="text-4xl lg:text-3xl xl:text-5xl font-bold mb-6 leading-tight text-purple-950 ">
-                    AFH in a serene environment in
+                    Discover Family Style Living in an AFH in
                     <span class="text-primary">Auburn Washington</span>
                 </h1>
                 <p class="text-xl text-gray-600 mb-10">
@@ -40,33 +40,7 @@
             </div>
 
             <!-- Right Image -->
-            <div class="relative animate-fade-in-up animation-delay-200">
-                <div class="hero-image relative">
-                    <div
-                        class="bg-gradient-to-br from-primary to-green-600 rounded-3xl h-96 lg:h-[500px] overflow-hidden shadow-2xl">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                        <!-- This would be hero image -->
-
-                        <img src="{{ asset('images/hero.jpg') }}" alt="Hero Image" class="w-full h-full object-cover">
-                    </div>
-                </div>
-                    <div class="absolute -top-6 -right-6 bg-purple-950 text-white p-4 rounded-2xl shadow-xl">
-                        <div class="text-3xl font-bold">24/7</div>
-                        <div class="text-sm">Home Support</div>
-                    </div>
-
-                    <div class="absolute -bottom-6 -left-6 bg-purple-950 p-4 rounded-2xl shadow-xl border border-gray-200">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-                                <i class="fas fa-shield-alt text-white text-xl"></i>
-                            </div>
-                            <div class="text-white">
-                                <div class="font-bold">Quality Services</div>
-                                <div class="text-sm text-gray-300">Expert Caregivers</div>
-                            </div>
-                        </div>
-                    </div>
-            </div>
+<livewire:gallery-card />
         </div>
     </div>
 
