@@ -597,7 +597,7 @@
                 Schedule a personal tour to experience our facility firsthand, meet our team, and see why families choose Amazing Palace for their loved ones.
             </p>
             <div class="flex flex-col md:flex-row justify-center space-y-6 md:space-y-0 md:space-x-8">
-                <a href="/booking" class="btn-gold px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-xl">
+                <a href="gallery" class="btn-gold px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-xl">
                     <i class="fas fa-calendar-check mr-2"></i> Schedule a Tour
                 </a>
                 <a href="tel:+12064889285" class="bg-navy hover:bg-royal-blue text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-lg">
