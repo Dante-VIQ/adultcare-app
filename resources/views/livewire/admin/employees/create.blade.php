@@ -9,7 +9,7 @@
             </div>
         @endif
 
-        <form wire:submit.prevent="save" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form wire:submit.prevent="save">
 
             {{-- Name --}}
             <div class="space-y-1">
