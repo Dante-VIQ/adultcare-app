@@ -2,29 +2,29 @@
                         @csrf
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label class="block mb-2 font-semibold text-gray-800">First Name *</label>
-                                <input type="text" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent">
+                                <label for="first_name" class="block mb-2 font-semibold text-gray-800">First Name *</label>
+                                <input type="text" id="first_name" name="first_name" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent">
                             </div>
                             <div>
-                                <label class="block mb-2 font-semibold text-gray-800">Last Name *</label>
-                                <input type="text" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent">
+                                <label for="last_name" class="block mb-2 font-semibold text-gray-800">Last Name *</label>
+                                <input type="text" id="last_name" name="last_name" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent">
                             </div>
                         </div>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label class="block mb-2 font-semibold text-gray-800">Email Address *</label>
-                                <input type="email" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent">
+                                <label for="email" class="block mb-2 font-semibold text-gray-800">Email Address *</label>
+                                <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent">
                             </div>
                             <div>
-                                <label class="block mb-2 font-semibold text-gray-800">Phone Number *</label>
-                                <input type="tel" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent">
+                                <label for="phone" class="block mb-2 font-semibold text-gray-800">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent">
                             </div>
                         </div>
                         
                         <div>
-                            <label class="block mb-2 font-semibold text-gray-800">Subject</label>
-                            <select name="subject" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent">
+                            <label for="subject" class="block mb-2 font-semibold text-gray-800">Subject</label>
+                            <select name="subject" id="subject" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent">
                                 <option value="">Select a subject</option>
                                 <option value="Schedule a Tour">Schedule a Tour</option>
                                 <option value="Admissions Information">Admissions Information</option>
@@ -36,8 +36,8 @@
                         </div>
                         
                         <div>
-                            <label class="block mb-2 font-semibold text-gray-800">Message *</label>
-                            <textarea rows="5" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent" placeholder="Tell us about your specific needs or questions..."></textarea>
+                            <label for="message" class="block mb-2 font-semibold text-gray-800">Message *</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent" placeholder="Tell us about your specific needs or questions..."></textarea>
                         </div>
                         
                         <div class="flex items-center">
