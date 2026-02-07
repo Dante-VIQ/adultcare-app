@@ -1,4 +1,5 @@
-                    <form class="space-y-6">
+                                        <form action="{{ route('appointments.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block mb-2 font-semibold">First Name</label>
