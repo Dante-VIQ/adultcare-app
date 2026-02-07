@@ -24,7 +24,7 @@ new class extends Component {
                     <div class="h-24 w-auto">
                         <a href="/">
                             <img src="{{ asset('images/logo0.png') }}" alt="Amazing Palace Logo"
-                                class="h-28 w-auto object-cover mx-auto">
+                                class="h-32 w-auto object-cover mx-auto">
                         </a>
                     </div>
                     <div class="block">
