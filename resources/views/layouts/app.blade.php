@@ -80,7 +80,7 @@
         }
 
         .hero-bg {
-            background-image: url('images/hero.jpg');
+            background-image: linear-gradient(rgba(160, 80, 180, 0.2), rgba(151, 98, 156, 0.5)), url('images/hero.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;

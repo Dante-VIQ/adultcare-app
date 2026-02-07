@@ -1,5 +1,6 @@
-    <section id="home" class="hero-bg relative text-white py-20 md:py-32">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-purpleLight"></div>
+  <x-hero-card />
+{{--  <section id="home" class="hero-bg relative text-white py-20 md:py-32">
+         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-purpleLight"></div>
         <div class="relative container mx-auto px-4 text-center bottom-0">
             <div class="max-w-3xl mx-auto py-4">
                 <h1 class="cormorant text-3xl md:text-5xl font-bold mb-6">
@@ -20,7 +21,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- About Section -->
     <section id="about" class="py-20 section-bg">

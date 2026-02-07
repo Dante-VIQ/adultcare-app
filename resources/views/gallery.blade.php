@@ -55,6 +55,8 @@
             box-shadow: 0 4px 12px rgba(107, 33, 168, 0.3);
         }
     </style>
+    @livewireStyles
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="bg-palace-cream">
@@ -118,13 +120,14 @@
         </div>
     </div>
 
+    @livewireScripts
 
     <!-- JavaScript -->
     <script>
         // Filter functionality
         document.addEventListener('DOMContentLoaded', function() {
             const filterButtons = document.querySelectorAll('.filter-btn');
-            const galleryItems = document.querySelectorAll('.gallery-item');
+            // const galleryItems = document.querySelectorAll('.gallery-item');
             const viewButtons = document.querySelectorAll('.gallery-item button');
             const lightboxModal = document.getElementById('lightbox-modal');
             const lightboxImage = document.getElementById('lightbox-image');

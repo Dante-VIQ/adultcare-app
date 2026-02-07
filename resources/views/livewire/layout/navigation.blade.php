@@ -16,14 +16,14 @@ new class extends Component {
 ?>
 
 <div class="sticky top-0 z-50 bg-white shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-2">
         <div class="flex flex-row justify-between h-20 items-center">
             <!-- Logo Section -->
             <div class="flex-shrink-0 flex items-center">
                 <div class="flex items-center justify-center">
                     <div class="h-24  w-auto">
                         <img src="{{ asset('images/logo0.png') }}" alt="Amazing Palace Logo"
-                            class="h-28 w-auto object-cover">
+                            class="h-28 w-auto object-cover mx-auto">
                     </div>
                     <div class="block">
                         <h1 class="cormorant text-xl sm:text-2xl font-bold text-navy leading-tight">Amazing Palace</h1>
