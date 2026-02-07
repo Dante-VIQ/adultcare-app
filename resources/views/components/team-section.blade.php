@@ -1,6 +1,6 @@
 @props(['teamMembers'])
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="grid grid-cols-2 md:grid-cols-3 gap-8">
     @foreach($teamMembers as $member)
         <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
             <div class="h-64 bg-navy flex items-center justify-center">

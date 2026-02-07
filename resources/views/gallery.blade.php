@@ -97,7 +97,9 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="gallery-grid">
                 <div class="gallery-item bg-white rounded-2xl overflow-hidden shadow-lg border border-palace-lavender"
                     data-category="suites">
-                    <livewire:image-card />
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="gallery-grid">
+                        <livewire:image-card />
+                    </div>
                 </div>
 
             </div>
@@ -120,14 +122,14 @@
         </div>
     </div>
 
-    @livewireScripts
+    @livewiScripts
 
     <!-- JavaScript -->
     <script>
         // Filter functionality
         document.addEventListener('DOMContentLoaded', function() {
             const filterButtons = document.querySelectorAll('.filter-btn');
-            // const galleryItems = document.querySelectorAll('.gallery-item');
+            const galleryItems = document.querySelectorAll('.gallery-item');
             const viewButtons = document.querySelectorAll('.gallery-item button');
             const lightboxModal = document.getElementById('lightbox-modal');
             const lightboxImage = document.getElementById('lightbox-image');
@@ -206,7 +208,7 @@
             mobileMenuBtn.addEventListener('click', function() {
                 alert(
                     'Mobile menu would open here. In a full implementation, this would toggle a mobile navigation menu.'
-                    );
+                );
             });
         });
     </script>
