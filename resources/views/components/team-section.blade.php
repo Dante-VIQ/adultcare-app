@@ -13,9 +13,9 @@
                 @endif
             </div>
             <div class="p-8">
-                <h3 class="cormorant text-2xl font-bold text-navy mb-2">{{ $member->name }}</h3>
-                {{-- <p class="text-gold font-semibold mb-4">{{ $member->title }}</p>
-                <p class="text-gray-700">{{ $member->details }}</p> --}}
+                <h3 class="cormorant text-xl font-bold text-navy mb-2">{{ $member->name }}</h3>
+                <p class="text-gold font-semibold mb-4">{{ $member->title }}</p>
+                <p class="text-gray-700">{{ $member->details }}</p>
             </div>
         </div>
     @endforeach

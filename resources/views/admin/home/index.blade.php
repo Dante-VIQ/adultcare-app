@@ -299,17 +299,7 @@ Welcome to Amazing Palace, where the comfort of a private residence meets the ex
             <div class="bg-white/5 rounded-2xl p-4 border border-white/10">
                 <!-- You can add a Google Maps embed here -->
                 <div id="hotel-map"></div>
-                {{-- <div  class="hidden sm:flex h-64 md:h-80 bg-gradient-to-r from-blue-900/50 to-gray-800/50 rounded-xl flex flex-col items-center justify-center">
-                    <i class="fas fa-map-marked-alt text-5xl mb-4 text-gold opacity-70"></i>
-                    <p class="text-xl mb-2">2638 26th pl SE, Auburn, WA 98002</p>
-                    <p class="text-gray-400 mb-6">Conveniently located in Auburn, Washington</p>
-                    <a href="https://maps.google.com/?q=2638+26th+pl+SE,+Auburn,+WA+98002" 
-                       target="_blank"
-                       class="bg-gold text-navy font-bold px-6 py-3 rounded-lg hover:bg-yellow-500 transition-all flex items-center gap-2">
-                        <i class="fas fa-directions"></i>
-                        <span>Get Directions</span>
-                    </a>
-                </div> --}}
+
             </div>
         </div>
     </div>
