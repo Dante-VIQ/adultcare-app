@@ -3,7 +3,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-8 md:mb-0">
                     <div class="flex items-center">
-                        <div class="bg-white w-16 h-16 p-2 rounded-full flex items-center justify-center mr-3">
+                        <div class="bg-white w-16 h-16 p-2 rounded-full flex mx-auto mr-3">
                             <img src="{{ asset('images/logoo.png') }}" alt="Logo"
                                 class="object-cover w-auto h-16 rounded-2xl mr-3 ">
                         </div>
