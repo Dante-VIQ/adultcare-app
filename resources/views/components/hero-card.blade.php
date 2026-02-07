@@ -17,7 +17,7 @@
                         <i class="fas fa-phone-alt mr-2"></i> Contact Us Today
                     </a>
                     <a href="/gallery"
-                        class="bg-sage border-2 border-white hover:bg-white hover:text-navy text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300">
+                        class="bg-palace-purple-dark border-2 border-white hover:bg-white hover:text-navy text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300">
                         <i class="fas fa-images mr-2"></i> View Our Facility
                     </a>
                 </div>
