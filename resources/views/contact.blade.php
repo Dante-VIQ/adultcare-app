@@ -21,7 +21,7 @@
                     Multiple ways to connect with our team. We typically respond within 24 hours.
                 </p>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                 <div class="bg-white rounded-2xl shadow-lg p-8 contact-card">
                     <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center mb-6 mx-auto">
@@ -37,7 +37,7 @@
                         <p class="text-gray-600">24/7 Emergency Line Available</p>
                     </div>
                 </div>
-                
+
                 <div class="bg-white rounded-2xl shadow-lg p-8 contact-card">
                     <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center mb-6 mx-auto">
                         <i class="fas fa-envelope text-white text-2xl"></i>
@@ -52,7 +52,7 @@
                         <p class="text-gray-600 mt-2">For admissions inquiries</p>
                     </div>
                 </div>
-                
+
                 <div class="bg-white rounded-2xl shadow-lg p-8 contact-card">
                     <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center mb-6 mx-auto">
                         <i class="fas fa-map-marker-alt text-white text-2xl"></i>
@@ -65,13 +65,13 @@
                         <p class="text-lg font-bold text-navy">2638 26th pl SE</p>
                         <p class="text-lg text-gray-700">Auburn, WA 98002</p>
                         <p class="text-gray-600 mt-2">Tours by appointment only</p>
-                        <a href="#tour" class="inline-block mt-4 bg-navy hover:bg-royal-blue text-white px-6 py-3 rounded-full font-semibold transition-all duration-300">
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=2638+26th+pl+SE+Auburn+WA+98002" class="inline-block mt-4 bg-navy hover:bg-royal-blue text-white px-6 py-3 rounded-full font-semibold transition-all duration-300">
                             <i class="fas fa-directions mr-2"></i> Get Directions
                         </a>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Emergency Contact Banner -->
             <div class="bg-gradient-to-r from-red-600 to-red-800 text-white rounded-2xl p-8 mb-16">
                 <div class="flex flex-col md:flex-row items-center justify-between">
@@ -99,16 +99,16 @@
                     <p class="text-lg text-gray-700 mb-8">
                         Fill out the form below and our team will contact you within 24 hours. For immediate assistance, please call us directly.
                     </p>
-                    
+
                     @include('components.partials.form')
                 </div>
-                
+
                 <!-- Map & Location Information -->
                 <div>
                     <div class="mb-10">
                         <h2 class="cormorant text-4xl font-bold text-navy mb-6">Our Location</h2>
                         <div class="w-24 h-1 bg-gold mb-8"></div>
-                        
+
                         <!-- Map Placeholder (In a real implementation, you would embed Google Maps or similar) -->
                         <div id="hotel-map" class="map-container mb-8 flex items-center justify-center">
                             <div class="text-center">
@@ -117,7 +117,7 @@
                                 {{-- <p class="text-gray-500 text-sm">(Google Maps integration)</p> --}}
                             </div>
                         </div>
-                        
+
                         <div class="bg-white rounded-xl p-6 shadow-lg">
                             <h3 class="cormorant text-2xl font-bold text-navy mb-4">Amazing Palace Adult Family Home</h3>
                             <div class="space-y-4">
@@ -147,7 +147,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Quick Links -->
                     {{-- <div class="bg-navy text-white rounded-xl p-8">
                         <h3 class="cormorant text-2xl font-bold mb-6 text-gold">Quick Links</h3>
@@ -185,14 +185,14 @@
                     Experience Amazing Palace firsthand with a personalized tour of our facility.
                 </p>
             </div>
-            
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                     <h3 class="cormorant text-3xl font-bold text-navy mb-6">What to Expect on Your Tour</h3>
                     <p class="text-lg text-gray-700 mb-8">
                         During your personalized tour, you'll have the opportunity to see our facility, meet our care team, and get all your questions answered in person.
                     </p>
-                    
+
                     <ul class="space-y-6">
                         <li class="flex items-start">
                             <div class="w-10 h-10 bg-gold rounded-full flex items-center justify-center mr-4 flex-shrink-0">
@@ -232,17 +232,17 @@
                         </li>
                     </ul>
                 </div>
-                
+
                 <div class="bg-white rounded-2xl shadow-xl p-10">
                     <h3 class="cormorant text-3xl font-bold text-navy mb-6">Book Your Tour</h3>
                     <p class="text-gray-700 mb-8">Select your preferred date and time for a personal tour of Amazing Palace.</p>
-                    
+
                     <form id="tourForm" class="space-y-6">
                         <div>
                             <label class="block mb-2 font-semibold text-gray-800">Preferred Tour Date *</label>
                             <input type="date" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent">
                         </div>
-                        
+
                         <div>
                             <label class="block mb-2 font-semibold text-gray-800">Preferred Time *</label>
                             <select class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent">
@@ -255,7 +255,7 @@
                                 <option value="4:00">4:00 PM</option>
                             </select>
                         </div>
-                        
+
                         <div>
                             <label class="block mb-2 font-semibold text-gray-800">Number of Attendees *</label>
                             <select class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent">
@@ -266,16 +266,16 @@
                                 <option value="5">5+ people</option>
                             </select>
                         </div>
-                        
+
                         <div>
                             <label class="block mb-2 font-semibold text-gray-800">Special Requests</label>
                             <textarea rows="3" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent" placeholder="Any specific areas you'd like to focus on during the tour..."></textarea>
                         </div>
-                        
+
                         <button type="submit" class="btn-gold w-full py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg">
                             <i class="fas fa-calendar-check mr-2"></i> Schedule Tour
                         </button>
-                        
+
                         <p class="text-gray-600 text-sm text-center">
                             A confirmation email with tour details will be sent within 24 hours.
                         </p>
@@ -295,7 +295,7 @@
                     Common questions about Amazing Palace and our services.
                 </p>
             </div>
-            
+
             <div class="max-w-4xl mx-auto">
                 <div class="faq-item">
                     <button class="faq-question w-full text-left py-6 flex justify-between items-center">
@@ -309,7 +309,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <button class="faq-question w-full text-left py-6 flex justify-between items-center">
                         <span class="cormorant text-xl font-bold text-navy">What is included in your monthly pricing?</span>
@@ -333,7 +333,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <button class="faq-question w-full text-left py-6 flex justify-between items-center">
                         <span class="cormorant text-xl font-bold text-navy">Do you accept Medicaid/Apple Health?</span>
@@ -346,7 +346,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <button class="faq-question w-full text-left py-6 flex justify-between items-center">
                         <span class="cormorant text-xl font-bold text-navy">What is your staff-to-resident ratio?</span>
@@ -359,7 +359,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <button class="faq-question w-full text-left py-6 flex justify-between items-center">
                         <span class="cormorant text-xl font-bold text-navy">How do you handle medical emergencies?</span>
@@ -380,7 +380,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <button class="faq-question w-full text-left py-6 flex justify-between items-center">
                         <span class="cormorant text-xl font-bold text-navy">Can residents bring their own furniture and personal items?</span>
@@ -393,7 +393,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <button class="faq-question w-full text-left py-6 flex justify-between items-center">
                         <span class="cormorant text-xl font-bold text-navy">What is your COVID-19 safety protocol?</span>
@@ -415,7 +415,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="text-center mt-12">
                 <p class="text-xl text-gray-700 mb-8">
                     Have a question that's not answered here?
@@ -468,31 +468,31 @@
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        
+
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-        
+
         // Close mobile menu when clicking a link
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
-        
+
         // FAQ Accordion functionality
         const faqQuestions = document.querySelectorAll('.faq-question');
-        
+
         faqQuestions.forEach(question => {
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
                 const icon = question.querySelector('i');
-                
+
                 // Toggle current answer
                 answer.classList.toggle('open');
                 icon.classList.toggle('fa-chevron-down');
                 icon.classList.toggle('fa-chevron-up');
-                
+
                 // Close other answers
                 faqQuestions.forEach(otherQuestion => {
                     if (otherQuestion !== question) {
@@ -505,12 +505,12 @@
                 });
             });
         });
-        
+
         // Form submission handling
         const contactForm = document.getElementById('contactForm');
         const tourForm = document.getElementById('tourForm');
         const successModal = document.getElementById('successModal');
-        
+
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             // In a real implementation, this would send data to your backend
@@ -518,7 +518,7 @@
             showSuccessModal();
             contactForm.reset();
         });
-        
+
         tourForm.addEventListener('submit', function(e) {
             e.preventDefault();
             // In a real implementation, this would send data to your backend
@@ -526,32 +526,32 @@
             showSuccessModal();
             tourForm.reset();
         });
-        
+
         function showSuccessModal() {
             successModal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
         }
-        
+
         function closeSuccessModal() {
             successModal.classList.add('hidden');
             document.body.style.overflow = 'auto';
         }
-        
+
         // Close modal when clicking outside
         successModal.addEventListener('click', function(e) {
             if (e.target.id === 'successModal') {
                 closeSuccessModal();
             }
         });
-        
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
                 if(href === '#' || href.includes('.html')) return;
-                
+
                 e.preventDefault();
-                
+
                 const targetElement = document.querySelector(href);
                 if(targetElement) {
                     window.scrollTo({
@@ -561,7 +561,7 @@
                 }
             });
         });
-        
+
         // Set minimum date for tour scheduling to today
         const today = new Date().toISOString().split('T')[0];
         const tourDateInput = document.querySelector('input[type="date"]');
