@@ -122,7 +122,7 @@
         </div>
     </div>
 
-    @livewiScripts
+    @livewireScripts
 
     <!-- JavaScript -->
     <script>
