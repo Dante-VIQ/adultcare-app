@@ -92,7 +92,7 @@
             Cancel
         </a>
         <button type="submit"
-                class="px-4 py-2 bg-navy text-white rounded-md text-sm font-medium hover:bg-navy-dark">
+                class="px-4 py-2 bg-teal-600 text-white rounded-md text-sm font-medium hover:bg-teal-700 transition">
             {{ isset($team) ? 'Update' : 'Create' }}
         </button>
     </div>

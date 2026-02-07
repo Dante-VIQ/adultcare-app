@@ -8,6 +8,37 @@
     <title>Admin - @yield('title', 'Dashboard')</title>
     <meta name="robots" content="noindex, nofollow">
 
+        <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'gold': '#E6D7FF', // Soft Amethyst
+                        'royal-blue': '#5B2D8B', // 'royal-purple': '#5E83DB',
+                        'navy': '#2A123F', //deep purple
+                        'cream': '#f5f2e9',
+                        'purpleDeep': 'rgba(91, 45, 120, 0.35)',
+                        'purpleLight': 'rgba(155, 109, 255, 0.25)',
+                        'light-blue': '#e8f0f7',
+                        'sage': '#87a96b',
+                        'taupe': '#b8a99a',
+                        'palace-purple': '#6D28D9',
+                        'palace-purple-light': '#8B5CF6',
+                        'palace-purple-dark': '#5B21B6',
+                        'palace-lavender': '#EDE9FE',
+                        'palace-gold': '#FBBF24',
+                        'palace-cream': '#FAF5FF',
+                        'primary': '#6D28D9',
+                        'secondary': '#8B5CF6',
+                    },
+                    fontFamily: {
+                        'cormorant': ['Cormorant Garamond', 'serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     @livewireStyles
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>

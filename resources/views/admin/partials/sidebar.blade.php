@@ -5,14 +5,14 @@
                         <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
                     </a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="{{ route('admin.bookings.index') }}"
                         class="flex items-center justify-between px-3 py-2 rounded hover:bg-purple-700 {{ request()->routeIs('admin.bookings.*') ? 'bg-purple-700' : '' }}">
                         <span><i class="fas fa-calendar-alt mr-2"></i> Bookings</span>
                         <span
                             class="bg-yellow-400 text-black px-2 py-0.5 rounded text-xs">{{ App\Models\Booking::where('status', 'pending')->count() }}</span>
                     </a>
-                </li>
+                </li> --}}
                 <li>
                     <a href="{{ route('admin.view') }}"
                         class="flex items-center justify-between px-3 py-2 rounded hover:bg-purple-700 {{ request()->routeIs('admin.view') ? 'bg-purple-700' : '' }}">

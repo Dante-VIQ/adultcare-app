@@ -449,7 +449,7 @@
                         'royal-blue': '#5B2D8B', // 'royal-purple': '#5E83DB',
                         'navy': '#2A123F', //deep purple
                         'cream': '#f5f2e9',
-                        'purpleDeep': 'rgba(91, 45, 120, 0.25)',
+                        'purpleDeep': 'rgba(91, 45, 120, 0.35)',
                         'purpleLight': 'rgba(155, 109, 255, 0.25)',
                         'light-blue': '#e8f0f7',
                         'sage': '#87a96b',
@@ -660,12 +660,12 @@
         if (!mapElement) return;
 
         const coords = convertPlusCodeToCoordinates(hotelLocation.plusCode);
-        
+
         // OpenStreetMap iframe centered on coordinates
         const mapUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${coords.lng - 0.01}%2C${coords.lat - 0.01}%2C${coords.lng + 0.01}%2C${coords.lat + 0.01}&layer=mapnik&marker=${coords.lat}%2C${coords.lng}`;
-        
+
         mapElement.innerHTML = `
-            <iframe 
+            <iframe
                 class="w-full h-full border-0"
                 src="${mapUrl}"
                 title="Hotel Location Map"
@@ -684,8 +684,8 @@
                         <p class="text-sm font-mono text-hotel-navy">${hotelLocation.plusCode}</p>
                     </div>
                 </div>
-                <a href="https://www.openstreetmap.org/?mlat=${coords.lat}&mlon=${coords.lng}#map=17/${coords.lat}/${coords.lng}" 
-                   target="_blank" 
+                <a href="https://www.openstreetmap.org/?mlat=${coords.lat}&mlon=${coords.lng}#map=17/${coords.lat}/${coords.lng}"
+                   target="_blank"
                    class="mt-2 block text-xs text-hotel-gold hover:text-yellow-600 transition flex items-center gap-1">
                     <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
@@ -699,7 +699,7 @@
     // Open directions in Google Maps using Plus Code
     function openDirections() {
         const startAddress = document.getElementById('start-address').value;
-        
+
         if (startAddress) {
             // With starting address and Plus Code destination
             const encodedStart = encodeURIComponent(startAddress);
@@ -751,7 +751,7 @@
             `;
             button.classList.remove('text-hotel-gold');
             button.classList.add('text-green-600');
-            
+
             setTimeout(() => {
                 button.innerHTML = originalHTML;
                 button.classList.remove('text-green-600');
@@ -764,7 +764,7 @@
     function showPlusCodeQR() {
         // Optional: Generate QR code for the Plus Code
         const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(`https://plus.codes/${hotelLocation.plusCode.replace('+', '').replace(' ', '')}`)}`;
-        
+
         // Create modal or show QR code
         const qrModal = document.createElement('div');
         qrModal.className = 'fixed inset-0 bg-black/50 flex items-center justify-center z-50';
@@ -775,7 +775,7 @@
                     <img src="${qrCodeUrl}" alt="Plus Code QR Code" class="mx-auto mb-4">
                     <p class="text-sm text-gray-600 mb-2">Scan this QR code with your phone's camera</p>
                     <p class="font-mono text-hotel-gold mb-4">${hotelLocation.plusCode}</p>
-                    <button onclick="this.closest('.fixed').remove()" 
+                    <button onclick="this.closest('.fixed').remove()"
                             class="mt-2 text-hotel-gold hover:text-yellow-600">
                         Close
                     </button>
@@ -789,14 +789,14 @@
     document.addEventListener('DOMContentLoaded', function() {
         // Initialize map using Plus Code
         initOpenStreetMapWithPlusCode();
-        
+
         // Add QR code button if desired
         const plusCodeSection = document.querySelector('.mt-6.pt-6.border-t');
         if (plusCodeSection) {
             const qrButton = document.createElement('button');
             qrButton.innerHTML = `
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/>
                 </svg>
                 QR Code
@@ -844,7 +844,7 @@
         const parts = plusCode.split(' ');
         const code = parts[0];
         const location = parts.slice(1).join(' ');
-        
+
         if (code.includes('+')) {
             return `<span class="font-mono">${code}</span> ${location ? `<span class="text-gray-600">${location}</span>` : ''}`;
         }

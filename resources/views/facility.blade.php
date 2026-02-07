@@ -441,7 +441,7 @@
     </section>
 
     <!-- Photo Gallery -->
-    <section class="py-20" id="virtual-tour">
+    {{-- <section class="py-20" id="virtual-tour">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="cormorant text-4xl md:text-5xl font-bold text-navy mb-4">Photo Gallery</h2>
@@ -508,7 +508,7 @@
             </div>
             
         </div>
-    </section>
+    </section> --}}
 
     <!-- Image Modal -->
     {{-- <div id="imageModal" class="image-modal">
