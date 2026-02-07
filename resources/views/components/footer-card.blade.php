@@ -4,8 +4,8 @@
                 <div class="mb-8 md:mb-0">
                     <div class="flex items-center">
                         <div class="bg-white w-16 h-16 p-2 rounded-full flex items-center justify-center mr-3">
-                        <img src="{{ asset('images/logo0.png') }}" alt="Logo"
-                        class="object-cover w-auto h-16 rounded-2xl mr-3 ">
+                            <img src="{{ asset('images/logoo.png') }}" alt="Logo"
+                                class="object-cover w-auto h-16 rounded-2xl mr-3 ">
                         </div>
                         <div>
                             <h2 class="cormorant text-2xl font-bold text-white">Amazing Palace</h2>
@@ -35,7 +35,7 @@
 
             <div class="mt-12 pt-8 border-t border-white/10 text-center text-gray-400 text-sm">
                 <p>2638 26th pl SE, Auburn, WA 98002 | (206) 4889285 | amazingpalaceafh@gmail.com</p>
-                <p class="mt-2">WA State License  | Medicaid Provider</p>
+                <p class="mt-2">WA State License | Medicaid Provider</p>
             </div>
         </div>
     </footer>
