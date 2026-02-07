@@ -483,10 +483,7 @@
                     </div>
 
                     <div class="mt-8 text-center">
-                        <a href="contact.html#testimonials"
-                            class="inline-block border-2 border-white text-white hover:bg-white hover:text-navy px-6 py-3 rounded-full font-bold transition-all duration-300">
-                            <i class="fas fa-star mr-2"></i> Read More Testimonials
-                        </a>
+                        
                     </div>
                 </div>
             </div>
@@ -503,11 +500,11 @@
                 for your loved one.
             </p>
             <div class="flex flex-col md:flex-row justify-center space-y-6 md:space-y-0 md:space-x-8">
-                <a href="contact.html#tour"
+                <a href="/gallery"
                     class="btn-gold px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-xl">
                     <i class="fas fa-calendar-check mr-2"></i> Schedule a Tour
                 </a>
-                <a href="contact.html"
+                <a href="/contact"
                     class="bg-navy hover:bg-royal-blue text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-lg">
                     <i class="fas fa-phone-alt mr-2"></i> Call to Speak with Our Team
                 </a>
