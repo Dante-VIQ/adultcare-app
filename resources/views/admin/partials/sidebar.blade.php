@@ -35,11 +35,11 @@
                     </a>
                 </li>
 
-                <li>
+                {{-- <li>
                     <a href="/licenses"
                         class="flex items-center justify-between px-3 py-2 rounded hover:bg-purple-700 {{ request()->routeIs('admin.licenses.*') ? 'bg-purple-700' : '' }}">
                         <span><i class="fas fa-users mr-2"></i>Licenses</span>
                     </a>
-                </li>
+                </li> --}}
                 <!-- More links -->
             </ul>
