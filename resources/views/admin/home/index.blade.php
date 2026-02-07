@@ -204,77 +204,116 @@ Welcome to Amazing Palace, where the comfort of a private residence meets the ex
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-navy text-white">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div>
-                    <h2 class="cormorant text-4xl md:text-5xl font-bold mb-6">Contact Amazing Palace</h2>
-                    <div class="w-24 h-1 bg-gold mb-8"></div>
-                    <p class="text-xl mb-8">
-                        We're here to answer your questions and help you make the best decision for your loved one's
-                        care.
-                    </p>
+<section id="contact" class="py-12 md:py-20 bg-navy text-white">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12">
+            <!-- Left Column -->
+            <div class="lg:pr-8">
+                <h2 class="cormorant text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-center lg:text-left">
+                    Contact Amazing Palace
+                </h2>
+                <div class="w-24 h-1 bg-gold mb-8 mx-auto lg:mx-0"></div>
+                
+                <p class="text-lg md:text-xl mb-8 text-center lg:text-left">
+                    We're here to answer your questions and help you make the best decision for your loved one's care.
+                </p>
 
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div
-                                class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-map-marker-alt text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="cormorant text-xl font-bold mb-1">Our Location</h4>
-                                <p class="text-gray-300">2638 26th pl SE, Auburn, WA 98002</p>
-                            </div>
+                <!-- Contact Info Cards -->
+                <div class="space-y-6 mb-12 lg:mb-0">
+                    <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all">
+                        <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-map-marker-alt text-white text-lg"></i>
                         </div>
-
-                        <div class="flex items-start">
-                            <div
-                                class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-phone-alt text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="cormorant text-xl font-bold mb-1">Call Us</h4>
-                                <p class="text-gray-300">(206) 4889285</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div
-                                class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-envelope text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="cormorant text-xl font-bold mb-1">Email Us</h4>
-                                <p class="text-gray-300">amazingpalaceafh@gmail.com</p>
-                            </div>
+                        <div class="text-center sm:text-left">
+                            <h4 class="cormorant text-xl font-bold mb-1">Our Location</h4>
+                            <p class="text-gray-300">2638 26th pl SE, Auburn, WA 98002</p>
                         </div>
                     </div>
 
-                    <div class="mt-12">
-                        <h4 class="cormorant text-2xl font-bold mb-4">License & Accreditation</h4>
-                        <div class="flex flex-wrap gap-4">
-                            <div class="bg-white/10 px-4 py-2 rounded-lg">
-                                <p class="font-semibold">WA State License</p>
-                                {{-- <p class="text-sm text-gray-300">#AFH-123456</p> --}}
-                            </div>
-                            <div class="bg-white/10 px-4 py-2 rounded-lg">
-                                <p class="font-semibold">Medicaid Approved</p>
-                                {{-- <p class="text-sm text-gray-300">Provider #WA98765</p> --}}
-                            </div>
+                    <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all">
+                        <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-phone-alt text-white text-lg"></i>
+                        </div>
+                        <div class="text-center sm:text-left">
+                            <h4 class="cormorant text-xl font-bold mb-1">Call Us</h4>
+                            <p class="text-gray-300 text-lg font-medium">(206) 488-9285</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all">
+                        <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-envelope text-white text-lg"></i>
+                        </div>
+                        <div class="text-center sm:text-left">
+                            <h4 class="cormorant text-xl font-bold mb-1">Email Us</h4>
+                            <p class="text-gray-300 break-all md:break-normal">amazingpalaceafh@gmail.com</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                    <h3 class="cormorant text-3xl font-bold mb-6">Schedule a Tour</h3>
-                    <p class="mb-8">Contact us to schedule a personal tour of our facility or a virtual consultation.
+                <!-- License & Accreditation -->
+                <div class="mt-8 lg:mt-12">
+                    <h4 class="cormorant text-2xl font-bold mb-4 text-center lg:text-left">License & Accreditation</h4>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <div class="bg-white/10 px-6 py-3 rounded-lg text-center hover:bg-white/15 transition-all">
+                            <p class="font-semibold">WA State License</p>
+                            <p class="text-sm text-gray-300 mt-1">Fully Licensed & Certified</p>
+                        </div>
+                        <div class="bg-white/10 px-6 py-3 rounded-lg text-center hover:bg-white/15 transition-all">
+                            <p class="font-semibold">Medicaid Approved</p>
+                            <p class="text-sm text-gray-300 mt-1">Provider Accepted</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Form -->
+            <div class="lg:pl-4">
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20">
+                    <h3 class="cormorant text-2xl md:text-3xl font-bold mb-6 text-center lg:text-left">
+                        Schedule a Tour
+                    </h3>
+                    <p class="mb-8 text-center lg:text-left">
+                        Contact us to schedule a personal tour of our facility or a virtual consultation.
                     </p>
 
-               @include('components.partials.appointment')
+                    @include('components.partials.appointment')
+                    
+                    <!-- Optional: Add a direct contact CTA for mobile -->
+                    <div class="mt-8 block lg:hidden">
+                        <a href="tel:+12064889285" 
+                           class="w-full bg-gold text-navy font-bold py-4 px-6 rounded-lg flex items-center justify-center gap-3 hover:bg-yellow-500 transition-all">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>Call Now: (206) 488-9285</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+
+        <!-- Map Section (Optional) -->
+        <div class="mt-12 lg:mt-16">
+            <h4 class="cormorant text-2xl md:text-3xl font-bold mb-6 text-center lg:text-left">
+                Find Our Location
+            </h4>
+            <div class="bg-white/5 rounded-2xl p-4 border border-white/10">
+                <!-- You can add a Google Maps embed here -->
+                <div id="hotel-map"></div>
+                {{-- <div  class="hidden sm:flex h-64 md:h-80 bg-gradient-to-r from-blue-900/50 to-gray-800/50 rounded-xl flex flex-col items-center justify-center">
+                    <i class="fas fa-map-marked-alt text-5xl mb-4 text-gold opacity-70"></i>
+                    <p class="text-xl mb-2">2638 26th pl SE, Auburn, WA 98002</p>
+                    <p class="text-gray-400 mb-6">Conveniently located in Auburn, Washington</p>
+                    <a href="https://maps.google.com/?q=2638+26th+pl+SE,+Auburn,+WA+98002" 
+                       target="_blank"
+                       class="bg-gold text-navy font-bold px-6 py-3 rounded-lg hover:bg-yellow-500 transition-all flex items-center gap-2">
+                        <i class="fas fa-directions"></i>
+                        <span>Get Directions</span>
+                    </a>
+                </div> --}}
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Footer -->
     <x-footer-card />

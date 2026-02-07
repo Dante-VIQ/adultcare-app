@@ -268,16 +268,6 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .gallery-image {
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .gallery-image:hover {
-            transform: scale(1.02);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-
         .image-modal {
             display: none;
             position: fixed;
@@ -402,10 +392,6 @@
 
         .bg-light-blue {
             background-color: #f0f8ff;
-        }
-
-        .text-navy {
-            color: #001f3f;
         }
 
         .gallery-item {
