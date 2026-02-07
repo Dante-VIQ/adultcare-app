@@ -94,13 +94,9 @@
     <!-- Main Gallery Grid -->
     <main class="py-8 pb-20 bg-palace-cream">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="gallery-grid">
-                <div class="gallery-item bg-white rounded-2xl overflow-hidden shadow-lg border border-palace-lavender"
-                    data-category="suites">
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="gallery-grid">
-                        <livewire:image-card />
-                    </div>
-                </div>
+            <div>
+
+                    <livewire:image-card />
 
             </div>
         </div>

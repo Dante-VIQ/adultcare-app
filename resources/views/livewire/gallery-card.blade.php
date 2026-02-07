@@ -10,9 +10,9 @@
                                 @if (!empty($Images) && count($Images) > 0)
                                     @foreach ($Images as $image)
                                         <div class="swiper-slide">
-                                            <div class="relative w-full h-full">
+                                            <div class="relative h-full max-h-fit" data-category="suites">
                                                 <img src="{{ asset($image->image) }}" alt="Hero Image"
-                                                    class="w-full h-full object-cover">
+                                                    class="w-full h-screen object-cover">
                                             </div>
                                         </div>
                                     @endforeach
