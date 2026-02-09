@@ -1,34 +1,42 @@
 User-agent: *
 Allow: /
-Disallow: /analysis
+
+# Disallow all admin and master/engineer routes
 Disallow: /admin/
+Disallow: /Admin/
+Disallow: /analysis
+Disallow: /team/
 Disallow: /dashboard
 Disallow: /profile
 Disallow: /requests
-Disallow: /admin/abouts
-Disallow: /admin/services
-Disallow: /admin/images
-Disallow: /admin/head
-Disallow: /admin/employees
-Disallow: /admin/employees/index
-Disallow: /admin/employees/create
-Disallow: /admin/employees/*
-Disallow: /admin/about
-Disallow: /admin/service
-Disallow: /admin/view
-Disallow: /admin/user_profile/*
-Disallow: /admin/bookings
-Disallow: /admin/jobs
-Disallow: /admin/job-applications
-Disallow: /admin/roles
-Disallow: /Admin/user/roles/index
-Disallow: /auth/reset-password
-Disallow: /auth/verify-email
 
-# Dynamic parameters that shouldn't be indexed
-Disallow: /*?*
+# Disallow admin resource license routes (except public /licenses GET)
+Disallow: /licenses/*/edit
+Disallow: /licenses/create
+Disallow: /licenses/update-order
+
+# Disallow admin-only endpoints
 Disallow: /*/edit
 Disallow: /*/create
+
+# Disallow URLs with query parameters
+Disallow: /*?*
+
+# Disallow authentication routes
+Disallow: /auth/
+
+# Public routes to allow
+Allow: /
+Allow: /all-services
+Allow: /all-about
+Allow: /service-area
+Allow: /contact
+Allow: /facility
+Allow: /careteam
+Allow: /gallery
+Allow: /booking
+Allow: /licenses
+Allow: /sitemap.xml
 
 # Sitemap location
 Sitemap: https://rideaidellc.com/sitemap.xml

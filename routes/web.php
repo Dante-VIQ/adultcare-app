@@ -104,9 +104,7 @@ Route::name('booking.')->prefix('booking')->group(function () {
 //     });
 
 // Public routes
-Route::get('licenses', function () {
-    return view('licenses');
-})->name('licenses');
+
 Route::get('/sitemap.xml', [App\Http\Controllers\SitemapController::class, 'index']);
 
 Route::middleware(['auth', 'role:master|engineer'])->group(function () {
