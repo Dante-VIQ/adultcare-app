@@ -51,6 +51,7 @@
     <link rel="mask-icon" href="{{ asset('safari-pinned-tab.svg') }}" color="#0a2463">
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 
+@stack('schema')
     <style>
         .care_one {
             background-size: cover;
