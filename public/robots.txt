@@ -39,4 +39,4 @@ Allow: /licenses
 Allow: /sitemap.xml
 
 # Sitemap location
-Sitemap: https://rideaidellc.com/sitemap.xml
+Sitemap: https://amazingpalace.com/sitemap.xml
