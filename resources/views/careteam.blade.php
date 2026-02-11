@@ -1,4 +1,10 @@
-<x-app-layout>
+@extends('layouts.app')
+
+@section('title', 'Our Care Team – Compassionate Support Staff | Amazing Palace')
+@section('description', 'Meet the Amazing Palace team dedicated to providing compassionate, respectful and personalized care in a warm home-style environment.')
+@section('keywords', 'care team, caregivers, professional support staff, compassionate caregivers')
+
+@section('content')
     <!-- Hero Section -->
     <section class="relative team-hero-bg text-white py-24">
         <div class="absolute inset-0 bg-gradient-to-r from-purpleDeep to-purpleLight"></div>
@@ -412,8 +418,7 @@
 
                     <div class="space-y-8">
                         <div class="flex items-start">
-                            <div
-                                class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                                 <i class="fas fa-user-circle text-navy text-xl"></i>
                             </div>
                             <div>
@@ -423,8 +428,7 @@
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <div
-                                class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                                 <i class="fas fa-hand-holding-heart text-navy text-xl"></i>
                             </div>
                             <div>
@@ -434,8 +438,7 @@
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <div
-                                class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                                 <i class="fas fa-home text-navy text-xl"></i>
                             </div>
                             <div>
@@ -483,7 +486,7 @@
                     </div>
 
                     <div class="mt-8 text-center">
-                        
+
                     </div>
                 </div>
             </div>
@@ -520,9 +523,10 @@
     </div>
 
     <!-- Footer -->
- <x-footer-card />
+    <x-footer-card />
+@endsection
 
-    @livewireScripts
+@push('scripts')
     <script>
         // Mobile menu toggle
         // const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -675,7 +679,8 @@
                     'Intergenerational Programs'
                 ],
                 education: ['Recreational Therapy Certificate', 'Activity Director Certified',
-                    'Music Therapy Training'],
+                    'Music Therapy Training'
+                ],
                 quote: '"Joy is an essential part of wellness. I love creating moments of happiness for our residents."',
                 years: '5 years'
             }
@@ -780,4 +785,4 @@
             });
         });
     </script>
-</x-app-layout>
+@endpush

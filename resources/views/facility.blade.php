@@ -1,4 +1,10 @@
-<x-app-layout>
+@extends('layouts.app')
+
+@section('title', 'Our Facility – Comfortable Home Environment | Amazing Palace')
+@section('description', 'Explore the Amazing Palace facility, designed to provide a safe, clean and welcoming home-style environment focused on comfort, care and peace of mind.')
+@section('keywords', 'care home facility, home care environment, comfortable living facility, safe care home')
+
+@section('content')
     <!-- Hero Section -->
     <section class="relative facility-hero-bg text-white py-24">
         <div class="absolute inset-0 bg-gradient-to-r from-purpleDeep to-purpleLight"></div>
@@ -609,7 +615,8 @@
 
     <!-- Footer -->
  <x-footer-card />
-
+ @endsection
+@push('scripts')
     <script>
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -706,4 +713,24 @@
             });
         });
     </script>
-</x-app-layout>
+@endpush
+
+@push('schema')
+@php
+$schema = [
+    "@context" => "https://schema.org",
+    "@type" => "LocalBusiness",
+    "name" => "Amazing Palace",
+    "url" => url('/'),
+    "description" => "A comfortable home-style care environment providing personalized support and supervision.",
+    "areaServed" => [
+        "@type" => "Place",
+        "name" => "Auburn, Washington"
+    ]
+];
+@endphp
+
+<script type="application/ld+json">
+{!! json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+</script>
+@endpush

@@ -1,5 +1,10 @@
-<x-app-layout>
+@extends('layouts.app')
 
+@section('title', 'About Amazing Palace – Our Home, Our Care Philosophy')
+@section('description', 'Learn about Amazing Palace and our mission to provide compassionate, home-style care focused on dignity, comfort and personal attention.')
+@section('keywords', 'about amazing palace, care philosophy, home care mission, personalized care home')
+
+@section('content')
     <!-- Hero Section -->
     <section class="relative hero-bg text-white py-24">
         <div class="absolute inset-0 bg-gradient-to-r from-purpleDeep to-purpleLight"></div>
@@ -362,7 +367,8 @@
 
     <!-- Footer -->
     <x-footer-card />
-
+    @endsection
+ @push('scripts')
     <script>
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -397,4 +403,4 @@
             });
         });
     </script>
-</x-app-layout>
+@endpush

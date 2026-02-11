@@ -1,4 +1,11 @@
-<x-app-layout>
+@extends('layouts.app')
+
+@section('title', 'Contact Amazing Palace – Schedule a Visit or Ask Questions')
+@section('description', 'Reach out to Amazing Palace to schedule a visit, ask questions or learn more about our
+    home-based care services and living environment.')
+@section('keywords', 'contact care home, schedule visit care home, speak to care provider, care home contact')
+
+@section('content')
     <!-- Hero Section -->
     <section class="relative contact-hero-bg text-white py-24">
         <div class="absolute inset-0 bg-gradient-to-r from-purpleDeep to-purpleLight"></div>
@@ -6,7 +13,7 @@
             <h1 class="cormorant text-5xl md:text-6xl font-bold mb-6">Contact Us</h1>
             <div class="w-32 h-1 bg-gold mx-auto mb-8"></div>
             <p class="text-2xl max-w-3xl mx-auto font-light">
-                We're here to answer your questions and help you make the best decision for your loved one's care.
+                We are here to help you every step of the way. Contact our team anytime for guidance or information.
             </p>
         </div>
     </section>
@@ -32,7 +39,8 @@
                         Speak directly with our care coordinator during business hours.
                     </p>
                     <div class="text-center">
-                        <a href="tel:2065551234" class="text-2xl font-bold text-navy hover:text-gold transition">(206) 488-9285</a>
+                        <a href="tel:2065551234" class="text-2xl font-bold text-navy hover:text-gold transition">(206)
+                            488-9285</a>
                         <p class="text-gray-600 mt-2">Mon-Fri: 9am-5pm | Sat: 10am-2pm</p>
                         <p class="text-gray-600">24/7 Emergency Line Available</p>
                     </div>
@@ -47,7 +55,8 @@
                         Send us a message and we'll respond promptly.
                     </p>
                     <div class="text-center">
-                        <a href="mailto:amazingpalaceafh@gmail.com" class="text-sm font-bold text-navy hover:text-gold transition block mb-2 text-wrap">amazingpalaceafh@gmail.com</a>
+                        <a href="mailto:amazingpalaceafh@gmail.com"
+                            class="text-sm font-bold text-navy hover:text-gold transition block mb-2 text-wrap">amazingpalaceafh@gmail.com</a>
                         {{-- <a href="mailto:admissions@amazingpalaceseattle.com" class="text-xl font-bold text-navy hover:text-gold transition block">amazingpalaceafh@gmail.com</a> --}}
                         <p class="text-gray-600 mt-2">For admissions inquiries</p>
                     </div>
@@ -65,7 +74,8 @@
                         <p class="text-lg font-bold text-navy">2638 26th pl SE</p>
                         <p class="text-lg text-gray-700">Auburn, WA 98002</p>
                         <p class="text-gray-600 mt-2">Tours by appointment only</p>
-                        <a href="https://www.google.com/maps/dir/?api=1&destination=2638+26th+pl+SE+Auburn+WA+98002" class="inline-block mt-4 bg-navy hover:bg-royal-blue text-white px-6 py-3 rounded-full font-semibold transition-all duration-300">
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=2638+26th+pl+SE+Auburn+WA+98002"
+                            class="inline-block mt-4 bg-navy hover:bg-royal-blue text-white px-6 py-3 rounded-full font-semibold transition-all duration-300">
                             <i class="fas fa-directions mr-2"></i> Get Directions
                         </a>
                     </div>
@@ -97,7 +107,8 @@
                     <h2 class="cormorant text-4xl font-bold text-navy mb-6">Send Us a Message</h2>
                     <div class="w-24 h-1 bg-gold mb-8"></div>
                     <p class="text-lg text-gray-700 mb-8">
-                        Fill out the form below and our team will contact you within 24 hours. For immediate assistance, please call us directly.
+                        Fill out the form below and our team will contact you within 24 hours. For immediate assistance,
+                        please call us directly.
                     </p>
 
                     @include('components.partials.form')
@@ -436,7 +447,8 @@
                 Whether you're ready to schedule a tour or just have questions, our caring team is here to help.
             </p>
             <div class="flex flex-col md:flex-row justify-center space-y-6 md:space-y-0 md:space-x-8">
-                <a href="tel:2064889285" class="btn-gold px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-xl">
+                <a href="tel:2064889285"
+                    class="btn-gold px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-xl">
                     <i class="fas fa-phone-alt mr-2"></i> Call Now: (206) 4889285
                 </a>
                 {{-- <a href="/booking" class="bg-transparent border-2 border-white hover:bg-white hover:text-navy text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300">
@@ -447,7 +459,7 @@
     </section>
 
     <!-- Footer -->
- <x-footer-card />
+    <x-footer-card />
     <!-- Form Submission Modal -->
     <div id="successModal" class="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center p-4">
         <div class="bg-white rounded-2xl max-w-md w-full p-10 text-center">
@@ -458,12 +470,16 @@
             <p class="text-gray-700 mb-8">
                 Thank you for contacting Amazing Palace. Our team will respond to your inquiry within 24 hours.
             </p>
-            <button onclick="closeSuccessModal()" class="btn-gold px-8 py-3 rounded-full font-bold text-lg transition-all duration-300 shadow-lg w-full">
+            <button onclick="closeSuccessModal()"
+                class="btn-gold px-8 py-3 rounded-full font-bold text-lg transition-all duration-300 shadow-lg w-full">
                 Close
             </button>
         </div>
     </div>
 
+@endsection
+
+@push('scripts')
     <script>
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -548,12 +564,12 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
-                if(href === '#' || href.includes('.html')) return;
+                if (href === '#' || href.includes('.html')) return;
 
                 e.preventDefault();
 
                 const targetElement = document.querySelector(href);
-                if(targetElement) {
+                if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
@@ -569,4 +585,4 @@
             tourDateInput.min = today;
         }
     </script>
-</x-app-layout>
+@endpush
