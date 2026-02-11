@@ -39,7 +39,7 @@
                         Speak directly with our care coordinator during business hours.
                     </p>
                     <div class="text-center">
-                        <a href="tel:2065551234" class="text-2xl font-bold text-navy hover:text-gold transition">(206)
+                        <a href="tel:+12064889285" class="text-2xl font-bold text-navy hover:text-gold transition">(206)
                             488-9285</a>
                         <p class="text-gray-600 mt-2">Mon-Fri: 9am-5pm | Sat: 10am-2pm</p>
                         <p class="text-gray-600">24/7 Emergency Line Available</p>
@@ -90,7 +90,7 @@
                         <p class="text-lg">For urgent matters outside business hours</p>
                     </div>
                     <div class="text-center md:text-right">
-                        <a href="tel:2065559999" class="text-3xl font-bold block mb-2">(206) 488-9285</a>
+                        <a href="tel:+12064889285" class="text-3xl font-bold block mb-2">(206) 488-9285</a>
                         <p class="text-sm">This line is monitored 24 hours a day, 7 days a week</p>
                     </div>
                 </div>
@@ -447,7 +447,7 @@
                 Whether you're ready to schedule a tour or just have questions, our caring team is here to help.
             </p>
             <div class="flex flex-col md:flex-row justify-center space-y-6 md:space-y-0 md:space-x-8">
-                <a href="tel:2064889285"
+                <a href="tel:+12064889285"
                     class="btn-gold px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-xl">
                     <i class="fas fa-phone-alt mr-2"></i> Call Now: (206) 4889285
                 </a>
