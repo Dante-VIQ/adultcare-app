@@ -3,7 +3,7 @@
 <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
     @foreach($teamMembers as $member)
         <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-            <div class="h-64 bg-navy flex items-center justify-center">
+            <div class="h-80 bg-navy flex items-center justify-center">
                 @if($member->image)
                     <img src="{{ asset($member->image) }}"
                          alt="{{ $member->name }}"
