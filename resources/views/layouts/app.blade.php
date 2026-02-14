@@ -41,7 +41,6 @@
     <meta name="theme-color" content="#0a2463">
     <meta name="msapplication-TileColor" content="#0a2463">
     <meta name="msapplication-config" content="{{ asset('browserconfig.xml') }}">
-    <link rel="canonical" href="{{ url()->current() }}">
 
     {{-- Icons & Favicons --}}
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/logo0.png') }}">
@@ -50,8 +49,12 @@
     <link rel="manifest" href="{{ asset('site.webmanifest') }}">
     <link rel="mask-icon" href="{{ asset('safari-pinned-tab.svg') }}" color="#0a2463">
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+    @push('head')
+        <link rel="canonical" href="{{ url('/') }}">
+    @endpush
 
-@stack('schema')
+    @stack('schema')
+
     <style>
         .care_one {
             background-size: cover;
@@ -553,18 +556,18 @@
                 // Navigation arrows
                 navigation: {{ !empty($heroImages) && count($heroImages) > 1
                     ? `{
-                                                                nextEl: '.swiper-button-next',
-                                                                prevEl: '.swiper-button-prev',
-                                                            }`
+                                                                                nextEl: '.swiper-button-next',
+                                                                                prevEl: '.swiper-button-prev',
+                                                                            }`
                     : 'false' }},
 
                 // Pagination
                 pagination: {{ !empty($heroImages) && count($heroImages) > 1
                     ? `{
-                                                                el: '.swiper-pagination',
-                                                                clickable: true,
-                                                                dynamicBullets: true,
-                                                            }`
+                                                                                el: '.swiper-pagination',
+                                                                                clickable: true,
+                                                                                dynamicBullets: true,
+                                                                            }`
                     : 'false' }},
 
                 // Only enable autoplay if we have multiple images
@@ -665,7 +668,7 @@
             mobileMenuBtn.addEventListener('click', function() {
                 alert(
                     'Mobile menu would open here. In a full implementation, this would toggle a mobile navigation menu.'
-                    );
+                );
             });
         });
 
@@ -843,7 +846,7 @@
                 QR Code
             `;
                 qrButton.className =
-                'text-hotel-gold hover:text-yellow-600 transition flex items-center gap-2 ml-4';
+                    'text-hotel-gold hover:text-yellow-600 transition flex items-center gap-2 ml-4';
                 qrButton.onclick = showPlusCodeQR;
                 plusCodeSection.querySelector('.flex').appendChild(qrButton);
             }

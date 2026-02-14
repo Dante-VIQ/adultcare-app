@@ -4,6 +4,10 @@
 @section('description', 'Explore the Amazing Palace facility, designed to provide a safe, clean and welcoming home-style environment focused on comfort, care and peace of mind.')
 @section('keywords', 'care home facility, home care environment, comfortable living facility, safe care home')
 
+@push('head')
+<link rel="canonical" href="{{ url('/facility') }}">
+@endpush
+
 @section('content')
     <!-- Hero Section -->
     <section class="relative facility-hero-bg text-white py-24">

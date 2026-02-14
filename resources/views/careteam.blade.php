@@ -4,6 +4,10 @@
 @section('description', 'Meet the Amazing Palace team dedicated to providing compassionate, respectful and personalized care in a warm home-style environment.')
 @section('keywords', 'care team, caregivers, professional support staff, compassionate caregivers')
 
+@push('head')
+<link rel="canonical" href="{{ url('/careteam') }}">
+@endpush
+
 @section('content')
     <!-- Hero Section -->
     <section class="relative team-hero-bg text-white py-24">
