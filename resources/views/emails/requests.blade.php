@@ -13,6 +13,6 @@
 	<h4>Message</h4>
 	<p>{!! nl2br(e($appointment->message)) !!}</p>
 	<hr>
-	<p>This message was generated automatically by RIDE-AIDE.</p>
+	<p>This message was generated automatically by AMAZING PALACE.</p>
 </body>
 </html>
