@@ -404,3 +404,23 @@
         });
     </script>
 @endpush
+
+@push('schema')
+@php
+$schema = [
+    "@context" => "https://schema.org",
+    "@type" => "LocalBusiness",
+    "name" => "Amazing Palace",
+    "url" => url('/all-about'),
+    "description" => "Setting higher standard in adult care through compassionate service, professional expertise, and respect for dignity.",
+    "areaServed" => [
+        "@type" => "Place",
+        "name" => "Auburn, Washington"
+    ]
+];
+@endphp
+
+<script type="application/ld+json">
+{!! json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+</script>
+@endpush

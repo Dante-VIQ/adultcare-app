@@ -102,7 +102,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Team Member 2 -->
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden team-card">
                     <div class="h-64 bg-navy flex items-center justify-center relative">
@@ -124,7 +124,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Team Member 3 -->
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden team-card">
                     <div class="h-64 bg-navy flex items-center justify-center relative">
@@ -167,7 +167,7 @@
                     Our licensed clinical professionals provide expert medical care and oversight for all residents.
                 </p>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Team Member 4 -->
                 <div class="bg-white rounded-2xl shadow-lg p-8 text-center team-card">
@@ -181,7 +181,7 @@
                         <i class="fas fa-info-circle mr-1"></i> Learn More
                     </button>
                 </div>
-                
+
                 <!-- Team Member 5 -->
                 <div class="bg-white rounded-2xl shadow-lg p-8 text-center team-card">
                     <div class="w-20 h-20 bg-navy rounded-full flex items-center justify-center mx-auto mb-6">
@@ -194,7 +194,7 @@
                         <i class="fas fa-info-circle mr-1"></i> Learn More
                     </button>
                 </div>
-                
+
                 <!-- Team Member 6 -->
                 <div class="bg-white rounded-2xl shadow-lg p-8 text-center team-card">
                     <div class="w-20 h-20 bg-navy rounded-full flex items-center justify-center mx-auto mb-6">
@@ -207,7 +207,7 @@
                         <i class="fas fa-info-circle mr-1"></i> Learn More
                     </button>
                 </div>
-                
+
                 <!-- Team Member 7 -->
                 <div class="bg-white rounded-2xl shadow-lg p-8 text-center team-card">
                     <div class="w-20 h-20 bg-navy rounded-full flex items-center justify-center mx-auto mb-6">
@@ -234,7 +234,7 @@
                     Our compassionate caregivers form the heart of our home, providing daily support with dignity and respect.
                 </p>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div>
                     <h3 class="cormorant text-3xl font-bold text-navy mb-6">Exceptional Caregivers</h3>
@@ -244,7 +244,7 @@
                     <p class="text-lg text-gray-700 mb-8">
                         We maintain a low caregiver-to-resident ratio to ensure meaningful relationships and attentive care. Our team includes both certified nursing assistants (CNAs) and trained caregivers who specialize in memory care, mobility assistance, and activities of daily living.
                     </p>
-                    
+
                     <div class="bg-white rounded-xl p-8 shadow-lg">
                         <h4 class="cormorant text-2xl font-bold text-navy mb-6">Caregiver Qualifications</h4>
                         <div class="grid grid-cols-2 gap-6">
@@ -283,11 +283,11 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div>
                     <div class="bg-white rounded-2xl shadow-xl p-10 mb-8">
                         <h3 class="cormorant text-2xl font-bold text-navy mb-6">Meet Some of Our Caregivers</h3>
-                        
+
                         <div class="space-y-8">
                             <!-- Caregiver 1 -->
                             <div class="flex items-start">
@@ -303,7 +303,7 @@
                                     </button>
                                 </div>
                             </div>
-                            
+
                             <!-- Caregiver 2 -->
                             <div class="flex items-start">
                                 <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center mr-4 flex-shrink-0">
@@ -318,7 +318,7 @@
                                     </button>
                                 </div>
                             </div>
-                            
+
                             <!-- Caregiver 3 -->
                             <div class="flex items-start">
                                 <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center mr-4 flex-shrink-0">
@@ -335,7 +335,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="text-center">
                         <a href="contact.html#employment" class="inline-block border-2 border-navy text-navy hover:bg-navy hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300">
                             <i class="fas fa-briefcase mr-2"></i> Caregiving Career Opportunities
@@ -393,13 +393,6 @@
                     <p class="text-gray-700">Programs focused on empathy, communication, and building meaningful
                         relationships with residents and families.</p>
                 </div>
-            </div>
-
-            <div class="mt-12 text-center">
-                <a href="contact.html#training"
-                    class="inline-block bg-navy hover:bg-royal-blue text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-lg">
-                    <i class="fas fa-file-certificate mr-2"></i> View Our Training Certifications
-                </a>
             </div>
         </div>
     </section>
@@ -703,28 +696,28 @@
                                     <i class="fas fa-times"></i>
                                 </button>
                             </div>
-                            
+
                             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                                 <div class="lg:col-span-2">
                                     <h4 class="cormorant text-2xl font-bold text-navy mb-4">Professional Background</h4>
                                     <p class="text-gray-700 mb-6">${member.bio}</p>
-                                    
+
                                     <h4 class="cormorant text-2xl font-bold text-navy mb-4">Specialties</h4>
                                     <div class="flex flex-wrap gap-2 mb-8">
                                         ${member.specialties.map(spec => `<span class="cert-badge">${spec}</span>`).join('')}
                                     </div>
-                                    
+
                                     <h4 class="cormorant text-2xl font-bold text-navy mb-4">Education & Certification</h4>
                                     <ul class="space-y-2 mb-8">
                                         ${member.education.map(edu => `<li class="flex items-start"><i class="fas fa-graduation-cap text-gold mr-2 mt-1"></i><span>${edu}</span></li>`).join('')}
                                     </ul>
-                                    
+
                                     <div class="bg-light-blue rounded-xl p-6">
                                         <p class="italic text-gray-700 mb-4">${member.quote}</p>
                                         <p class="font-semibold text-navy">~ ${member.name.split(' ')[0]}</p>
                                     </div>
                                 </div>
-                                
+
                                 <div>
                                     <div class="bg-navy rounded-2xl p-8 text-white h-full">
                                         <div class="w-32 h-32 bg-gold rounded-full flex items-center justify-center mx-auto mb-6">
@@ -733,7 +726,7 @@
                                         <div class="text-center">
                                             <h4 class="cormorant text-2xl font-bold mb-2">Experience</h4>
                                             <p class="text-3xl font-bold text-gold mb-6">${member.years}</p>
-                                            
+
                                             <h4 class="cormorant text-2xl font-bold mb-4">Contact</h4>
                                             <p class="mb-2">For inquiries about ${member.name.split(' ')[0]}'s role:</p>
                                             <a href="contact.html" class="inline-block bg-gold text-navy px-6 py-3 rounded-full font-bold transition-all duration-300 mt-4">
@@ -785,4 +778,24 @@
             });
         });
     </script>
+@endpush
+
+@push('schema')
+@php
+$schema = [
+    "@context" => "https://schema.org",
+    "@type" => "LocalBusiness",
+    "name" => "Amazing Palace",
+    "url" => url('/careteam'),
+    "description" => "At Amazing Palace, we believe that exceptional care begins with exceptional people. Our team of dedicated professionals brings together expertise, compassion, and a genuine commitment to enhancing the lives of our residents",
+    "areaServed" => [
+        "@type" => "Place",
+        "name" => "Auburn, Washington"
+    ]
+];
+@endphp
+
+<script type="application/ld+json">
+{!! json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+</script>
 @endpush

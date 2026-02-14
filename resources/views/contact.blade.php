@@ -586,3 +586,23 @@
         }
     </script>
 @endpush
+
+@push('schema')
+@php
+$schema = [
+    "@context" => "https://schema.org",
+    "@type" => "LocalBusiness",
+    "name" => "Amazing Palace",
+    "url" => url('/contact'),
+    "description" => "We are here to help you every step of the way. Contact our team anytime for guidance or information.",
+    "areaServed" => [
+        "@type" => "Place",
+        "name" => "Auburn, Washington"
+    ]
+];
+@endphp
+
+<script type="application/ld+json">
+{!! json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+</script>
+@endpush
