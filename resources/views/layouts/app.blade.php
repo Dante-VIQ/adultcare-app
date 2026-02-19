@@ -54,6 +54,7 @@
     @endpush
 
     @stack('schema')
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="YFX8ec3HEiPJXmU1uM5BDg" async></script>
 
     <style>
         .care_one {
