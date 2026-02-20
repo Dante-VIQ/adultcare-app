@@ -74,7 +74,7 @@
         }
 
         .care-bg {
-            background-image: url('images/care_bg.jpg');
+            background-image: url('images/companion.jpg');
             background-size: cover;
             background-position: center;
         }
