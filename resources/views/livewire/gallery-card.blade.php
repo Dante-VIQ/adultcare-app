@@ -1,10 +1,10 @@
-                        <div class="swiper-wrapper">
+<div class="swiper-wrapper">
                             @if (!empty($Images) && count($Images) > 0)
                                 @foreach ($Images as $image)
                                     <div class="swiper-slide">
-                                        <div class="relative h-full">
+                                        <div class="relative w-full h-full flex items-center justify-center">
                                             <img src="{{ asset($image->image) }}" alt="Hero Image"
-                                                class="w-full h-64 sm:h-80 md:h-96 lg:h-[500px] object-cover rounded-2xl shadow-2xl">
+                                                class="w-full h-64 sm:h-80 md:h-96 lg:h-[500px] object-cover rounded-2xl shadow-2xl max-w-full">
                                         </div>
                                     </div>
                                 @endforeach
