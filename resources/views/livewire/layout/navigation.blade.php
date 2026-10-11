@@ -53,6 +53,16 @@ new class extends Component {
             </nav>
             
             <div class="hidden lg:flex items-center space-x-6">
+                <!-- Call + booking CTAs -->
+                <a href="tel:{{ config('facility.phone_tel') }}" class="hidden xl:inline-flex items-center gap-2 font-semibold text-gray-700 hover:text-gold transition">
+                    <i class="fas fa-phone-alt text-gold"></i> {{ config('facility.phone') }}
+                </a>
+                @unless (request()->is('booking*'))
+                    <a href="{{ route('booking.index') }}"
+                        class="btn-gold px-5 py-2.5 rounded-full text-sm font-bold transition shadow-md">
+                        Book a Tour
+                    </a>
+                @endunless
                 <!-- Auth for Desktop -->
                 @auth
                     <div x-data="{ show: false }" @click.away="show = false" class="relative">
@@ -108,6 +118,14 @@ new class extends Component {
     <div x-show="mobileMenuOpen" x-cloak x-transition.opacity.duration.300ms
          class="lg:hidden bg-white border-t border-gray-100 shadow-lg max-h-[80vh] overflow-y-auto">
         <div class="px-4 pt-2 pb-6 space-y-1">
+
+            <!-- Call + booking CTAs -->
+            <div class="grid grid-cols-2 gap-3 pb-3">
+                <a href="{{ route('booking.index') }}"
+                    class="text-center btn-gold py-3 rounded-lg font-bold">Book a Tour</a>
+                <a href="tel:{{ config('facility.phone_tel') }}"
+                    class="text-center border-2 border-navy text-navy py-3 rounded-lg font-bold"><i class="fas fa-phone-alt mr-1"></i> Call</a>
+            </div>
 
             <!-- Navigation Links -->
             <a href="/" @click="mobileMenuOpen = false"

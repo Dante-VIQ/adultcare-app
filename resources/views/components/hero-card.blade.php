@@ -12,15 +12,19 @@
                 </p>
 
                 <div class="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4 lg:space-x-6">
-                    <a href="tel:+12064889285"
+                    <a href="{{ route('booking.index') }}"
                         class="btn-gold px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold text-base sm:text-lg transition-all duration-300 shadow-xl text-center">
-                        <i class="fas fa-phone-alt mr-2"></i> Contact Us Today
+                        <i class="fas fa-calendar-check mr-2"></i> Book a Tour
                     </a>
-                    <a href="/gallery"
-                        class="bg-palace-purple-dark border-2 border-white hover:bg-white hover:text-navy text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold text-base sm:text-lg transition-all duration-300 text-center">
-                        <i class="fas fa-images mr-2"></i> View Our Facility
+                    <a href="tel:{{ config('facility.phone_tel') }}" style="background-color:#5B21B6"
+                        class="bg-palace-purple-dark border-2 border-white hover:bg-white hover:text-navy text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold text-base sm:text-lg transition-all duration-300 shadow-xl text-center">
+                        <i class="fas fa-phone-alt mr-2"></i> Call {{ config('facility.phone') }}
                     </a>
                 </div>
+                <p class="mt-4 text-center lg:text-left text-sm text-gray-600">
+                    Tours take about an hour &middot; No obligation &middot;
+                    <a href="/gallery" class="underline text-primary hover:text-purple-950">See photos of the home</a>
+                </p>
             </div>
 
             <!-- Right Image -->

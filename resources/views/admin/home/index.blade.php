@@ -127,8 +127,6 @@ Welcome to Amazing Palace, where the comfort of a private residence meets the ex
                     <h3 class="cormorant text-2xl font-bold mb-4">Dining</h3>
                     <p class="mb-6">Meals with nutritionist-approved menus tailored to individual
                         dietary needs.</p>
-                    <a href="#" class="text-gold font-semibold hover:text-yellow-300 transition">View Sample Menu
-                        <i class="fas fa-arrow-right ml-1"></i></a>
                 </div>
 
                 <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
@@ -138,8 +136,6 @@ Welcome to Amazing Palace, where the comfort of a private residence meets the ex
                     <h3 class="cormorant text-2xl font-bold mb-4">Amenities & Activities</h3>
                     <p class="mb-6">Beautiful backyard for activity and daily social and recreational programs.
                         </p>
-                    <a href="#" class="text-gold font-semibold hover:text-yellow-300 transition">See Activities <i
-                            class="fas fa-arrow-right ml-1"></i></a>
                 </div>
             </div>
         </div>
@@ -276,15 +272,20 @@ Welcome to Amazing Palace, where the comfort of a private residence meets the ex
                     <p class="mb-8 text-center lg:text-left">
                         Contact us to schedule a personal tour of our facility or a virtual consultation.
                     </p>
+                    <p class="mb-6 text-center lg:text-left">
+                        <a href="{{ route('booking.index') }}" class="inline-block btn-gold font-bold px-6 py-3 rounded-full transition">
+                            Pick a date and time online
+                        </a>
+                    </p>
 
                     @include('components.partials.appointment')
                     
                     <!-- Optional: Add a direct contact CTA for mobile -->
                     <div class="mt-8 block lg:hidden">
-                        <a href="tel:+12064889285" 
+                        <a href="tel:{{ config('facility.phone_tel') }}" 
                            class="w-full bg-gold text-navy font-bold py-4 px-6 rounded-lg flex items-center justify-center gap-3 hover:bg-yellow-500 transition-all">
                             <i class="fas fa-phone-alt"></i>
-                            <span>Call Now: (206) 488-9285</span>
+                            <span>Call Now: {{ config('facility.phone') }}</span>
                         </a>
                     </div>
                 </div>
