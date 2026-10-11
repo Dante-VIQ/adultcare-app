@@ -205,39 +205,33 @@
                 </div>
             </div>
 
-            <!-- Location & Parking -->
+            <!-- Location -->
             <div class="section">
-                <h2 class="h2">Location & Parking</h2>
+                <h2 class="h2">Location</h2>
                 <p><strong>Address:</strong><br>
-                123 Luxury Lane<br>
-                Seattle, WA 98101</p>
-
-                <p><strong>Parking:</strong> Free visitor parking is available in our front lot. Look for signs marked "Visitor Parking - Amazing Palace".</p>
-
-                <p><strong>Public Transportation:</strong> We're accessible via bus routes 11, 12, and 43. The nearest light rail station is Westlake Station (0.8 miles away).</p>
+                {{ config('facility.name') }}<br>
+                {{ config('facility.address_line') }}</p>
+                <p><a href="https://www.google.com/maps/search/?api=1&query={{ rawurlencode(config('facility.address_line')) }}">Open in Maps</a></p>
             </div>
 
-            <!-- Action Buttons -->
+            <!-- Changes -->
             <div class="section text-center">
-                <p>Need to make changes to your appointment?</p>
-                <a href="{{ route('booking.cancel', $booking) }}" class="btn btn-secondary">Cancel Appointment</a>
-                <a href="{{ route('booking.reschedule', $booking) }}" class="btn">Reschedule</a>
+                <p>Need to change or cancel your appointment? Call us on
+                    <a href="tel:{{ config('facility.phone_tel') }}">{{ config('facility.phone') }}</a>
+                    or reply to this email.</p>
             </div>
 
             <!-- Contact Information -->
             <div class="contact-info">
                 <h3 style="margin-top: 0; color: #d4af37;">Need Assistance?</h3>
-                <p>Email: <a href="mailto:admissions@amazingpalaceseattle.com">admissions@amazingpalaceseattle.com</a></p>
-                <p>Phone: <a href="tel:2065551234">(206) 555-1234</a></p>
-                <p>Business Hours: Monday-Friday 9am-5pm, Saturday 10am-2pm</p>
-                <p class="mt-4" style="font-size: 12px; opacity: 0.8;">For emergencies outside business hours, call (206) 555-9999</p>
+                <p>Email: <a href="mailto:{{ config('facility.email') }}">{{ config('facility.email') }}</a></p>
+                <p>Phone: <a href="tel:{{ config('facility.phone_tel') }}">{{ config('facility.phone') }}</a></p>
             </div>
         </div>
 
         <!-- Footer -->
         <div class="footer">
             <p>© {{ date('Y') }} Amazing Palace Adult Family Home. All rights reserved.</p>
-            <p>WA State License #AFH-123456 | Medicaid Provider #WA98765</p>
             <p>This email was sent to {{ $booking->email }}. If you believe you received this in error, please contact us.</p>
         </div>
     </div>

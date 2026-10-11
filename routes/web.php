@@ -87,9 +87,9 @@ Route::name('booking.')->prefix('booking')->group(function () {
     Route::get('/', [BookingController::class, 'showForm'])->name('index');
     Route::post('/check-availability', [BookingController::class, 'checkAvailability'])->name('checkAvailability');
     Route::post('/submit', [BookingController::class, 'submitBooking'])->name('submit');
-    Route::get('/confirm/{booking}', [BookingController::class, 'showConfirmation'])->name('confirm');
-    Route::post('/{booking}/cancel', [BookingController::class, 'cancelBooking'])->name('cancel');
-    Route::post('/{booking}/reschedule', [BookingController::class, 'rescheduleBooking'])->name('reschedule');
+    Route::get('/confirm/{booking}', [BookingController::class, 'showConfirmation'])->middleware('signed')->name('confirm');
+    Route::post('/{booking}/cancel', [BookingController::class, 'cancelBooking'])->middleware('signed')->name('cancel');
+    Route::post('/{booking}/reschedule', [BookingController::class, 'rescheduleBooking'])->middleware('signed')->name('reschedule');
 });
 // Route::prefix('jobs')
 //     ->name('jobs.')
@@ -179,11 +179,11 @@ Route::middleware(['auth', 'role:master|engineer'])->group(function () {
 
     // Bookings management
     Route::get('admin/bookings', [AdminBookingController::class, 'index'])->name('admin.bookings.index');
+    Route::get('admin/bookings/export', [AdminBookingController::class, 'export'])->name('admin.bookings.export');
     Route::get('admin/bookings/{booking}', [AdminBookingController::class, 'show'])->name('admin.bookings.show');
     Route::get('admin/bookings/{booking}/edit', [AdminBookingController::class, 'edit'])->name('admin.bookings.edit');
     Route::put('admin/bookings/{booking}', [AdminBookingController::class, 'update'])->name('admin.bookings.update');
     Route::delete('admin/bookings/{booking}', [AdminBookingController::class, 'destroy'])->name('admin.bookings.destroy');
-    Route::get('admin/bookings/export', [AdminBookingController::class, 'export'])->name('admin.bookings.export');
 
     // Route::prefix('admin')
     //     ->name('admin.')

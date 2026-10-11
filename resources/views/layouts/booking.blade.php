@@ -264,8 +264,7 @@
             </div>
 
             <div class="mt-12 pt-8 border-t border-white/10 text-center text-gray-400 text-sm">
-                <p>123 Luxury Lane, Seattle, WA 98101 | (206) 555-1234 | info@amazingpalaceseattle.com</p>
-                <p class="mt-2">WA State License #AFH-123456 | Medicaid Provider #WA98765</p>
+                <p>{{ config('facility.address_line') }} | {{ config('facility.phone') }} | {{ config('facility.email') }}</p>
             </div>
         </div>
     </footer>

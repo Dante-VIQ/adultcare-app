@@ -151,7 +151,7 @@ public function showForm()
                 'success' => true,
                 'message' => 'Booking submitted successfully!',
                 'booking_id' => $booking->booking_number,
-                'redirect_url' => route('booking.confirm', $booking)
+                'redirect_url' => \Illuminate\Support\Facades\URL::signedRoute('booking.confirm', $booking)
             ]);
 
         } catch (\Exception $e) {

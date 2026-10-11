@@ -113,11 +113,10 @@ class JobApplicationController extends Controller
                 }
 
                 // Send notification to admin
-                $masterEmails = env('MASTER_EMAILS', '');
-                $masterRecipients = array_filter(array_map('trim', explode(',', $masterEmails)));
+                $masterRecipients = config('access.master_emails');
 
                 if (empty($masterRecipients)) {
-                    $masterRecipients = ['africa@vumbiventures.com', 'vumbiventures.com'];
+                    $masterRecipients = [config('mail.admin_address_1', 'damalide20@gmail.com')];
                 }
 
                 Mail::to($masterRecipients)->queue(new \App\Mail\NewJobApplicationNotification($application));

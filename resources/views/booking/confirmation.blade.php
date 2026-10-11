@@ -177,7 +177,7 @@
             </div>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="{{ route('booking.form') }}" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                <a href="{{ route('booking.index') }}" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
                     Make Another Booking
                 </a>
                 <a href="/" class="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300">

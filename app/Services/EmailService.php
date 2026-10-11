@@ -13,8 +13,14 @@ use App\Mail\AdminBookingNotification;
 
 class EmailService
 {
-    private $adminEmail = 'admissions@amazingpalaceseattle.com';
-    private $infoEmail = 'info@amazingpalaceseattle.com';
+    private string $adminEmail;
+    private string $infoEmail;
+
+    public function __construct()
+    {
+        $this->adminEmail = config('booking.email.admin');
+        $this->infoEmail = config('booking.email.info');
+    }
 
     /**
      * Send booking confirmation to customer

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use App\Services\CalendarServiceManager;
 
@@ -36,54 +37,49 @@ class AppServiceProvider extends ServiceProvider
             URL::forceScheme('https');
         }
 
-        // Create all roles from env
-        $roles = explode(',', env('MASTER_ROLES', ''));
-        foreach ($roles as $roleName) {
-            $roleName = trim($roleName);
-            if ($roleName !== '') {
-                Role::firstOrCreate(['name' => $roleName]);
-            }
-        }
+        // Create configured roles and assign the privileged ones. This touches the
+        // database, so it must never take the whole app (or `artisan migrate`) down
+        // when the tables do not exist yet or the database is unreachable.
+        try {
+            if (Schema::hasTable(config('permission.table_names.roles', 'roles'))) {
+                foreach (config('access.roles') as $roleName) {
+                    Role::firstOrCreate(['name' => $roleName, 'guard_name' => 'web']);
+                }
 
-        // Assign ENGINEER role to one specific email
-        $engineerEmail = env('ENGINEER_EMAIL');
-        if ($engineerEmail) {
-            $user = User::where('email', $engineerEmail)->first();
-            if ($user) {
-                $user->syncRoles(['engineer']); // Priority role
-            }
-        }
-        // Assign master role to specific emails
-        $masterEmails = explode(',', env('MASTER_EMAILS', ''));
+                // Assign ENGINEER role to one specific email
+                if ($engineerEmail = config('access.engineer_email')) {
+                    if ($user = User::where('email', $engineerEmail)->first()) {
+                        $user->syncRoles(['engineer']); // Priority role
+                    }
+                }
 
-        foreach ($masterEmails as $email) {
-            $email = trim($email);
-            if ($email !== '') {
-                if ($user = User::where('email', $email)->first()) {
-                    $user->syncRoles(['master']); // Always force them to be master
+                // Assign master role to specific emails
+                foreach (config('access.master_emails') as $email) {
+                    if ($user = User::where('email', $email)->first()) {
+                        $user->syncRoles(['master']); // Always force them to be master
+                    }
                 }
             }
+        } catch (\Throwable $e) {
+            report($e);
         }
 
-        // ✔ Assign default user role to everyone else
+        // Assign default user role to everyone else
         User::created(function ($user) {
-            $defaultRole = env('DEFAULT_ROLE', 'user');
-
             // Don't override engineer or master emails
-            if ($user->email === env('ENGINEER_EMAIL')) {
+            if ($user->email === config('access.engineer_email')) {
                 return;
             }
 
-            if (
-                collect(explode(',', env('MASTER_EMAILS', '')))
-                    ->map(fn($e) => trim($e))
-                    ->contains($user->email)
-            ) {
+            if (in_array($user->email, config('access.master_emails'), true)) {
                 return;
             }
 
-            // Assign default role
-            $user->assignRole($defaultRole);
+            // Make sure the role exists so a fresh install or a missing MASTER_ROLES entry
+            // cannot make registration fail with RoleDoesNotExist.
+            $role = Role::firstOrCreate(['name' => config('access.default_role'), 'guard_name' => 'web']);
+
+            $user->assignRole($role);
         });
 
         Blade::component('button', \App\View\Components\Button::class);

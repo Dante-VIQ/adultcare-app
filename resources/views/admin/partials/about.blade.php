@@ -46,7 +46,7 @@
                                         @endforeach
                                     </td>
                                     <td>
-                                        <form action="{{ route('admin.users.assign-role', $user) }}" method="POST">
+                                        <form action="{{ route('admin.roles.update', $user) }}" method="POST">
                                             @csrf
                                             <select name="role" class="form-select">
                                                 @foreach ($roles as $role)

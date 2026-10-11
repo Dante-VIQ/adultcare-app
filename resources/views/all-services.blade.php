@@ -539,7 +539,7 @@
             </p>
             <div class="flex flex-col md:flex-row justify-center space-y-6 md:space-y-0 md:space-x-8">
                 <a href="contact.html#tour" class="btn-gold px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-xl">
-                    <i class="fas fa-phone-alt mr-2"></i> Call Now: (206) 555-1234
+                    <i class="fas fa-phone-alt mr-2"></i> Call Now: {{ config('facility.phone') }}
                 </a>
                 <a href="contact.html" class="bg-transparent border-2 border-white hover:bg-white hover:text-navy text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300">
                     <i class="fas fa-envelope mr-2"></i> Email Us

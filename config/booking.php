@@ -41,8 +41,8 @@ return [
 
     // Email recipients
     'email' => [
-        'admin' => env('BOOKING_ADMIN_EMAIL', 'admissions@amazingpalaceseattle.com'),
-        'info' => env('BOOKING_INFO_EMAIL', 'info@amazingpalaceseattle.com'),
+        'admin' => env('BOOKING_ADMIN_EMAIL', env('FACILITY_EMAIL', 'amazingpalaceafh@gmail.com')),
+        'info' => env('BOOKING_INFO_EMAIL', env('FACILITY_EMAIL', 'amazingpalaceafh@gmail.com')),
         'bcc' => env('BOOKING_BCC_EMAIL', null),
     ],
 
