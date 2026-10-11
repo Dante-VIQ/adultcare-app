@@ -252,7 +252,7 @@ class GoogleCalendarService implements CalendarServiceInterface
         }
 
         // Add location
-        $event->setLocation('123 Luxury Lane, Seattle, WA 98101');
+        $event->setLocation(config('facility.address_line'));
 
         // Add conference data for virtual tours
         if ($booking->type === 'virtual') {

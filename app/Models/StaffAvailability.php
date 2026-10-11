@@ -1,5 +1,3 @@
-// File: app/Models/StaffAvailability.php
-
 <?php
 
 namespace App\Models;

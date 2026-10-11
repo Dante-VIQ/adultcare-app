@@ -1,5 +1,3 @@
-// File: app/Services/CalendarServiceManager.php
-
 <?php
 
 namespace App\Services;

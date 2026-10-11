@@ -115,8 +115,8 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="text-sm text-center md:text-left mb-1 md:mb-0">
-                    <i class="fas fa-phone-alt mr-2"></i> Call Now: <a href="tel:+12535451994"
-                        class="font-semibold hover:text-blue-200">+1(253) 5451994</a>
+                    <i class="fas fa-phone-alt mr-2"></i> Call Now: <a href="tel:{{ config('facility.phone_tel') }}"
+                        class="font-semibold hover:text-blue-200">{{ config('facility.phone') }}</a>
                 </div>
                 <div class="flex items-center space-x-4">
                     <span class="text-sm">24/7 Service Available</span>
@@ -177,7 +177,7 @@
             </div>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="{{ route('booking.form') }}" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                <a href="{{ route('booking.index') }}" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
                     Make Another Booking
                 </a>
                 <a href="/" class="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300">

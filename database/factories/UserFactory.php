@@ -24,7 +24,7 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
-        $role = Role::firstOrCreate(['name' => 'user'], ['description' => 'Regular User']);
+        $role = Role::firstOrCreate(['name' => 'user', 'guard_name' => 'web'], ['description' => 'Regular User']);
 
         return [
             'name' => fake()->name(),

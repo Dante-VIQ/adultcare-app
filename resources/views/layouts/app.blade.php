@@ -482,7 +482,7 @@
 
         <!-- Page Content -->
         <main>
-            {{-- {{ $slot }} --}}
+            {{ $slot ?? '' }}
             @yield('content')
         </main>
     </div>
@@ -900,6 +900,7 @@
             return plusCode;
         }
     </script>
+    <x-mobile-cta-bar />
 </body>
 
 </html>

@@ -75,8 +75,7 @@ class AppointmentController extends Controller
             $appointment = Appointment::create($data);
 
             // Send email to MASTER_EMAILS from .env (comma-separated). Use send() to avoid queue driver issues.
-            $masterEmails = env('MASTER_EMAILS', '');
-            $masterRecipients = array_filter(array_map('trim', explode(',', $masterEmails)));
+            $masterRecipients = config('access.master_emails');
             if (empty($masterRecipients)) {
                 $masterRecipients = [config('mail.admin_address_1', 'damalide20@gmail.com')];
             }

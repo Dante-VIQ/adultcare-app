@@ -162,7 +162,7 @@ class Profile extends Component
         $employee->delete();
 
         session()->flash('success', 'Employee deleted successfully.');
-        return redirect()->route('employees.index');
+        return redirect()->route('admin.employees.index');
     }
     public function render()
     {

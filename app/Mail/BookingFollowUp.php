@@ -32,8 +32,8 @@ class BookingFollowUp extends Mailable
                         'booking' => $this->booking,
                         'questions' => $this->followUpQuestions,
                         'nextSteps' => $this->nextSteps,
-                        'contactEmail' => 'admissions@amazingpalaceseattle.com',
-                        'contactPhone' => '(206) 555-1234'
+                        'contactEmail' => config('facility.email'),
+                        'contactPhone' => config('facility.phone')
                     ]);
     }
 

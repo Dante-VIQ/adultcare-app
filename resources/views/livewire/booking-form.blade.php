@@ -188,7 +188,7 @@
                                  </li>
                                  <li class="flex items-start">
                                      <i class="fas fa-info-circle text-gold mr-2 mt-0.5"></i>
-                                     <span>Same-day appointments may be available - call (206) 555-1234</span>
+                                     <span>Same-day appointments may be available - call {{ config('facility.phone') }}</span>
                                  </li>
                              </ul>
                          </div>
@@ -227,7 +227,7 @@
                          <div class="bg-light-blue rounded-xl p-6">
                              <h4 class="font-bold text-navy mb-4">Need a different time?</h4>
                              <p class="text-gray-700 mb-4">If you need a time not listed here, please call us at
-                                 <strong>(206) 555-1234</strong> or note your preference in the next step.
+                                 <strong>{{ config('facility.phone') }}</strong> or note your preference in the next step.
                              </p>
                              <button id="request-custom-time"
                                  class="text-navy font-semibold hover:text-gold transition">
@@ -537,14 +537,14 @@
                          <h3 class="cormorant text-2xl font-bold text-navy mb-4">How far in advance should I book?</h3>
                          <p class="text-gray-700">We recommend booking at least 48 hours in advance to ensure
                              availability. However, we occasionally have same-day availability for tours - please call
-                             (206) 555-1234 to check.</p>
+                             {{ config('facility.phone') }} to check.</p>
                      </div>
 
                      <div class="bg-white rounded-2xl shadow-lg p-8">
                          <h3 class="cormorant text-2xl font-bold text-navy mb-4">What if I need to cancel or
                              reschedule?</h3>
-                         <p class="text-gray-700">You can cancel or reschedule your appointment by calling us at (206)
-                             555-1234 or replying to your confirmation email. We request at least 24 hours notice for
+                         <p class="text-gray-700">You can cancel or reschedule your appointment by calling us at {{ config('facility.phone') }}
+                             or replying to your confirmation email. We request at least 24 hours notice for
                              cancellations.</p>
                      </div>
 
@@ -592,9 +592,9 @@
                  Our care coordinators are available to help you schedule an appointment and answer any questions.
              </p>
              <div class="flex flex-col md:flex-row justify-center space-y-6 md:space-y-0 md:space-x-8">
-                 <a href="tel:2065551234"
+                 <a href="tel:{{ config('facility.phone_tel') }}"
                      class="btn-gold px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-xl">
-                     <i class="fas fa-phone-alt mr-2"></i> Call Now: (206) 555-1234
+                     <i class="fas fa-phone-alt mr-2"></i> Call Now: {{ config('facility.phone') }}
                  </a>
                  <a href="contact.html"
                      class="bg-transparent border-2 border-white hover:bg-white hover:text-navy text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300">

@@ -29,7 +29,7 @@ class NewBookingNotification extends Mailable
         }
 
         return $this->subject($subject)
-                    ->view('emails.admin.booking-notification')
+                    ->view('emails.booking.notification')
                     ->with([
                         'booking' => $this->booking,
                         'priority' => $this->priority,
