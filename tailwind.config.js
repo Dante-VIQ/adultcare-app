@@ -7,8 +7,8 @@ export default {
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
-        './app/Livewire/**/*.php', // Livewire components
-        './resources/js/**/*.js',  // Alpine.js components or custom scripts
+        './app/Livewire/**/*.php',
+        './resources/js/**/*.js',
         './resources/**/*.vue',
     ],
 
@@ -20,8 +20,5 @@ export default {
         },
     },
 
-   plugins: [
-  require('@tailwindcss/forms')
-],
-
+    plugins: [forms],
 };

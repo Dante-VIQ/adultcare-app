@@ -22,29 +22,42 @@ class BookingWizard {
         document.querySelectorAll('.booking-option').forEach(option => {
             option.addEventListener('click', () => this.selectBookingType(option));
         });
-        
-        document.getElementById('next-step-1').addEventListener('click', () => this.goToStep(2));
-        
+
+        const nextStep1 = document.getElementById('next-step-1');
+        if (nextStep1) {
+            nextStep1.addEventListener('click', () => this.goToStep(2));
+        }
+
         // Step 2: Date & Time
-        document.getElementById('prev-step-2').addEventListener('click', () => this.goToStep(1));
-        document.getElementById('next-step-2').addEventListener('click', () => this.goToStep(3));
-        
+        const prevStep2 = document.getElementById('prev-step-2');
+        const nextStep2 = document.getElementById('next-step-2');
+        if (prevStep2) prevStep2.addEventListener('click', () => this.goToStep(1));
+        if (nextStep2) nextStep2.addEventListener('click', () => this.goToStep(3));
+
         // Step 3: Contact Information
-        document.getElementById('prev-step-3').addEventListener('click', () => this.goToStep(2));
-        
+        const prevStep3 = document.getElementById('prev-step-3');
+        if (prevStep3) prevStep3.addEventListener('click', () => this.goToStep(2));
+
         // Step 4: Review
-        document.getElementById('prev-step-4').addEventListener('click', () => this.goToStep(3));
+        const prevStep4 = document.getElementById('prev-step-4');
+        if (prevStep4) prevStep4.addEventListener('click', () => this.goToStep(3));
     }
-    
+
     async selectBookingType(option) {
-        const bookingType = option.getAttribute('data-booking-type');
+        const bookingType = option?.getAttribute('data-booking-type');
         this.bookingData.type = bookingType;
-        
-        // Update hidden input for form submission
-        document.getElementById('booking-type-input').value = bookingType;
-        
+
+        // Update hidden input for form submission when present
+        const typeInput = document.getElementById('booking-type-input');
+        if (typeInput) {
+            typeInput.value = bookingType;
+        }
+
         // Enable next button
-        document.getElementById('next-step-1').disabled = false;
+        const nextButton = document.getElementById('next-step-1');
+        if (nextButton) {
+            nextButton.disabled = !bookingType;
+        }
     }
     
     async goToStep(step) {
@@ -100,8 +113,11 @@ class BookingWizard {
     
     selectDate(date) {
         this.bookingData.date = date;
-        document.getElementById('appointment-date-input').value = date;
-        
+        const dateInput = document.getElementById('appointment-date-input');
+        if (dateInput) {
+            dateInput.value = date;
+        }
+
         // Fetch available time slots for this date
         this.fetchAvailableTimeSlots(date);
     }
@@ -132,16 +148,28 @@ class BookingWizard {
     
     selectTime(time) {
         this.bookingData.time = time;
-        document.getElementById('appointment-time-input').value = time;
-        
+        const timeInput = document.getElementById('appointment-time-input');
+        if (timeInput) {
+            timeInput.value = time;
+        }
+
         // Enable next button
-        document.getElementById('next-step-2').disabled = false;
+        const nextStep2 = document.getElementById('next-step-2');
+        if (nextStep2) {
+            nextStep2.disabled = !time;
+        }
     }
-    
+
     populateContactForm() {
         // Pre-populate form with any saved data
-        if (this.bookingData.contact.first_name) {
-            document.getElementById('first_name').value = this.bookingData.contact.first_name;
+        const firstNameInput = document.getElementById('first-name');
+        if (firstNameInput && this.bookingData.contact.first_name) {
+            firstNameInput.value = this.bookingData.contact.first_name;
+        }
+
+        const lastNameInput = document.getElementById('last-name');
+        if (lastNameInput && this.bookingData.contact.last_name) {
+            lastNameInput.value = this.bookingData.contact.last_name;
         }
         // Add more fields as needed
     }
@@ -182,7 +210,7 @@ class BookingWizard {
             case 3:
                 // Basic form validation
                 const form = document.getElementById('contact-form');
-                return form.checkValidity();
+                return !!form && form.checkValidity();
             default:
                 return true;
         }
@@ -196,15 +224,20 @@ class BookingWizard {
     setupEventListeners() {
         // Form submission
         const form = document.getElementById('contact-form');
-        if (form) {
-            form.addEventListener('submit', (e) => this.handleFormSubmit(e));
+        if (!form) {
+            return;
         }
-        
+
+        form.addEventListener('submit', (e) => this.handleFormSubmit(e));
+
         // Input change listeners for real-time data capture
         const inputs = form.querySelectorAll('input, select, textarea');
         inputs.forEach(input => {
             input.addEventListener('change', (e) => {
-                const field = e.target.name;
+                const field = e.target.name || e.target.id;
+                if (!field) {
+                    return;
+                }
                 this.bookingData.contact[field] = e.target.value;
             });
         });
@@ -260,5 +293,5 @@ class BookingWizard {
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    const wizard = new BookingWizard(window.bookingData);
+    const wizard = new BookingWizard(window.bookingData || {});
 });

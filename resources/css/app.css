@@ -1,7 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+@import "tailwindcss";
 
 #img {
 background-image: url('/images/RIDE TOP.png'); /* Adjust the path as necessary */

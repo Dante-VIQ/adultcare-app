@@ -264,15 +264,16 @@
             </div>
 
             <div class="mt-12 pt-8 border-t border-white/10 text-center text-gray-400 text-sm">
-                <p>{{ config('facility.address_line') }} | {{ config('facility.phone') }} | {{ config('facility.email') }}</p>
+                <p>{{ config('facility.address_line') }} | {{ config('facility.phone') }} |
+                    {{ config('facility.email') }}</p>
             </div>
         </div>
     </footer>
 
     @livewireScripts
-  <script>
+    <script>
         // Initialize with data from Laravel
-        const bookingData = {
+        window.bookingData = {
             availableDates: @json($availableDates ?? []),
             unavailableSlots: @json($unavailableSlots ?? []),
             bookingTypes: @json($bookingTypes ?? []),
@@ -281,7 +282,7 @@
             checkAvailabilityUrl: '{{ route("booking.checkAvailability") }}',
             submitUrl: '{{ route("booking.submit") }}'
         };
-        
+
     </script>
     <script src="js/booking.js" defer></script>
 
